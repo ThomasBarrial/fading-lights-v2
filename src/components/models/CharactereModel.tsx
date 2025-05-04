@@ -12,7 +12,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 
-export function CharactereModel({ isGrounded }: { isGrounded: boolean }) {
+export function CharactereModel() {
   const { nodes } = useGLTF("/models/charactere.gltf");
 
   const groupRef = useRef<THREE.Group>(null);
@@ -36,8 +36,6 @@ export function CharactereModel({ isGrounded }: { isGrounded: boolean }) {
 
   useFrame((state, delta) => {
     if (!groupRef.current) return;
-
-    console.log(isGrounded);
 
     const t = state.clock.getElapsedTime();
 
@@ -78,32 +76,28 @@ export function CharactereModel({ isGrounded }: { isGrounded: boolean }) {
 
     // console.log(legright, legleft);
 
-    if (legright && legleft) {
-      // Applique une rotation conditionnelle
-      legright.rotation.z = isJumping ? -Math.PI / 6 : 0;
-      legleft.rotation.z = isJumping ? Math.PI / 6 : 0;
-    }
+    // if (legright && legleft) {
+    //   // Applique une rotation conditionnelle
+    //   legright.rotation.z = isJumping ? -Math.PI / 6 : 0;
+    //   legleft.rotation.z = isJumping ? Math.PI / 6 : 0;
+    // }
 
-    if (leftArm && rightArm) {
-      leftArm.rotation.x = isJumping ? Math.PI / 10 : 0;
-      rightArm.rotation.x = isJumping ? -Math.PI / 10 : 0;
+    // if (leftArm && rightArm) {
+    //   leftArm.rotation.x = isJumping ? Math.PI / 10 : 0;
+    //   rightArm.rotation.x = isJumping ? -Math.PI / 10 : 0;
 
-      leftArm.position.z = isJumping ? 135 : 152;
-      rightArm.position.z = isJumping ? -135 : -152;
-    }
+    //   leftArm.position.z = isJumping ? 135 : 152;
+    //   rightArm.position.z = isJumping ? -135 : -152;
+    // }
 
-    if (head) {
-      head.rotation.z = isJumping ? Math.PI / 10 : 0;
-    }
+    // if (head) {
+    //   head.rotation.z = isJumping ? Math.PI / 10 : 0;
+    // }
 
     if (forward || backward || leftward || rightward) {
-      console.log("Moving");
       const swing = Math.sin(t * 6) * 0.4; // fréquence * amplitude
       const headSwing = Math.sin(t * 6) * 0.1;
       const armSwing = Math.sin(t * 4) * 0.3; // fréquence * amplitude
-
-      console.log("swing", swing);
-      console.log("swingOpp", swing);
 
       if (legright && legleft && !isJumping) {
         legright.rotation.z = swing;
@@ -122,7 +116,7 @@ export function CharactereModel({ isGrounded }: { isGrounded: boolean }) {
   });
   return (
     <group
-      scale={0.2}
+      scale={0.1}
       position={[0, 0, 0]}
       rotation={[0, Math.PI / 2, 0]}
       dispose={null}

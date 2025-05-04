@@ -2,9 +2,10 @@
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
 import { Suspense } from "react";
-import { KeyboardControls, OrbitControls } from "@react-three/drei";
-import Scene from "./Scene";
+import { KeyboardControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
+import Charactere from "./Charactere";
+import Level1 from "./levels/level1/Level1";
 
 export default function Experience() {
   return (
@@ -20,11 +21,11 @@ export default function Experience() {
       <Canvas shadows camera={{ position: [10, 10, 10], fov: 50 }}>
         <color attach="background" args={["#d6e2e9"]} />
 
-        <OrbitControls />
         <Lights />
         <Suspense fallback={null}>
-          <Physics gravity={[0, -12, 0]}>
-            <Scene />
+          <Physics debug={false} gravity={[0, -15, 0]}>
+            <Level1 />
+            <Charactere />
           </Physics>
         </Suspense>
       </Canvas>

@@ -400,7 +400,7 @@
     use-sync-external-store "^1.4.0"
     zustand "^5.0.3"
 
-"@react-three/rapier@^2.1.0":
+"@react-three/rapier@^2.0.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@react-three/rapier/-/rapier-2.1.0.tgz#a184bd0edfed0a718fd2fc8e6f27983fa1076934"
   integrity sha512-o1VzgCEILnc4noF4t5WNPYCy6dh0bTcd0Fa/xZa5/LBDnjYMb2mlWX6f+wMck5ucdz2BsVV+tpYWTGvb72QRIA==

@@ -1,6 +1,5 @@
 "use client";
 import { RigidBody } from "@react-three/rapier";
-import Charactere from "./Charactere";
 
 export default function Scene() {
   return (
@@ -27,8 +26,6 @@ export default function Scene() {
           <meshStandardMaterial color="#3a5a40" />
         </mesh>
       </RigidBody>
-
-      <Charactere />
     </>
   );
 }

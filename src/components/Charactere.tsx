@@ -13,53 +13,57 @@ import { CharactereModel } from "./models/CharactereModel";
 function Charactere() {
   const rigidBodyRef = useRef<RapierRigidBody>(null);
   const cameraFollowRef = useRef<THREE.Object3D>(null);
-  const jumpCooldown = useRef(0);
   const [subscribeKeys, get] = useKeyboardControls();
-  const speed = 3;
+  const speed = 1.5;
   const direction = new THREE.Vector3();
-  const isGrounded = useRef(false);
   const { rapier, world } = useRapier();
-  const rayHelper = useRef<THREE.ArrowHelper>(null);
+
+  const isGrounded = useRef(false);
+
+  const checkGrounded = () => {
+    if (!rigidBodyRef.current) return;
+
+    const rb = rigidBodyRef.current;
+    const origin = rb.translation();
+    const down = { x: 0, y: -1, z: 0 };
+
+    // On lance une capsule fictive directement sous le joueur
+    const shape = new rapier.Capsule(0.2, 0.1); // radius, halfHeight
+
+    const hit = world.castShape(
+      { x: origin.x, y: origin.y - 0.25, z: origin.z }, // Position
+      { x: 0, y: 0, z: 0, w: 1 }, // Pas de rotation
+      down,
+      shape,
+      0.05, // max distance
+      1, // ignore RB itself
+      false, // stopAtPenetration
+    );
+    isGrounded.current = !!hit && hit.time_of_impact < 0.05;
+  };
 
   const jump = React.useCallback(() => {
+    console.log(isGrounded.current);
+    console.log("jump");
     if (!rigidBodyRef.current) return;
-    if (jumpCooldown.current > 0) return;
-
-    const base = rigidBodyRef.current.translation();
-    const origin = { x: base.x, y: base.y - 0.6, z: base.z };
-    const ray = new rapier.Ray(origin, { x: 0, y: -1, z: 0 });
-    const hit = world.castRayAndGetNormal(ray, 0.5, true);
-
-    if (hit && hit.timeOfImpact < 0.1) {
-      rigidBodyRef.current.applyImpulse({ x: 0, y: 4, z: 0 }, true);
-      jumpCooldown.current = 1;
-    }
-  }, [rapier, world]);
+    if (!isGrounded.current) return;
+    rigidBodyRef.current.applyImpulse({ x: 0, y: 0.2, z: 0 }, true);
+  }, []);
 
   useEffect(() => {
-    const unsubscribeJump = subscribeKeys(
+    subscribeKeys(
       (state) => state.jump,
       (value) => {
         if (value) jump();
       },
     );
-
-    return () => {
-      unsubscribeJump();
-    };
   }, [subscribeKeys, jump]);
 
   useFrame((state, delta) => {
     const body = rigidBodyRef.current;
     if (!body) return;
 
-    if (rayHelper.current && rigidBodyRef.current) {
-      const origin = rigidBodyRef.current.translation();
-      const rayOrigin = new THREE.Vector3(origin.x, origin.y - 0.5, origin.z);
-
-      rayHelper.current.position.copy(rayOrigin);
-      rayHelper.current.setDirection(new THREE.Vector3(0, -1, 0));
-    }
+    checkGrounded();
 
     const { forward, backward, leftward, rightward } = get();
 
@@ -75,12 +79,7 @@ function Charactere() {
     const linvel = body.linvel();
     body.setLinvel({ x: direction.x, y: linvel.y, z: direction.z }, true);
 
-    // Tentative de saut
-    if (jumpCooldown.current > 0) {
-      jumpCooldown.current -= delta;
-    }
-
-    // CAMERA
+    // CAMERA;
     if (!cameraFollowRef.current) return;
     // On récupère la position actuelle et on lisse sur le ref visuel
     const bodyPos = new THREE.Vector3().copy(body.translation());
@@ -88,10 +87,11 @@ function Charactere() {
     // Smooth follow
     cameraFollowRef.current.position.lerp(bodyPos, 8 * delta);
 
-    const idealOffset = new THREE.Vector3(8, 15, 8); // (inversé selon besoin)
+    const idealOffset = new THREE.Vector3(5, 10, 5); // (inversé selon besoin)
     const idealLookAt = new THREE.Vector3(0, 1, 0);
 
     const cameraPos = cameraFollowRef.current.position.clone().add(idealOffset);
+
     const target = cameraFollowRef.current.position.clone().add(idealLookAt);
 
     state.camera.position.lerp(cameraPos, 5 * delta);
@@ -101,28 +101,20 @@ function Charactere() {
   return (
     <RigidBody
       ref={rigidBodyRef}
-      colliders={false}
       mass={1}
       position={[0, 1, 0]}
-      enabledRotations={[false, false, false]} // empêche de tomber ou tourner
+      colliders={false}
+      restitution={0.2}
       friction={1}
-      canSleep={false} // empêche de dormir
+      canSleep={false}
+      enabledRotations={[false, false, false]}
+      linearDamping={0.5}
+      angularDamping={0.5}
     >
       <object3D ref={cameraFollowRef} />
-      <CapsuleCollider args={[0.4, 0.4]} />
-      {/* <primitive
-        ref={rayHelper}
-        object={
-          new THREE.ArrowHelper(
-            new THREE.Vector3(0, -1, 0), // direction
-            new THREE.Vector3(0, 0, 0), // origin
-            1, // length
-            0xff0000, // color
-          )
-        }
-      /> */}
 
-      <CharactereModel isGrounded={isGrounded.current} />
+      <CapsuleCollider args={[0.2, 0.2]} />
+      <CharactereModel />
     </RigidBody>
   );
 }
