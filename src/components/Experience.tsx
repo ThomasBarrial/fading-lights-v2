@@ -1,13 +1,19 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Suspense } from "react";
-import { KeyboardControls } from "@react-three/drei";
+import { Suspense, useRef } from "react";
+import { KeyboardControls, OrbitControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
 import Charactere from "./Charactere";
 import Level1 from "./levels/level1/Level1";
+import { useControls } from "leva";
 
 export default function Experience() {
+  const { fogColor } = useControls({
+    fogColor: { value: "#D6E892" },
+  });
+  const rigidBodyRef = useRef(null);
+
   return (
     <KeyboardControls
       map={[
@@ -19,13 +25,14 @@ export default function Experience() {
       ]}
     >
       <Canvas shadows camera={{ position: [10, 10, 10], fov: 50 }}>
-        <color attach="background" args={["#d6e2e9"]} />
-
+        <color attach="background" args={["#D6E892"]} />
+        <fog attach="fog" args={[fogColor, 10, 30]} />
+        <OrbitControls />
         <Lights />
         <Suspense fallback={null}>
-          <Physics debug={false} gravity={[0, -15, 0]}>
-            <Level1 />
-            <Charactere />
+          <Physics debug={false}>
+            <Level1 rigidBodyRef={rigidBodyRef} />
+            <Charactere rigidBodyRef={rigidBodyRef} />
           </Physics>
         </Suspense>
       </Canvas>

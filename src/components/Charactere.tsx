@@ -10,11 +10,14 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { CharactereModel } from "./models/CharactereModel";
 
-function Charactere() {
-  const rigidBodyRef = useRef<RapierRigidBody>(null);
+function Charactere({
+  rigidBodyRef,
+}: {
+  rigidBodyRef: React.RefObject<RapierRigidBody | null>;
+}) {
   const cameraFollowRef = useRef<THREE.Object3D>(null);
   const [subscribeKeys, get] = useKeyboardControls();
-  const speed = 1.5;
+  const speed = 3;
   const direction = new THREE.Vector3();
   const { rapier, world } = useRapier();
 
@@ -43,11 +46,9 @@ function Charactere() {
   };
 
   const jump = React.useCallback(() => {
-    console.log(isGrounded.current);
-    console.log("jump");
     if (!rigidBodyRef.current) return;
     if (!isGrounded.current) return;
-    rigidBodyRef.current.applyImpulse({ x: 0, y: 0.2, z: 0 }, true);
+    rigidBodyRef.current.applyImpulse({ x: 0, y: 0.35, z: 0 }, true);
   }, []);
 
   useEffect(() => {
@@ -87,8 +88,8 @@ function Charactere() {
     // Smooth follow
     cameraFollowRef.current.position.lerp(bodyPos, 8 * delta);
 
-    const idealOffset = new THREE.Vector3(5, 10, 5); // (inversé selon besoin)
-    const idealLookAt = new THREE.Vector3(0, 1, 0);
+    const idealOffset = new THREE.Vector3(6, 10, 5); // (inversé selon besoin)
+    const idealLookAt = new THREE.Vector3(0, 0, 0);
 
     const cameraPos = cameraFollowRef.current.position.clone().add(idealOffset);
 
@@ -100,9 +101,10 @@ function Charactere() {
 
   return (
     <RigidBody
+      name="player"
       ref={rigidBodyRef}
       mass={1}
-      position={[0, 1, 0]}
+      position={[-1, 2, 0]}
       colliders={false}
       restitution={0.2}
       friction={1}
@@ -113,7 +115,7 @@ function Charactere() {
     >
       <object3D ref={cameraFollowRef} />
 
-      <CapsuleCollider args={[0.2, 0.2]} />
+      <CapsuleCollider args={[0.25, 0.25]} />
       <CharactereModel />
     </RigidBody>
   );
