@@ -4,12 +4,11 @@ import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 
 function Level1Block1() {
-  const { scene: block1 } = useGLTF(
-    "/models/level1/blocks/block1/level_1_block_1.gltf",
-  );
+  const { scene: block1 } = useGLTF("/models/level1/level_1_block_1.gltf");
+  const { scene: boost } = useGLTF("/models/boost.gltf");
 
   const { scene: plantsGrass } = useGLTF(
-    "/models/level1/blocks/block1/level_1_GrassPlantBlock1.gltf",
+    "/models/level1/plant_grass_level1.gltf",
   );
 
   function enableShadowsRecursively(object: THREE.Object3D) {
@@ -25,8 +24,9 @@ function Level1Block1() {
     if (block1) {
       enableShadowsRecursively(block1);
       enableShadowsRecursively(plantsGrass);
+      enableShadowsRecursively(boost);
     }
-  }, [block1, plantsGrass]);
+  }, [block1, plantsGrass, boost]);
 
   return (
     <group>
@@ -39,11 +39,12 @@ function Level1Block1() {
           position={[0, 1.1, 0]}
         />
       </RigidBody>
+
       <primitive
         rotation={[0, Math.PI / 2, 0]}
         object={plantsGrass}
         scale={1.1}
-        position={[0, 1.1, 0.8]}
+        position={[0, 1.1, 0]}
       />
     </group>
   );

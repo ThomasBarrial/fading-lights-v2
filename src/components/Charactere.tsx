@@ -21,6 +21,9 @@ function Charactere({
   const direction = new THREE.Vector3();
   const { rapier, world } = useRapier();
 
+  // const intialPostion = new THREE.Vector3(-1, 2, 0);
+  const intialPostion = new THREE.Vector3(-2, 5.6, -34);
+
   const isGrounded = useRef(false);
 
   const checkGrounded = () => {
@@ -49,7 +52,7 @@ function Charactere({
     if (!rigidBodyRef.current) return;
     if (!isGrounded.current) return;
     rigidBodyRef.current.applyImpulse({ x: 0, y: 0.35, z: 0 }, true);
-  }, []);
+  }, [rigidBodyRef]);
 
   useEffect(() => {
     subscribeKeys(
@@ -104,7 +107,7 @@ function Charactere({
       name="player"
       ref={rigidBodyRef}
       mass={1}
-      position={[-1, 2, 0]}
+      position={intialPostion.toArray()}
       colliders={false}
       restitution={0.2}
       friction={1}
