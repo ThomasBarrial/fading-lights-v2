@@ -6,7 +6,23 @@ import * as THREE from "three";
 
 const ROCK_URL = "/models/env/oneGrass.gltf";
 
-export default function GrassBackground() {
+export type GrassData = {
+  position: [number, number, number];
+  scale: number;
+  rotationY: number;
+};
+
+export default function GrassBackground({
+  minZ,
+  maxZ,
+  grassPosition,
+  maxX,
+}: {
+  minZ: number;
+  maxZ: number;
+  grassPosition?: GrassData[];
+  maxX: number;
+}) {
   const { scene } = useGLTF(ROCK_URL);
 
   useEffect(() => {
@@ -21,7 +37,7 @@ export default function GrassBackground() {
   const grass = useMemo(() => {
     const grassArray = [];
 
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 500; i++) {
       const x = Math.random() * 33 - 20;
       const z = Math.random() * 140 - 130;
 
@@ -31,6 +47,8 @@ export default function GrassBackground() {
         continue;
       }
 
+      if (z < minZ || z > maxZ || x < maxX) continue;
+
       grassArray.push({
         position: [x, 0, z] as [number, number, number],
         scale: 0.05 + Math.random() * 0.5,
@@ -39,24 +57,46 @@ export default function GrassBackground() {
     }
 
     return grassArray;
-  }, []);
+  }, [minZ, maxZ, maxX]);
 
   return (
     <Suspense fallback={null}>
       <group position={[0, 0.6, 0]}>
-        {grass.map((grass, idx) => (
-          <group key={idx}>
-            {grass.position[2] < 20 && (
-              <primitive
-                key={idx}
-                object={scene.clone()}
-                position={grass.position}
-                scale={grass.scale * 3}
-                rotation={[0, grass.rotationY, 0]}
-              />
-            )}
-          </group>
-        ))}
+        {grassPosition ? (
+          <>
+            {" "}
+            {grassPosition.map((grass, idx) => (
+              <group key={idx}>
+                {grass.position[2] < 20 && (
+                  <primitive
+                    key={idx}
+                    object={scene.clone()}
+                    position={grass.position}
+                    scale={grass.scale * 3}
+                    rotation={[0, grass.rotationY, 0]}
+                  />
+                )}
+              </group>
+            ))}
+          </>
+        ) : (
+          <>
+            {" "}
+            {grass.map((grass, idx) => (
+              <group key={idx}>
+                {grass.position[2] < 20 && (
+                  <primitive
+                    key={idx}
+                    object={scene.clone()}
+                    position={grass.position}
+                    scale={grass.scale * 3}
+                    rotation={[0, grass.rotationY, 0]}
+                  />
+                )}
+              </group>
+            ))}
+          </>
+        )}
       </group>
     </Suspense>
   );

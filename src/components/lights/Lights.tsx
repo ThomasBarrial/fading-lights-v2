@@ -19,7 +19,7 @@ export default function Lights() {
         ref={light}
         castShadow
         position={[4, 3, 1]}
-        intensity={isBoosted ? 2.4 : 2}
+        intensity={isBoosted ? 2 : 1.8}
         shadow-mapSize={[2024, 2024]}
         shadow-camera-top={20}
         shadow-camera-bottom={-20}
@@ -28,7 +28,7 @@ export default function Lights() {
         shadow-camera-near={0.1}
         shadow-camera-far={100}
       />
-      <ambientLight intensity={isBoosted ? 1.9 : 1.5} />
+      <ambientLight intensity={isBoosted ? 1.5 : 1.3} />
     </>
   );
 }

@@ -28,7 +28,7 @@ function Charactere({
   });
 
   const { dashFov, baseFov, fovSmooth } = useControls("Camera", {
-    dashFov: { value: 35, min: 35, max: 90 },
+    dashFov: { value: 40, min: 35, max: 90 },
     baseFov: { value: 45, min: 30, max: 90 },
     fovSmooth: { value: 2, min: 0, max: 20 },
   });
@@ -60,9 +60,9 @@ function Charactere({
     [isBoosted, baseDash, boostedDash],
   );
 
-  // const intialPostion = new THREE.Vector3(-1, 2, 0);
+  const intialPostion = new THREE.Vector3(-1, 2, 0);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
-  const intialPostion = new THREE.Vector3(-2, 5.6, -23);
+  // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
 
   const isGrounded = useRef(false);
 

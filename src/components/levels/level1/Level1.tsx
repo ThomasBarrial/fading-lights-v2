@@ -1,7 +1,6 @@
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import React, { useRef } from "react";
 
-// import TreesBackground from "./env/TreesBackground";
 // import RocksBackground from "./env/RocksBackground";
 // import GrassBackground from "./env/GrassBackground";
 import Level1Bounds from "./Level1Bounds";
@@ -20,9 +19,13 @@ function Level1({
   const currentCheckpoint = useRef<string | null>("start");
   const onCheckpointactivated = (checkPointId: string) => {
     currentCheckpoint.current = checkPointId;
+    setCurrentCheckpointId(checkPointId);
   };
   const boostStore = useBoostStore();
   const isPlayerDied = useRef(false);
+  const [currentCheckpointId, setCurrentCheckpointId] = React.useState<
+    string | null
+  >("start");
 
   const checkpoints = [
     {
@@ -68,13 +71,15 @@ function Level1({
     }
   });
 
+  console.log(currentCheckpointId);
+
   return (
     <group>
       <Level1Bounds />
       {/* Sol */}
       <RigidBody type="fixed" colliders="cuboid">
-        <mesh receiveShadow position={[0, 0, -60]}>
-          <boxGeometry args={[80, 1, 160]} />
+        <mesh receiveShadow position={[-5, 0.4, -60]}>
+          <boxGeometry args={[60, 0.2, 160]} />
           <meshStandardMaterial color={"#527650"} />
         </mesh>
       </RigidBody>
@@ -95,12 +100,11 @@ function Level1({
       <Boost id="boost1" position={[-0.3, 3, -29]} corruptionValue={0.15} />
 
       {/* Blocks */}
+      {/* {(currentCheckpointId === "start" ||
+        currentCheckpointId === "checkpoint1") && <Level1Block1 />} */}
+
       <Level1Block1 />
       <Level1Block2 isPlayerDied={isPlayerDied} />
-      {/* Environnement */}
-      {/* <TreesBackground />
-      <RocksBackground />
-      <GrassBackground /> */}
     </group>
   );
 }

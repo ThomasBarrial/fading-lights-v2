@@ -8,7 +8,7 @@ import Charactere from "./Charactere";
 import Level1 from "./levels/level1/Level1";
 import { useControls } from "leva";
 import GameOverOverlay from "./ui/GameOverOverlay";
-import PostProcessingEffects from "./effects/PostProcessingEffects";
+// import PostProcessingEffects from "./effects/PostProcessingEffects";
 
 export default function Experience() {
   const { fogColor } = useControls({
@@ -37,7 +37,7 @@ export default function Experience() {
               <Level1 rigidBodyRef={rigidBodyRef} />
               <Charactere rigidBodyRef={rigidBodyRef} />
             </Physics>
-            <PostProcessingEffects />
+            {/* <PostProcessingEffects /> */}
           </Suspense>
         </Canvas>
       </KeyboardControls>

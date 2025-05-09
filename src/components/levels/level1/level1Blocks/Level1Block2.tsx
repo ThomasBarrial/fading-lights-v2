@@ -3,6 +3,10 @@ import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import React, { RefObject, useEffect, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import TreesBackground from "../env/TreesBackground";
+import trees_block2 from "@/utils/level1/block2/trees_block2";
+import RocksBackground from "../env/RocksBackground";
+import rocks_block2 from "@/utils/level1/block2/rocks_block2";
 
 type BarConfig = {
   ref: React.RefObject<RapierRigidBody | null>;
@@ -19,14 +23,25 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
     "/models/level1/level_1_block_2.gltf",
   );
 
-  useEffect(() => {
-    block2.traverse((child) => {
+  const { scene: plantsGrass } = useGLTF(
+    "/models/level1/plants_level_1_block_2.gltf",
+  );
+
+  function enableShadowsRecursively(object: THREE.Object3D) {
+    object.traverse((child) => {
       if ((child as THREE.Mesh).isMesh) {
         child.castShadow = true;
         child.receiveShadow = true;
       }
     });
-  }, [block2]);
+  }
+
+  useEffect(() => {
+    if (block2) {
+      enableShadowsRecursively(block2);
+      enableShadowsRecursively(plantsGrass);
+    }
+  }, [block2, plantsGrass]);
 
   const bars: BarConfig[] = useMemo(() => {
     return [
@@ -106,6 +121,19 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
           <primitive object={node} />
         </RigidBody>
       ))}
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
+        object={plantsGrass}
+        scale={1.1}
+        position={[0, 1.1, 0]}
+      />
+      <TreesBackground minZ={-50} maxZ={-15} treesPositions={trees_block2} />
+      <RocksBackground
+        minZ={-50}
+        maxZ={-15}
+        rocksPosition={rocks_block2}
+        maxX={-15}
+      />
     </group>
   );
 }
