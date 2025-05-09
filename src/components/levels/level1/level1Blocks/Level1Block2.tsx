@@ -35,8 +35,8 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         node: nodes.bar1_obs_2,
         min: -0.3,
         max: -1.9,
-        z: -32.6,
-        frequency: 1,
+        z: -32.7,
+        frequency: 0.8,
         phase: 0,
       },
       {
@@ -99,7 +99,6 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
           sensor
           onIntersectionEnter={({ other }) => {
             if (other.rigidBodyObject?.name === "player") {
-              console.log("💥 Collision avec le joueur détectée !");
               isPlayerDied.current = true;
             }
           }}

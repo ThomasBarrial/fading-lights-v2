@@ -9,6 +9,8 @@ import Level1Block1 from "./level1Blocks/Level1Block1";
 import { useFrame } from "@react-three/fiber";
 import Checkpoint from "./CheckPoint";
 import Level1Block2 from "./level1Blocks/Level1Block2";
+import Boost from "@/components/models/Boost";
+import { useBoostStore } from "@/store/useBoostStore";
 
 function Level1({
   rigidBodyRef,
@@ -19,7 +21,7 @@ function Level1({
   const onCheckpointactivated = (checkPointId: string) => {
     currentCheckpoint.current = checkPointId;
   };
-
+  const boostStore = useBoostStore();
   const isPlayerDied = useRef(false);
 
   const checkpoints = [
@@ -29,13 +31,15 @@ function Level1({
       size: [3.3, 0.4, 2] as [number, number, number],
       onActivate: () => onCheckpointactivated("checkpoint1"),
       lightPosition: [1.2, 1.3, 0.4] as [number, number, number],
+      particlesPosition: [-0.75, 4, -8.5] as [number, number, number],
     },
     {
       name: "checkpoint2",
-      position: [-1.9, 5, -34.4] as [number, number, number],
+      position: [-2, 2.5, -23.3] as [number, number, number],
       size: [3.3, 0.4, 2] as [number, number, number],
       onActivate: () => onCheckpointactivated("checkpoint2"),
-      lightPosition: [1.65, 1.2, -0.1] as [number, number, number],
+      lightPosition: [1.28, 1.7, 0.65] as [number, number, number],
+      particlesPosition: [-0.75, 4, -22.7] as [number, number, number],
     },
   ];
 
@@ -55,10 +59,12 @@ function Level1({
 
     if (
       currentCheckpoint.current === "checkpoint2" &&
-      (translation.y < 1 || translation.z > -30 || isPlayerDied.current)
+      (translation.y < 1 || translation.z > -20 || isPlayerDied.current)
     ) {
-      rigidBodyRef.current?.setTranslation({ x: -2, y: 5.6, z: -34 }, true);
+      rigidBodyRef.current?.setTranslation({ x: -2, y: 2.6, z: -23 }, true);
       isPlayerDied.current = false;
+      boostStore.isBoosted = false;
+      boostStore.resetBoosts();
     }
   });
 
@@ -81,8 +87,12 @@ function Level1({
           position={checkpoint.position}
           onActivate={checkpoint.onActivate}
           lightPosition={checkpoint.lightPosition}
+          particlesPosition={checkpoint.particlesPosition}
         />
       ))}
+
+      {/* boost test */}
+      <Boost id="boost1" position={[-0.3, 3, -29]} corruptionValue={0.15} />
 
       {/* Blocks */}
       <Level1Block1 />

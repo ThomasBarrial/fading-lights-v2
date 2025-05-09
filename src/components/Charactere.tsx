@@ -6,9 +6,10 @@ import {
   RigidBody,
   useRapier,
 } from "@react-three/rapier";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { CharactereModel } from "./models/CharactereModel";
+import { useBoostStore } from "@/store/useBoostStore";
 
 function Charactere({
   rigidBodyRef,
@@ -17,12 +18,30 @@ function Charactere({
 }) {
   const cameraFollowRef = useRef<THREE.Object3D>(null);
   const [subscribeKeys, get] = useKeyboardControls();
-  const speed = 3;
+  // const speed = 3;
   const direction = new THREE.Vector3();
   const { rapier, world } = useRapier();
 
+  const {
+    baseSpeed,
+    boostedSpeed,
+    baseJump,
+    boostedJump,
+    isBoosted,
+    updateBoostTimer,
+  } = useBoostStore();
+  const currentSpeed = useMemo(
+    () => (isBoosted ? boostedSpeed : baseSpeed),
+    [isBoosted, baseSpeed, boostedSpeed],
+  );
+  const currentJump = useMemo(
+    () => (isBoosted ? boostedJump : baseJump),
+    [isBoosted, baseJump, boostedJump],
+  );
+
   // const intialPostion = new THREE.Vector3(-1, 2, 0);
-  const intialPostion = new THREE.Vector3(-2, 5.6, -34);
+  // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
+  const intialPostion = new THREE.Vector3(-2, 5.6, -23);
 
   const isGrounded = useRef(false);
 
@@ -48,11 +67,24 @@ function Charactere({
     isGrounded.current = !!hit && hit.time_of_impact < 0.05;
   };
 
+  const canJump = useRef(true);
+
   const jump = React.useCallback(() => {
     if (!rigidBodyRef.current) return;
-    if (!isGrounded.current) return;
-    rigidBodyRef.current.applyImpulse({ x: 0, y: 0.35, z: 0 }, true);
-  }, [rigidBodyRef]);
+    if (!isGrounded.current || !canJump.current || !isGrounded.current) return;
+    canJump.current = false;
+
+    const velocity = rigidBodyRef.current.linvel();
+    rigidBodyRef.current.setLinvel(
+      { x: velocity.x, y: 0, z: velocity.z },
+      true,
+    );
+    rigidBodyRef.current.applyImpulse({ x: 0, y: currentJump, z: 0 }, true);
+
+    if (isGrounded.current && !canJump.current) {
+      canJump.current = true;
+    }
+  }, [rigidBodyRef, currentJump]);
 
   useEffect(() => {
     subscribeKeys(
@@ -64,7 +96,9 @@ function Charactere({
   }, [subscribeKeys, jump]);
 
   useFrame((state, delta) => {
+    updateBoostTimer(delta * 1.1);
     const body = rigidBodyRef.current;
+
     if (!body) return;
 
     checkGrounded();
@@ -78,7 +112,7 @@ function Charactere({
     if (rightward) direction.x += 1;
 
     // Mouvement horizontal
-    direction.normalize().multiplyScalar(speed);
+    direction.normalize().multiplyScalar(currentSpeed);
     // Récupère la vélocité actuelle
     const linvel = body.linvel();
     body.setLinvel({ x: direction.x, y: linvel.y, z: direction.z }, true);
@@ -103,24 +137,25 @@ function Charactere({
   });
 
   return (
-    <RigidBody
-      name="player"
-      ref={rigidBodyRef}
-      mass={1}
-      position={intialPostion.toArray()}
-      colliders={false}
-      restitution={0.2}
-      friction={1}
-      canSleep={false}
-      enabledRotations={[false, false, false]}
-      linearDamping={0.5}
-      angularDamping={0.5}
-    >
-      <object3D ref={cameraFollowRef} />
-
-      <CapsuleCollider args={[0.25, 0.25]} />
-      <CharactereModel />
-    </RigidBody>
+    <>
+      <RigidBody
+        name="player"
+        ref={rigidBodyRef}
+        mass={1}
+        position={intialPostion.toArray()}
+        colliders={false}
+        restitution={0.2}
+        friction={1}
+        canSleep={false}
+        enabledRotations={[false, false, false]}
+        linearDamping={0.5}
+        angularDamping={0.5}
+      >
+        <object3D ref={cameraFollowRef} />
+        <CapsuleCollider args={[0.25, 0.25]} />
+        <CharactereModel />
+      </RigidBody>
+    </>
   );
 }
 

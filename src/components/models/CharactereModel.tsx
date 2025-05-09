@@ -7,6 +7,7 @@ import * as THREE from "three";
 import { useGLTF, useKeyboardControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useBoostStore } from "@/store/useBoostStore";
 
 export function CharactereModel() {
   const { nodes } = useGLTF("/models/charactere.gltf");
@@ -15,6 +16,7 @@ export function CharactereModel() {
   const [isJumping, setIsJumping] = useState(false);
   const [, get] = useKeyboardControls();
   const direction = new THREE.Vector3();
+  const boostStore = useBoostStore();
 
   // Écoute clavier
   useEffect(() => {
@@ -89,10 +91,9 @@ export function CharactereModel() {
     }
 
     if (forward || backward || leftward || rightward) {
-      const swing = Math.sin(t * 10) * 0.4; // fréquence * amplitude
-      const headSwing = Math.sin(t * 6) * 0.1;
-      const armSwing = Math.sin(t * 4) * 0.3; // fréquence * amplitude
-
+      const swing = Math.sin(t * 10) * (boostStore.isBoosted ? 0.6 : 0.4); // fréquence * amplitude
+      const headSwing = Math.sin(t * 6) * (boostStore.isBoosted ? 0.15 : 0.1); // fréquence * amplitude
+      const armSwing = Math.sin(t * 4) * (boostStore.isBoosted ? 0.3 : 0.2); // fréquence * amplitude
       if (legright && legleft && !isJumping) {
         legright.rotation.z = swing;
         legleft.rotation.z = swing;
