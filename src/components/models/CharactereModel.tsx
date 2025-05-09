@@ -91,9 +91,9 @@ export function CharactereModel() {
     }
 
     if (forward || backward || leftward || rightward) {
-      const swing = Math.sin(t * 10) * (boostStore.isBoosted ? 0.6 : 0.4); // fréquence * amplitude
-      const headSwing = Math.sin(t * 6) * (boostStore.isBoosted ? 0.15 : 0.1); // fréquence * amplitude
-      const armSwing = Math.sin(t * 4) * (boostStore.isBoosted ? 0.3 : 0.2); // fréquence * amplitude
+      const swing = Math.sin(t * 10) * (boostStore.isBoosted ? 0.8 : 0.4); // fréquence * amplitude
+      const headSwing = Math.sin(t * 6) * 0.2; // fréquence * amplitude
+      const armSwing = Math.sin(t * 4) * (boostStore.isBoosted ? 0.8 : 0.2); // fréquence * amplitude
       if (legright && legleft && !isJumping) {
         legright.rotation.z = swing;
         legleft.rotation.z = swing;

@@ -10,6 +10,10 @@ import React, { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { CharactereModel } from "./models/CharactereModel";
 import { useBoostStore } from "@/store/useBoostStore";
+import { useDashStore } from "@/store/useDashStore";
+
+import { useControls } from "leva";
+import TrailFollow from "./effects/Trail";
 
 function Charactere({
   rigidBodyRef,
@@ -18,16 +22,29 @@ function Charactere({
 }) {
   const cameraFollowRef = useRef<THREE.Object3D>(null);
   const [subscribeKeys, get] = useKeyboardControls();
-  // const speed = 3;
-  const direction = new THREE.Vector3();
-  const { rapier, world } = useRapier();
+  const dashTrailRef = useRef<THREE.Object3D>(null);
+  const { trailColor } = useControls("Dash Trail", {
+    trailColor: { value: "#feffcf" },
+  });
 
+  const { dashFov, baseFov, fovSmooth } = useControls("Camera", {
+    dashFov: { value: 35, min: 35, max: 90 },
+    baseFov: { value: 45, min: 30, max: 90 },
+    fovSmooth: { value: 2, min: 0, max: 20 },
+  });
+  const targetFov = useRef(baseFov); // FOV normal
+
+  const direction = useMemo(() => new THREE.Vector3(), []);
+  const { rapier, world } = useRapier();
+  const { triggerDash, dashAvailable, updateDash, isDashing } = useDashStore();
   const {
     baseSpeed,
     boostedSpeed,
     baseJump,
     boostedJump,
     isBoosted,
+    baseDash,
+    boostedDash,
     updateBoostTimer,
   } = useBoostStore();
   const currentSpeed = useMemo(
@@ -37,6 +54,10 @@ function Charactere({
   const currentJump = useMemo(
     () => (isBoosted ? boostedJump : baseJump),
     [isBoosted, baseJump, boostedJump],
+  );
+  const currentDash = useMemo(
+    () => (isBoosted ? boostedDash : baseDash),
+    [isBoosted, baseDash, boostedDash],
   );
 
   // const intialPostion = new THREE.Vector3(-1, 2, 0);
@@ -95,6 +116,26 @@ function Charactere({
     );
   }, [subscribeKeys, jump]);
 
+  useEffect(() => {
+    const handleDash = (e: KeyboardEvent) => {
+      if (e.code === "ShiftLeft" && dashAvailable) {
+        triggerDash();
+
+        const impulse = direction
+          .clone()
+          .normalize()
+          .multiplyScalar(currentDash); // à ajuster
+        rigidBodyRef.current?.applyImpulse(
+          { x: impulse.x, y: 0, z: impulse.z },
+          true,
+        );
+      }
+    };
+
+    window.addEventListener("keydown", handleDash);
+    return () => window.removeEventListener("keydown", handleDash);
+  }, [dashAvailable, direction, rigidBodyRef, triggerDash, currentDash]);
+
   useFrame((state, delta) => {
     updateBoostTimer(delta * 1.1);
     const body = rigidBodyRef.current;
@@ -134,6 +175,24 @@ function Charactere({
 
     state.camera.position.lerp(cameraPos, 5 * delta);
     state.camera.lookAt(target);
+
+    // FOV Boost
+    const desiredFov = isDashing ? dashFov : baseFov; // Zoom out légèrement pendant dash
+    targetFov.current = THREE.MathUtils.lerp(
+      targetFov.current,
+      desiredFov,
+      fovSmooth * delta,
+    );
+    (state.camera as THREE.PerspectiveCamera).fov = targetFov.current;
+    state.camera.updateProjectionMatrix(); // Obligatoire après modif FO
+
+    // Dash
+    updateDash(delta, isBoosted);
+
+    if (dashTrailRef.current && rigidBodyRef.current) {
+      const p = rigidBodyRef.current.translation();
+      dashTrailRef.current.position.set(p.x, p.y, p.z);
+    }
   });
 
   return (
@@ -152,9 +211,18 @@ function Charactere({
         angularDamping={0.5}
       >
         <object3D ref={cameraFollowRef} />
+        <object3D ref={dashTrailRef} />
+
         <CapsuleCollider args={[0.25, 0.25]} />
         <CharactereModel />
       </RigidBody>
+      {dashTrailRef.current !== null && (
+        <TrailFollow
+          isDashing={isDashing || isBoosted}
+          color={trailColor}
+          target={dashTrailRef as React.RefObject<THREE.Object3D>}
+        />
+      )}
     </>
   );
 }
