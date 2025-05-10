@@ -1,6 +1,6 @@
 // components/Boost.tsx
 import { useBoostStore } from "@/store/useBoostStore";
-import { useGLTF } from "@react-three/drei";
+import { Clone, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import { useRef } from "react";
@@ -55,7 +55,7 @@ export default function Boost({
       }}
     >
       <group ref={visualRef}>
-        <primitive object={scene} />
+        <Clone object={scene} />
         <pointLight
           ref={lightRef}
           position={[0, 0.5, 0]}
@@ -67,3 +67,5 @@ export default function Boost({
     </RigidBody>
   );
 }
+
+useGLTF.preload("/models/boost.gltf");

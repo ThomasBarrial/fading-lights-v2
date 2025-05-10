@@ -1,4 +1,3 @@
-// import { useHelper } from "@react-three/drei";
 import CheckpointParticles from "@/components/effects/CheckPointParticles";
 import { RigidBody } from "@react-three/rapier";
 import { useControls } from "leva";
@@ -31,6 +30,7 @@ export default function Checkpoint({
   //   0.5,
   //   "hotpink",
   // );
+
   return (
     <>
       {isActive && <CheckpointParticles position={particlesPosition} />}

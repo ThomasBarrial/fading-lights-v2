@@ -33,7 +33,6 @@ function Level1Block1() {
   return (
     <group>
       <RigidBody type="fixed" colliders="trimesh">
-        {/* WALLCLIMB 1*/}
         <primitive
           rotation={[0, Math.PI / 2, 0]}
           object={block1}

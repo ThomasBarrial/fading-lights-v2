@@ -10,6 +10,7 @@ import Checkpoint from "./CheckPoint";
 import Level1Block2 from "./level1Blocks/Level1Block2";
 import Boost from "@/components/models/Boost";
 import { useBoostStore } from "@/store/useBoostStore";
+import Level1Block3 from "./level1Blocks/Level1Block3";
 
 function Level1({
   rigidBodyRef,
@@ -44,6 +45,14 @@ function Level1({
       lightPosition: [1.28, 1.7, 0.65] as [number, number, number],
       particlesPosition: [-0.75, 4, -22.7] as [number, number, number],
     },
+    {
+      name: "checkpoint3",
+      position: [-2, 2.5, -51.3] as [number, number, number],
+      size: [8, 0.4, 2] as [number, number, number],
+      onActivate: () => onCheckpointactivated("checkpoint3"),
+      lightPosition: [-2.1, 1.5, -0.3] as [number, number, number],
+      particlesPosition: [-4.1, 4, -51.6] as [number, number, number],
+    },
   ];
 
   useFrame(() => {
@@ -69,9 +78,16 @@ function Level1({
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
     }
+    if (
+      currentCheckpoint.current === "checkpoint3" &&
+      (translation.y < 1 || translation.z > -20 || isPlayerDied.current)
+    ) {
+      rigidBodyRef.current?.setTranslation({ x: -2, y: 2.6, z: -51 }, true);
+      isPlayerDied.current = false;
+      boostStore.isBoosted = false;
+      boostStore.resetBoosts();
+    }
   });
-
-  console.log(currentCheckpointId);
 
   return (
     <group>
@@ -93,18 +109,20 @@ function Level1({
           onActivate={checkpoint.onActivate}
           lightPosition={checkpoint.lightPosition}
           particlesPosition={checkpoint.particlesPosition}
+          debug={false}
         />
       ))}
 
       {/* boost test */}
       <Boost id="boost1" position={[-0.3, 3, -29]} corruptionValue={0.15} />
+      <Boost id="boost2" position={[-3, 3, -52.5]} corruptionValue={0.15} />
 
       {/* Blocks */}
-      {/* {(currentCheckpointId === "start" ||
-        currentCheckpointId === "checkpoint1") && <Level1Block1 />} */}
+      {(currentCheckpointId === "start" ||
+        currentCheckpointId === "checkpoint1") && <Level1Block1 />}
 
-      <Level1Block1 />
       <Level1Block2 isPlayerDied={isPlayerDied} />
+      <Level1Block3 />
     </group>
   );
 }

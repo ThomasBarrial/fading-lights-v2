@@ -72,7 +72,7 @@ export default function CheckpointParticles({
         color="#87bdff"
         count={5}
       />
-      {/* <mesh ref={originRef} position={position} scale={5}>
+      {/* <mesh ref={originRef} position={position} scale={10}>
         <sphereGeometry args={[0.05, 8, 8]} />
         <meshBasicMaterial color="hotpink" visible />
       </mesh> */}
