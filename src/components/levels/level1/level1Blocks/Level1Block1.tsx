@@ -49,6 +49,7 @@ function Level1Block1() {
       />
 
       <TreesBackground
+        maxX={-20}
         minZ={-15}
         maxZ={8}
         treesPositions={trees_block1_level1}

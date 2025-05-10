@@ -18,10 +18,12 @@ function TreesBackground({
   minZ,
   maxZ,
   treesPositions,
+  maxX,
 }: {
   minZ: number;
   maxZ: number;
   treesPositions?: TreeData[];
+  maxX: number;
 }) {
   const { scene } = useGLTF(TREE_URL);
 
@@ -64,7 +66,7 @@ function TreesBackground({
         continue;
       }
 
-      if (z < minZ || z > maxZ) continue;
+      if (z < minZ || z > maxZ || x < maxX) continue;
 
       treeArray.push({
         position: [x, 0.5, z] as [number, number, number],
@@ -74,7 +76,7 @@ function TreesBackground({
     }
 
     return treeArray;
-  }, [minZ, maxZ]);
+  }, [minZ, maxZ, maxX]);
 
   if (!scene.children[0]) return null;
 

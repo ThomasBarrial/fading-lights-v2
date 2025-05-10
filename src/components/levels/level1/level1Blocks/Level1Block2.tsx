@@ -127,7 +127,12 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         scale={1.1}
         position={[0, 1.1, 0]}
       />
-      <TreesBackground minZ={-50} maxZ={-15} treesPositions={trees_block2} />
+      <TreesBackground
+        minZ={-50}
+        maxZ={-15}
+        treesPositions={trees_block2}
+        maxX={-15}
+      />
       <RocksBackground
         minZ={-50}
         maxZ={-15}

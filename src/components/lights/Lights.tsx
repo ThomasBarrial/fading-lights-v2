@@ -1,11 +1,11 @@
-import { useBoostStore } from "@/store/useBoostStore";
+// import { useBoostStore } from "@/store/useBoostStore";
 import { useFrame } from "@react-three/fiber";
 import React, { useRef } from "react";
 import * as THREE from "three";
 
 export default function Lights() {
   const light = useRef<THREE.DirectionalLight>(null);
-  const { isBoosted } = useBoostStore();
+  // const { isBoosted } = useBoostStore();
   useFrame((state) => {
     if (!light.current) return;
     light.current.position.z = state.camera.position.z + 1 - 4;
@@ -19,7 +19,7 @@ export default function Lights() {
         ref={light}
         castShadow
         position={[4, 3, 1]}
-        intensity={isBoosted ? 2 : 1.5}
+        intensity={1.5}
         shadow-mapSize={[2024, 2024]}
         shadow-camera-top={20}
         shadow-camera-bottom={-20}
@@ -28,7 +28,7 @@ export default function Lights() {
         shadow-camera-near={0.1}
         shadow-camera-far={100}
       />
-      <ambientLight intensity={isBoosted ? 1.5 : 1.2} />
+      <ambientLight intensity={1.2} />
     </>
   );
 }

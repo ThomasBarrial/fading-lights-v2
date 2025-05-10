@@ -60,10 +60,10 @@ function Charactere({
     [isBoosted, baseDash, boostedDash],
   );
 
-  const intialPostion = new THREE.Vector3(-1, 2, 0);
+  // const intialPostion = new THREE.Vector3(-1, 2, 0);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
-  // const intialPostion = new THREE.Vector3(-2, 5.6, -51);
+  const intialPostion = new THREE.Vector3(-2, 5.6, -51.5);
 
   const isGrounded = useRef(false);
 

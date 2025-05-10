@@ -1,0 +1,262 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "THREE.GLTFExporter"
+  },
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -1.6340841184542114,
+        100.92696014515604,
+        -5.529785442064167,
+        1
+      ],
+      "name": "Pyramid",
+      "mesh": 0
+    },
+    {
+      "matrix": [
+        0.996933934686653,
+        1.734723475976807e-18,
+        0.07824787454102625,
+        0,
+        0.018150285747563596,
+        0.9727256032887681,
+        -0.23124763314201505,
+        0,
+        -0.07611371096898359,
+        0.23195883407730386,
+        0.9697431630571199,
+        0,
+        -76.11371096898242,
+        231.95883407729968,
+        969.7431630571173,
+        1
+      ],
+      "camera": 0
+    },
+    {
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "Default Ambient Light"
+    },
+    {
+      "name": "Scene 1",
+      "children": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 204,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 204,
+      "byteLength": 204,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 408,
+      "byteLength": 136,
+      "target": 34962,
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 544,
+      "byteLength": 48,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 592,
+      "uri": "data:application/octet-stream;base64,AAAAAJvaycIAAAAA3msNQpvaycLeaw1C3msNQpvaycLeaw3C3msNwpvaycLeaw3C3msNwpvaycLeaw1CAAAAAJvayUIAAAAA3msNQpvaycLeaw1C3msNQpvaycLeaw3CAAAAAJvayUIAAAAA3msNQpvaycLeaw3C3msNwpvaycLeaw3CAAAAAJvayUIAAAAA3msNwpvaycLeaw3C3msNwpvaycLeaw1CAAAAAJvayUIAAAAA3msNwpvaycLeaw1C3msNQpvaycLeaw1CAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAARyl8P9OqMD4xE4skRyl8P9OqMD4xE4skRyl8P9OqMD4xE4skMRMLJdOqMD5HKXy/MRMLJdOqMD5HKXy/MRMLJdOqMD5HKXy/Ryl8v9OqMD7JnFClRyl8v9OqMD7JnFClRyl8v9OqMD7JnFClMROLpdOqMD5HKXw/MROLpdOqMD5HKXw/MROLpdOqMD5HKXw/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAIAAAADAAMAAAAEAAQAAAABAAUABgAHAAgACQAKAAsADAANAA4ADwAQAA=="
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 17,
+      "max": [
+        35.35533905029297,
+        100.92696380615234,
+        35.35533905029297
+      ],
+      "min": [
+        -35.35533905029297,
+        -100.92696380615234,
+        -35.35533905029297
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 17,
+      "max": [
+        0.9850048422813416,
+        0.17252664268016815,
+        0.9850048422813416
+      ],
+      "min": [
+        -0.9850048422813416,
+        -1,
+        -0.9850048422813416
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 17,
+      "max": [
+        0,
+        0
+      ],
+      "min": [
+        0,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 24,
+      "max": [
+        16
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.08865558627723595,
+          0.08865558627723595,
+          0.10461648408208657,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.9056426648260791
+      },
+      "doubleSided": false
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 100,
+              "radialSegments": 4,
+              "heightSegments": 1,
+              "cornerRadius": 0,
+              "cornerSegments": 8,
+              "openEnded": false,
+              "depth": 100,
+              "height": 201.8539202903121,
+              "type": "PyramidGeometry"
+            },
+            "type": "PyramidGeometry"
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "cameras": [
+    {
+      "type": "orthographic",
+      "orthographic": {
+        "xmag": 8.38800964078711,
+        "ymag": 3.4112864789131305,
+        "zfar": 100000,
+        "znear": 0
+      }
+    }
+  ]
+}
