@@ -8,19 +8,11 @@ import Spike from "@/components/models/Spike";
 import { useFrame } from "@react-three/fiber";
 import trees_block3 from "@/utils/level1/block3/trees_block3";
 import rocks_block3 from "@/utils/level1/block3/rocks_block3";
+import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
 
 function Level1Block3() {
   const { scene: block3 } = useGLTF("/models/level1/level_1_block_3.gltf");
   const { scene: spike } = useGLTF("/models/plate.gltf");
-
-  function enableShadowsRecursively(object: THREE.Object3D) {
-    object.traverse((child) => {
-      if ((child as THREE.Mesh).isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-  }
 
   const spikesGrp1Ref = useRef<THREE.Group>(null);
 

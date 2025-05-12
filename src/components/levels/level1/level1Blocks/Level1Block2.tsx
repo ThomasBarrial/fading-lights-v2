@@ -7,6 +7,7 @@ import TreesBackground from "../env/TreesBackground";
 import trees_block2 from "@/utils/level1/block2/trees_block2";
 import RocksBackground from "../env/RocksBackground";
 import rocks_block2 from "@/utils/level1/block2/rocks_block2";
+import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
 
 type BarConfig = {
   ref: React.RefObject<RapierRigidBody | null>;
@@ -26,15 +27,6 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
   const { scene: plantsGrass } = useGLTF(
     "/models/level1/plants_level_1_block_2.gltf",
   );
-
-  function enableShadowsRecursively(object: THREE.Object3D) {
-    object.traverse((child) => {
-      if ((child as THREE.Mesh).isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-  }
 
   useEffect(() => {
     if (block2) {

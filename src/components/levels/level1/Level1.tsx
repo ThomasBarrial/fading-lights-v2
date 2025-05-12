@@ -11,6 +11,7 @@ import Level1Block2 from "./level1Blocks/Level1Block2";
 import Boost from "@/components/models/Boost";
 import { useBoostStore } from "@/store/useBoostStore";
 import Level1Block3 from "./level1Blocks/Level1Block3";
+import Level1Block4 from "./level1Blocks/Level1Block4";
 
 function Level1({
   rigidBodyRef,
@@ -123,6 +124,7 @@ function Level1({
 
       <Level1Block2 isPlayerDied={isPlayerDied} />
       <Level1Block3 />
+      <Level1Block4 />
     </group>
   );
 }

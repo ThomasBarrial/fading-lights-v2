@@ -1,11 +1,11 @@
 import { RigidBody } from "@react-three/rapier";
 import React, { useEffect } from "react";
-import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import TreesBackground from "../env/TreesBackground";
 import trees_block1_level1 from "@/utils/level1/block1/trees_block1";
 import RocksBackground from "../env/RocksBackground";
 import rocks_block1 from "@/utils/level1/block1/rocks_block1";
+import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
 
 function Level1Block1() {
   const { scene: block1 } = useGLTF("/models/level1/level_1_block_1.gltf");
@@ -13,15 +13,6 @@ function Level1Block1() {
   const { scene: plantsGrass } = useGLTF(
     "/models/level1/plants_level_1_block_1.gltf",
   );
-
-  function enableShadowsRecursively(object: THREE.Object3D) {
-    object.traverse((child) => {
-      if ((child as THREE.Mesh).isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-  }
 
   useEffect(() => {
     if (block1) {

@@ -29,7 +29,7 @@ export default function Experience() {
       >
         <Canvas shadows camera={{ position: [10, 10, 10], fov: 50 }}>
           <color attach="background" args={["#D6E892"]} />
-          <fog attach="fog" args={[fogColor, 15, 30]} />
+          {/* <fog attach="fog" args={[fogColor, 15, 30]} /> */}
           <OrbitControls />
           <Lights />
           <Suspense fallback={null}>
