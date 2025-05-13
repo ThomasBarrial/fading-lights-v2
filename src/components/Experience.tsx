@@ -6,7 +6,7 @@ import { KeyboardControls, OrbitControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
 import Charactere from "./Charactere";
 import Level1 from "./levels/level1/Level1";
-import { useControls } from "leva";
+import { Leva, useControls } from "leva";
 import GameOverOverlay from "./ui/GameOverOverlay";
 // import PostProcessingEffects from "./effects/PostProcessingEffects";
 
@@ -29,8 +29,9 @@ export default function Experience() {
       >
         <Canvas shadows camera={{ position: [10, 10, 10], fov: 50 }}>
           <color attach="background" args={["#D6E892"]} />
-          {/* <fog attach="fog" args={[fogColor, 15, 30]} /> */}
+          <fog attach="fog" args={[fogColor, 12, 30]} />
           <OrbitControls />
+          <Leva hidden />
           <Lights />
           <Suspense fallback={null}>
             <Physics debug={false}>

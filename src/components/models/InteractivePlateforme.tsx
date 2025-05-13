@@ -27,6 +27,7 @@ function InteractivePlateforme({
   isActive,
   setPlateFormActivated,
   isSequenceStarted,
+  isSequenceSuccessed,
 }: {
   id: string;
   lightFlamePosition?: [number, number, number];
@@ -50,6 +51,7 @@ function InteractivePlateforme({
   isActive: boolean;
   setPlateFormActivated: React.Dispatch<React.SetStateAction<string[]>>;
   isSequenceStarted: boolean;
+  isSequenceSuccessed: React.RefObject<boolean>;
 }) {
   const { scene: plateform } = useGLTF("/models/level1/plateform_block_4.gltf");
   const { lightColor } = useControls({
@@ -125,11 +127,11 @@ function InteractivePlateforme({
                 const next = prev + 1;
                 if (next === sequenceRef.current.length) {
                   interactivePlateform.forEach(({ id }) => lightUp(id, 1000));
+                  isSequenceSuccessed.current = true;
                 }
                 return next;
               });
             } else {
-              console.log("not the right plateform");
               hasLaunched.current = false;
               lightsOff();
               setCurrentStep(0);

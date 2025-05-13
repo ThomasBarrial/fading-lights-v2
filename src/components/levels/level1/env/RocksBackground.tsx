@@ -39,7 +39,7 @@ export default function RocksBackground({
 
     for (let i = 0; i < 400; i++) {
       const x = Math.random() * 35 - 25;
-      const z = Math.random() * 100 - 90;
+      const z = Math.random() * 100 - 180;
 
       // Optionnel : zone sécurité parcours
       if (x > -7 && x < 4 && z > -110 && z < 2) {

@@ -1,4 +1,5 @@
 import CheckpointParticles from "@/components/effects/CheckPointParticles";
+// import { useHelper } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 import { useControls } from "leva";
 import { useRef, useState } from "react";
