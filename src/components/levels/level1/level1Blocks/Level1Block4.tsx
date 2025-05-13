@@ -4,6 +4,8 @@ import { useGLTF } from "@react-three/drei";
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import * as THREE from "three";
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useFrame } from "@react-three/fiber";
+import { useCurrentPerfArea } from "@/store/useCurrentPerfArea";
 
 export type InteractivePlateformeType = {
   id: string;
@@ -26,7 +28,14 @@ function Level1Block4() {
   const lightRefs = useRef(
     new Map<string, { flame: THREE.PointLight; plateform: THREE.PointLight }>(),
   );
+  const isSequenceSuccessed = useRef(false);
 
+  const leftDoorRef = useRef<RapierRigidBody>(null);
+  const rightDoorRef = useRef<RapierRigidBody>(null);
+  const doorOpened = useRef(false);
+  const leftDoorLightRef = useRef<THREE.PointLight>(null);
+  const rightDoorLightRef = useRef<THREE.PointLight>(null);
+  const { perfArea } = useCurrentPerfArea();
   useEffect(() => {
     if (block4) {
       enableShadowsRecursively(block4);
@@ -151,6 +160,47 @@ function Level1Block4() {
       },
     ];
   }, []);
+
+  useFrame(() => {
+    if (
+      !isSequenceSuccessed.current ||
+      !leftDoorRef.current ||
+      !rightDoorRef.current ||
+      !leftDoorLightRef.current ||
+      !rightDoorLightRef.current ||
+      doorOpened.current
+    ) {
+      return;
+    }
+
+    const leftPos = leftDoorRef.current.translation();
+    const rightPos = rightDoorRef.current.translation();
+
+    const newLeftX = leftPos.x - 0.01;
+    const newRightX = rightPos.x + 0.01;
+
+    leftDoorLightRef.current.intensity = 10;
+    rightDoorLightRef.current.intensity = 10;
+
+    const limitLeft = -3.5;
+    const rightLimit = -1;
+
+    if (newLeftX <= limitLeft && newRightX >= rightLimit) {
+      doorOpened.current = true;
+      return;
+    }
+
+    leftDoorRef.current.setTranslation(
+      { x: newLeftX, y: leftPos.y, z: leftPos.z },
+      true,
+    );
+
+    rightDoorRef.current.setTranslation(
+      { x: newRightX, y: rightPos.y, z: rightPos.z },
+      true,
+    );
+  });
+
   return (
     <group>
       <RigidBody type="fixed" colliders="trimesh">
@@ -159,6 +209,11 @@ function Level1Block4() {
           object={block4}
           scale={1.1}
           position={[0, 0.8, 0]}
+          visible={
+            perfArea === "perfArea2" ||
+            perfArea === "perfArea3" ||
+            perfArea === "start"
+          }
         />
       </RigidBody>
 
@@ -189,6 +244,7 @@ function Level1Block4() {
           plateFormActivated={plateFormActivated}
           isActive={activeFlames.has(plateform.id)}
           setPlateFormActivated={setPlateFormActivated}
+          isSequenceSuccessed={isSequenceSuccessed}
         />
       ))}
       <RigidBody
@@ -207,6 +263,45 @@ function Level1Block4() {
           <meshStandardMaterial color="hotpink" transparent opacity={0} />
         </mesh>
       </RigidBody>
+      <RigidBody
+        ref={leftDoorRef}
+        type="fixed"
+        colliders="cuboid"
+        position={[-2.71, 7.2, -108.4]}
+      >
+        <mesh name="leftDoor">
+          <boxGeometry args={[1, 5, 0.8]} />
+          <meshStandardMaterial color="#74604D" />
+        </mesh>
+      </RigidBody>
+      <RigidBody
+        ref={rightDoorRef}
+        type="fixed"
+        colliders="cuboid"
+        position={[-1.69, 7.2, -108.4]}
+      >
+        <mesh name="rightDoor">
+          <boxGeometry args={[1, 5, 0.8]} />
+          <meshStandardMaterial color="#74604D" />
+        </mesh>
+      </RigidBody>
+
+      <pointLight
+        ref={leftDoorLightRef}
+        position={[-3.8, 8.8, -107.4]}
+        color={"#074EA4"}
+        decay={0.5}
+        intensity={0}
+        distance={1}
+      />
+      <pointLight
+        ref={rightDoorLightRef}
+        position={[-0.7, 8.8, -107.4]}
+        color={"#074EA4"}
+        decay={0.5}
+        intensity={0}
+        distance={1}
+      />
     </group>
   );
 }

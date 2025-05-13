@@ -1,3 +1,4 @@
+import { useCurrentPerfArea } from "@/store/useCurrentPerfArea";
 import { Clone } from "@react-three/drei";
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import React from "react";
@@ -18,6 +19,7 @@ function Spike({
   object,
   ref,
 }: IProps) {
+  const { perfArea } = useCurrentPerfArea();
   return (
     <RigidBody
       type="fixed"
@@ -26,7 +28,16 @@ function Spike({
       ref={ref as React.RefObject<RapierRigidBody>}
     >
       {/* <primitive object={object} scale={scale} rotation={rotation} /> */}
-      <Clone object={object} scale={scale} rotation={rotation} />
+      <Clone
+        object={object}
+        scale={scale}
+        rotation={rotation}
+        visible={
+          perfArea === "perfArea1" ||
+          perfArea === "perfArea2" ||
+          perfArea === "start"
+        }
+      />
     </RigidBody>
   );
 }

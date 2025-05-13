@@ -1,5 +1,5 @@
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 
 // import RocksBackground from "./env/RocksBackground";
 // import GrassBackground from "./env/GrassBackground";
@@ -12,6 +12,8 @@ import Boost from "@/components/models/Boost";
 import { useBoostStore } from "@/store/useBoostStore";
 import Level1Block3 from "./level1Blocks/Level1Block3";
 import Level1Block4 from "./level1Blocks/Level1Block4";
+import PerfArea from "@/components/PerfArea";
+import { useCurrentPerfArea } from "@/store/useCurrentPerfArea";
 
 function Level1({
   rigidBodyRef,
@@ -19,15 +21,12 @@ function Level1({
   rigidBodyRef: React.RefObject<RapierRigidBody | null>;
 }) {
   const currentCheckpoint = useRef<string | null>("start");
-  const onCheckpointactivated = (checkPointId: string) => {
-    currentCheckpoint.current = checkPointId;
-    setCurrentCheckpointId(checkPointId);
-  };
   const boostStore = useBoostStore();
   const isPlayerDied = useRef(false);
-  const [currentCheckpointId, setCurrentCheckpointId] = React.useState<
-    string | null
-  >("start");
+
+  const onCheckpointactivated = (checkPointId: string) => {
+    currentCheckpoint.current = checkPointId;
+  };
 
   const checkpoints = [
     {
@@ -54,7 +53,40 @@ function Level1({
       lightPosition: [-2.1, 1.5, -0.3] as [number, number, number],
       particlesPosition: [-4.1, 4, -51.6] as [number, number, number],
     },
+    {
+      name: "checkpoint4",
+      position: [-1.5, 5.9, -80.5] as [number, number, number],
+      size: [7, 0.4, 2] as [number, number, number],
+      onActivate: () => onCheckpointactivated("checkpoint4"),
+      lightPosition: [-2.8, 1.2, -0.1] as [number, number, number],
+      particlesPosition: [-4.3, 7, -80.6] as [number, number, number],
+    },
   ];
+
+  const perfAreas = useMemo(() => {
+    return [
+      {
+        name: "perfArea1",
+        position: [-2, 3.5, -28] as [number, number, number],
+        size: [8, 8, 0.1] as [number, number, number],
+        prevArea: "start",
+      },
+      {
+        name: "perfArea2",
+        position: [-2, 3.5, -65] as [number, number, number],
+        size: [8, 8, 0.1] as [number, number, number],
+        prevArea: "perfArea1",
+      },
+      {
+        name: "perfArea3",
+        position: [-2, 3.5, -95] as [number, number, number],
+        size: [8, 8, 0.1] as [number, number, number],
+        prevArea: "perfArea2",
+      },
+    ];
+  }, []);
+
+  const { setPerfArea } = useCurrentPerfArea();
 
   useFrame(() => {
     if (!rigidBodyRef.current) return;
@@ -62,31 +94,34 @@ function Level1({
 
     if (!currentCheckpoint.current) return;
 
-    if (
-      currentCheckpoint.current === "checkpoint1" &&
-      translation.y < 2 &&
-      translation.z < -8
-    ) {
+    if (currentCheckpoint.current === "checkpoint1" && translation.y < 3) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 4, z: -9 }, true);
+      setPerfArea("start");
     }
 
     if (
       currentCheckpoint.current === "checkpoint2" &&
-      (translation.y < 1 || translation.z > -20 || isPlayerDied.current)
+      (translation.y < 1 || isPlayerDied.current)
     ) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 2.6, z: -23 }, true);
       isPlayerDied.current = false;
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
+      setPerfArea("start");
     }
-    if (
-      currentCheckpoint.current === "checkpoint3" &&
-      (translation.y < 1 || translation.z > -20 || isPlayerDied.current)
-    ) {
+    if (currentCheckpoint.current === "checkpoint3" && translation.y < 1) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 2.6, z: -51 }, true);
       isPlayerDied.current = false;
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
+      setPerfArea("perfArea1");
+    }
+    if (currentCheckpoint.current === "checkpoint4" && translation.y < 1) {
+      rigidBodyRef.current?.setTranslation({ x: -2, y: 9.6, z: -80.5 }, true);
+      isPlayerDied.current = false;
+      boostStore.isBoosted = false;
+      boostStore.resetBoosts();
+      setPerfArea("perfArea2");
     }
   });
 
@@ -114,14 +149,23 @@ function Level1({
         />
       ))}
 
+      {/* Perf Areas */}
+      {perfAreas.map((perfArea) => (
+        <PerfArea
+          prevArea={perfArea.prevArea}
+          name={perfArea.name}
+          key={perfArea.name}
+          position={perfArea.position}
+        />
+      ))}
+
       {/* boost test */}
-      <Boost id="boost1" position={[-0.3, 3, -29]} corruptionValue={0.15} />
+      <Boost id="boost1" position={[-0.3, 3, -29]} corruptionValue={0.1} />
       <Boost id="boost2" position={[-3, 3, -52.5]} corruptionValue={0.15} />
+      <Boost id="boost3" position={[-2, 6, -85]} corruptionValue={0.17} />
 
       {/* Blocks */}
-      {(currentCheckpointId === "start" ||
-        currentCheckpointId === "checkpoint1") && <Level1Block1 />}
-
+      <Level1Block1 />
       <Level1Block2 isPlayerDied={isPlayerDied} />
       <Level1Block3 />
       <Level1Block4 />

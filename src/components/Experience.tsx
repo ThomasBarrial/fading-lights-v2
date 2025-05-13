@@ -6,14 +6,11 @@ import { KeyboardControls, OrbitControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
 import Charactere from "./Charactere";
 import Level1 from "./levels/level1/Level1";
-import { useControls } from "leva";
+
 import GameOverOverlay from "./ui/GameOverOverlay";
 // import PostProcessingEffects from "./effects/PostProcessingEffects";
 
 export default function Experience() {
-  const { fogColor } = useControls({
-    fogColor: { value: "#D6E892" },
-  });
   const rigidBodyRef = useRef(null);
 
   return (

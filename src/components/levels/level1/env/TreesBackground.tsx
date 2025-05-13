@@ -24,6 +24,7 @@ function TreesBackground({
   maxZ: number;
   treesPositions?: TreeData[];
   maxX: number;
+  currentAreaPerf?: string;
 }) {
   const { scene } = useGLTF(TREE_URL);
 

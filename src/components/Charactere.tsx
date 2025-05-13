@@ -63,8 +63,9 @@ function Charactere({
   // const intialPostion = new THREE.Vector3(-1, 2, 0);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
-  // const intialPostion = new THREE.Vector3(-2, 5.6, -30.5);
-  const intialPostion = new THREE.Vector3(-2, 9.6, -101);
+  const intialPostion = new THREE.Vector3(-2, 5.6, -50.5);
+  // const intialPostion = new THREE.Vector3(-2, 9.6, -80);
+  // const intialPostion = new THREE.Vector3(-2, 9.6, -101);
 
   const isGrounded = useRef(false);
 
