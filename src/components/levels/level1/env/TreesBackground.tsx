@@ -24,7 +24,6 @@ function TreesBackground({
   maxZ: number;
   treesPositions?: TreeData[];
   maxX: number;
-  currentAreaPerf?: string;
 }) {
   const { scene } = useGLTF(TREE_URL);
 
@@ -60,9 +59,9 @@ function TreesBackground({
 
     for (let i = 0; i < 600; i++) {
       const x = Math.random() * 35 - 25;
-      const z = Math.random() * 100 - 90;
+      const z = Math.random() * 100 - 180;
 
-      if (x > -8 && x < 3.5 && z > -110 && z < 5) {
+      if (x > -8 && x < 3.5 && z > -125 && z < 5) {
         i--;
         continue;
       }

@@ -126,14 +126,12 @@ function InteractivePlateforme({
               setCurrentStep((prev) => {
                 const next = prev + 1;
                 if (next === sequenceRef.current.length) {
-                  console.log("sequence completed");
                   interactivePlateform.forEach(({ id }) => lightUp(id, 1000));
                   isSequenceSuccessed.current = true;
                 }
                 return next;
               });
             } else {
-              console.log("not the right plateform");
               hasLaunched.current = false;
               lightsOff();
               setCurrentStep(0);

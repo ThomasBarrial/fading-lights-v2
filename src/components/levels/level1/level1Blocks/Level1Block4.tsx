@@ -6,6 +6,10 @@ import * as THREE from "three";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useCurrentPerfArea } from "@/store/useCurrentPerfArea";
+import TreesBackground from "../env/TreesBackground";
+import trees_position_block4 from "@/utils/level1/block4/trees_position_block4";
+import RocksBackground from "../env/RocksBackground";
+import rocks_block4 from "@/utils/level1/block4/rocks_block4";
 
 export type InteractivePlateformeType = {
   id: string;
@@ -301,6 +305,19 @@ function Level1Block4() {
         decay={0.5}
         intensity={0}
         distance={1}
+      />
+
+      <TreesBackground
+        minZ={-140}
+        maxZ={-80}
+        treesPositions={trees_position_block4}
+        maxX={-25}
+      />
+      <RocksBackground
+        maxX={-15}
+        minZ={-140}
+        maxZ={-80}
+        rocksPosition={rocks_block4}
       />
     </group>
   );

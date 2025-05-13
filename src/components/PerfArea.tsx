@@ -18,14 +18,13 @@ function PerfArea({ position, name, prevArea }: IProps) {
         onIntersectionEnter={({ other }) => {
           // Handle intersection enter event
           if (other.rigidBodyObject?.name === "player") {
-            console.log("Player entered the performance area");
             setPerfArea(name);
           }
         }}
       >
         <mesh>
           <boxGeometry args={[15, 15, 0.1]} />
-          <meshStandardMaterial color="hotpink" transparent opacity={0.5} />
+          <meshStandardMaterial color="hotpink" transparent opacity={0} />
         </mesh>
       </RigidBody>
       <RigidBody
@@ -43,7 +42,7 @@ function PerfArea({ position, name, prevArea }: IProps) {
       >
         <mesh>
           <boxGeometry args={[15, 15, 0.1]} />
-          <meshStandardMaterial color="hotpink" transparent opacity={0.5} />
+          <meshStandardMaterial color="hotpink" transparent opacity={0} />
         </mesh>
       </RigidBody>
     </group>

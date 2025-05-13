@@ -1,8 +1,6 @@
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import React, { useMemo, useRef } from "react";
 
-// import RocksBackground from "./env/RocksBackground";
-// import GrassBackground from "./env/GrassBackground";
 import Level1Bounds from "./Level1Bounds";
 import Level1Block1 from "./level1Blocks/Level1Block1";
 import { useFrame } from "@react-three/fiber";
@@ -130,8 +128,8 @@ function Level1({
       <Level1Bounds />
       {/* Sol */}
       <RigidBody type="fixed" colliders="cuboid">
-        <mesh receiveShadow position={[-5, 0.4, -60]}>
-          <boxGeometry args={[60, 0.2, 160]} />
+        <mesh receiveShadow position={[-5, 0.4, -66]}>
+          <boxGeometry args={[70, 0.2, 160]} />
           <meshStandardMaterial color={"#527650"} />
         </mesh>
       </RigidBody>
