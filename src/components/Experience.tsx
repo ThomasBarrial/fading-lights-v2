@@ -8,6 +8,7 @@ import Charactere from "./Charactere";
 import Level1 from "./levels/level1/Level1";
 import { Leva, useControls } from "leva";
 import GameOverOverlay from "./ui/GameOverOverlay";
+import SceneLoader from "./loaders/SceneLoader";
 // import PostProcessingEffects from "./effects/PostProcessingEffects";
 
 export default function Experience() {
@@ -33,7 +34,7 @@ export default function Experience() {
           <OrbitControls />
           <Leva hidden />
           <Lights />
-          <Suspense fallback={null}>
+          <Suspense fallback={<SceneLoader />}>
             <Physics debug={false}>
               <Level1 rigidBodyRef={rigidBodyRef} />
               <Charactere rigidBodyRef={rigidBodyRef} />
