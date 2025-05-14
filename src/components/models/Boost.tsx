@@ -2,7 +2,7 @@ import { useBoostStore } from "@/store/useBoostStore";
 import { Clone, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 export default function Boost({
@@ -35,6 +35,10 @@ export default function Boost({
       lightRef.current.intensity = 1 + Math.sin(t * 3) * 0.2;
     }
   });
+
+  useEffect(() => {
+    console.log("Boost mounted");
+  }, []);
 
   if (collectedBoosts[id]) return null;
 

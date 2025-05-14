@@ -1,8 +1,8 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Suspense, useRef } from "react";
-import { KeyboardControls, OrbitControls } from "@react-three/drei";
+import { Suspense, useEffect, useRef } from "react";
+import { KeyboardControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
 import Charactere from "./Charactere";
 import Level1 from "./levels/level1/level1Blocks/Level1";
@@ -23,6 +23,10 @@ export default function Experience({ level }: ExperienceProps) {
   });
   const rigidBodyRef = useRef(null);
 
+  useEffect(() => {
+    console.log("rerender");
+  }, []);
+
   return (
     <>
       <KeyboardControls
@@ -34,10 +38,10 @@ export default function Experience({ level }: ExperienceProps) {
           { name: "jump", keys: ["Space"] },
         ]}
       >
-        <Canvas shadows camera={{ position: [10, 10, 10], fov: 50 }}>
+        <Canvas shadows>
           <color attach="background" args={["#D6E892"]} />
           <fog attach="fog" args={[fogColor, 10, 30]} />
-          <OrbitControls />
+          {/* <OrbitControls /> */}
           <Leva hidden />
           <Lights />
           <Suspense fallback={<SceneLoader />}>
