@@ -7,8 +7,9 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useCurrentPerfArea } from "@/store/useCurrentPerfArea";
 import TreesBackground from "../env/TreesBackground";
-import trees_position_block4 from "@/utils/level1/block4/trees_position_block4";
 import RocksBackground from "../env/RocksBackground";
+import TransitionPlateform from "./TransitionPlateform";
+import trees_position_block4 from "@/utils/level1/block4/trees_position_block4";
 import rocks_block4 from "@/utils/level1/block4/rocks_block4";
 
 export type InteractivePlateformeType = {
@@ -307,15 +308,17 @@ function Level1Block4() {
         distance={1}
       />
 
+      <TransitionPlateform />
+
       <TreesBackground
-        minZ={-140}
+        minZ={-110}
         maxZ={-80}
         treesPositions={trees_position_block4}
         maxX={-25}
       />
       <RocksBackground
         maxX={-15}
-        minZ={-140}
+        minZ={-110}
         maxZ={-80}
         rocksPosition={rocks_block4}
       />

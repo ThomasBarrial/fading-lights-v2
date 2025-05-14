@@ -1,4 +1,3 @@
-// components/Boost.tsx
 import { useBoostStore } from "@/store/useBoostStore";
 import { Clone, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";

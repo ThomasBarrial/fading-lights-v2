@@ -19,9 +19,11 @@ function TreesBackground({
   maxZ,
   treesPositions,
   maxX,
+  Ypositions = 0.5,
 }: {
   minZ: number;
   maxZ: number;
+  Ypositions?: number;
   treesPositions?: TreeData[];
   maxX: number;
 }) {
@@ -59,7 +61,7 @@ function TreesBackground({
 
     for (let i = 0; i < 600; i++) {
       const x = Math.random() * 35 - 25;
-      const z = Math.random() * 100 - 180;
+      const z = Math.random() * 140 - 150;
 
       if (x > -8 && x < 3.5 && z > -125 && z < 5) {
         i--;
@@ -69,14 +71,14 @@ function TreesBackground({
       if (z < minZ || z > maxZ || x < maxX) continue;
 
       treeArray.push({
-        position: [x, 0.5, z] as [number, number, number],
+        position: [x, Ypositions, z] as [number, number, number],
         scale: 0.25 + Math.random() * 0.1,
         rotationY: Math.random() * Math.PI * 2,
       });
     }
 
     return treeArray;
-  }, [minZ, maxZ, maxX]);
+  }, [minZ, maxZ, maxX, Ypositions]);
 
   if (!scene.children[0]) return null;
 
