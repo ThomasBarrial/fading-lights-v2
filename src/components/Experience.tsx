@@ -5,13 +5,19 @@ import { Suspense, useRef } from "react";
 import { KeyboardControls, OrbitControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
 import Charactere from "./Charactere";
-import Level1 from "./levels/level1/Level1";
+import Level1 from "./levels/level1/level1Blocks/Level1";
 import { Leva, useControls } from "leva";
 import GameOverOverlay from "./ui/GameOverOverlay";
 import SceneLoader from "./loaders/SceneLoader";
+import ScreenTransition from "./ui/ScreenTransition";
+import Level2 from "./levels/level2/Level2";
 // import PostProcessingEffects from "./effects/PostProcessingEffects";
 
-export default function Experience() {
+interface ExperienceProps {
+  level: 1 | 2 | 3;
+}
+
+export default function Experience({ level }: ExperienceProps) {
   const { fogColor } = useControls({
     fogColor: { value: "#D6E892" },
   });
@@ -30,20 +36,21 @@ export default function Experience() {
       >
         <Canvas shadows camera={{ position: [10, 10, 10], fov: 50 }}>
           <color attach="background" args={["#D6E892"]} />
-          <fog attach="fog" args={[fogColor, 12, 30]} />
+          <fog attach="fog" args={[fogColor, 10, 30]} />
           <OrbitControls />
           <Leva hidden />
           <Lights />
           <Suspense fallback={<SceneLoader />}>
             <Physics debug={false}>
-              <Level1 rigidBodyRef={rigidBodyRef} />
+              {level === 1 && <Level1 rigidBodyRef={rigidBodyRef} />}
+              {level === 2 && <Level2 />}
               <Charactere rigidBodyRef={rigidBodyRef} />
             </Physics>
             {/* <PostProcessingEffects /> */}
           </Suspense>
         </Canvas>
       </KeyboardControls>
-
+      <ScreenTransition />
       <GameOverOverlay />
     </>
   );
