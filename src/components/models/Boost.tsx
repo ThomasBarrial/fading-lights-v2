@@ -2,7 +2,7 @@ import { useBoostStore } from "@/store/useBoostStore";
 import { Clone, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 
 export default function Boost({
@@ -31,14 +31,25 @@ export default function Boost({
       visualRef.current.rotation.y += delta * 0.5;
     }
 
-    if (lightRef.current) {
-      lightRef.current.intensity = 1 + Math.sin(t * 3) * 0.2;
-    }
+    // if (lightRef.current) {
+    //   lightRef.current.intensity = 1 + Math.sin(t * 3) * 0.2;
+    // }
   });
 
   useEffect(() => {
     console.log("Boost mounted");
   }, []);
+
+  const boostModel = useMemo(() => {
+    const clone = scene.clone();
+    clone.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    return clone;
+  }, [scene]);
 
   if (collectedBoosts[id]) return null;
 
@@ -52,13 +63,14 @@ export default function Boost({
       scale={1.2}
       onIntersectionEnter={({ other }) => {
         if (other.rigidBodyObject?.name === "player") {
+          console.log("Boost collected", id);
           applyBoost(corruptionValue, duration);
           markBoostAsCollected(id);
         }
       }}
     >
       <group ref={visualRef}>
-        <Clone object={scene} />
+        <primitive object={boostModel} />
         <pointLight
           ref={lightRef}
           position={[0, 0.5, 0]}

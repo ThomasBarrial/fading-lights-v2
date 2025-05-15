@@ -1,5 +1,5 @@
 import { useKeyboardControls } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import {
   CapsuleCollider,
   RapierRigidBody,
@@ -12,7 +12,6 @@ import { CharactereModel } from "./models/CharactereModel";
 import { useBoostStore } from "@/store/useBoostStore";
 import { useDashStore } from "@/store/useDashStore";
 
-import { useControls } from "leva";
 import TrailFollow from "./effects/Trail";
 
 function Charactere({
@@ -23,16 +22,19 @@ function Charactere({
   const cameraFollowRef = useRef<THREE.Object3D>(null);
   const [subscribeKeys, get] = useKeyboardControls();
   const dashTrailRef = useRef<THREE.Object3D>(null);
-  const { trailColor } = useControls("Dash Trail", {
-    trailColor: { value: "#feffcf" },
-  });
+  // const { trailColor } = useControls("Dash Trail", {
+  //   trailColor: { value: "#feffcf" },
+  // });
 
-  const { dashFov, baseFov, fovSmooth } = useControls("Camera", {
-    dashFov: { value: 40, min: 35, max: 90 },
-    baseFov: { value: 45, min: 30, max: 90 },
-    fovSmooth: { value: 2, min: 0, max: 20 },
-  });
-  const targetFov = useRef(baseFov); // FOV normal
+  const boostTimer = useRef(0);
+
+  // const { dashFov, baseFov, fovSmooth } = useControls("Camera", {
+  //   dashFov: { value: 40, min: 35, max: 90 },
+  //   baseFov: { value: 45, min: 30, max: 90 },
+  //   fovSmooth: { value: 2, min: 0, max: 20 },
+  // });
+  // const targetFov = useRef(baseFov); // FOV normal
+  // const lastFov = useRef(baseFov);
 
   const direction = useMemo(() => new THREE.Vector3(), []);
   const { rapier, world } = useRapier();
@@ -45,7 +47,7 @@ function Charactere({
     isBoosted,
     baseDash,
     boostedDash,
-    updateBoostTimer,
+    boostCount,
   } = useBoostStore();
   const currentSpeed = useMemo(
     () => (isBoosted ? boostedSpeed : baseSpeed),
@@ -66,6 +68,14 @@ function Charactere({
   // const intialPostion = new THREE.Vector3(-2, 5.6, -50.5);
   // const intialPostion = new THREE.Vector3(-2, 9.6, -80);
   // const intialPostion = new THREE.Vector3(-2, 9.6, -110);
+
+  useEffect(() => {
+    if (!isBoosted) return;
+
+    const duration = 8 - boostCount;
+    boostTimer.current = duration > 0 ? duration : 1; // évite valeur négative
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isBoosted]);
 
   const isGrounded = useRef(false);
 
@@ -139,12 +149,25 @@ function Charactere({
     return () => window.removeEventListener("keydown", handleDash);
   }, [dashAvailable, direction, rigidBodyRef, triggerDash, currentDash]);
 
+  // const camera = useThree().camera as THREE.PerspectiveCamera;
+  // useEffect(() => {
+  //   // Appliquer le FOV de base à la caméra au premier montage
+  //   // (évite le snap au premier dash)
+  //   camera.fov = baseFov;
+  //   camera.updateProjectionMatrix();
+  //   targetFov.current = baseFov;
+  //   lastFov.current = baseFov;
+  // }, [baseFov, camera]);
+
   useFrame((state, delta) => {
-    updateBoostTimer(delta * 1.1);
     const body = rigidBodyRef.current;
-
     if (!body) return;
-
+    if (isBoosted) {
+      boostTimer.current -= delta;
+      if (boostTimer.current <= 0) {
+        useBoostStore.getState().resetBoost(); // met isBoosted à false
+      }
+    }
     checkGrounded();
 
     const { forward, backward, leftward, rightward } = get();
@@ -180,14 +203,14 @@ function Charactere({
     state.camera.lookAt(target);
 
     // FOV Boost
-    const desiredFov = isDashing ? dashFov : baseFov; // Zoom out légèrement pendant dash
-    targetFov.current = THREE.MathUtils.lerp(
-      targetFov.current,
-      desiredFov,
-      fovSmooth * delta,
-    );
-    (state.camera as THREE.PerspectiveCamera).fov = targetFov.current;
-    state.camera.updateProjectionMatrix(); // Obligatoire après modif FO
+    // const desiredFov = isDashing ? dashFov : baseFov; // Zoom out légèrement pendant dash
+    // targetFov.current = THREE.MathUtils.lerp(
+    //   targetFov.current,
+    //   desiredFov,
+    //   fovSmooth * delta,
+    // );
+    // (state.camera as THREE.PerspectiveCamera).fov = targetFov.current;
+    // state.camera.updateProjectionMatrix(); // Obligatoire après modif FO
 
     // Dash
     updateDash(delta, isBoosted);
@@ -219,13 +242,12 @@ function Charactere({
         <CapsuleCollider args={[0.25, 0.25]} />
         <CharactereModel />
       </RigidBody>
-      {dashTrailRef.current !== null && (
-        <TrailFollow
-          isDashing={isDashing || isBoosted}
-          color={trailColor}
-          target={dashTrailRef as React.RefObject<THREE.Object3D>}
-        />
-      )}
+
+      <TrailFollow
+        isDashing={isDashing || isBoosted}
+        color={"#feffcf"}
+        target={dashTrailRef as React.RefObject<THREE.Object3D>}
+      />
     </>
   );
 }

@@ -63,3 +63,6 @@ function Level1Block1() {
 }
 
 export default Level1Block1;
+
+useGLTF.preload("/models/level1/level_1_block_1.gltf");
+useGLTF.preload("/models/level1/plants_level_1_block_1.gltf");

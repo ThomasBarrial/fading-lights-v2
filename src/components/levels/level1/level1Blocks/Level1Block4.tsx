@@ -327,3 +327,5 @@ function Level1Block4() {
 }
 
 export default Level1Block4;
+
+useGLTF.preload("/models/level1/level_1_block_4.gltf");

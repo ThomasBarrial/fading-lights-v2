@@ -148,3 +148,6 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
 }
 
 export default Level1Block2;
+
+useGLTF.preload("/models/level1/level_1_block_2.gltf");
+useGLTF.preload("/models/level1/plants_level_1_block_2.gltf");

@@ -11,6 +11,7 @@ import GameOverOverlay from "./ui/GameOverOverlay";
 import SceneLoader from "./loaders/SceneLoader";
 import ScreenTransition from "./ui/ScreenTransition";
 import Level2 from "./levels/level2/Level2";
+import { Perf } from "r3f-perf";
 // import PostProcessingEffects from "./effects/PostProcessingEffects";
 
 interface ExperienceProps {
@@ -38,7 +39,8 @@ export default function Experience({ level }: ExperienceProps) {
           { name: "jump", keys: ["Space"] },
         ]}
       >
-        <Canvas shadows>
+        <Canvas shadows camera={{ fov: 45 }}>
+          <Perf />
           <color attach="background" args={["#D6E892"]} />
           <fog attach="fog" args={[fogColor, 10, 30]} />
           {/* <OrbitControls /> */}

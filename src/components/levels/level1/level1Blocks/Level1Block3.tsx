@@ -173,3 +173,6 @@ function Level1Block3() {
 }
 
 export default Level1Block3;
+
+useGLTF.preload("/models/level1/level_1_block_3.gltf");
+useGLTF.preload("/models/plate.gltf");

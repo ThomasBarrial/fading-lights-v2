@@ -127,3 +127,5 @@ function TreesBackground({
 }
 
 export default TreesBackground;
+
+useGLTF.preload(TREE_URL);
