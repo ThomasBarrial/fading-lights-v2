@@ -92,7 +92,6 @@ export function CharactereModel() {
 
     if (forward || backward || leftward || rightward) {
       const swing = Math.sin(t * 10) * 0.4; // fréquence * amplitude
-      const headSwing = Math.sin(t * 6) * 0.2; // fréquence * amplitude
       const armSwing = Math.sin(t * 4) * 0.2; // fréquence * amplitude
       if (legright && legleft && !isJumping) {
         legright.rotation.z = swing;
@@ -102,10 +101,6 @@ export function CharactereModel() {
       if (leftArm && rightArm) {
         leftArm.rotation.z = armSwing;
         rightArm.rotation.z = armSwing;
-      }
-
-      if (head) {
-        head.rotation.z = headSwing;
       }
     }
   });

@@ -100,3 +100,5 @@ export default function RocksBackground({
     </Suspense>
   );
 }
+
+useGLTF.preload(ROCK_URL);

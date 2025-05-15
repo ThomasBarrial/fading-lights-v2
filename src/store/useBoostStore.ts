@@ -6,7 +6,7 @@ interface BoostState {
   threshold: number; // 0.4 to 0.7 (set once per game)
 
   isBoosted: boolean;
-  boostTimer: number;
+  // boostTimer: number;
 
   baseSpeed: number;
   baseJump: number;
@@ -24,7 +24,7 @@ interface BoostState {
     corruptionGain: number,
     durationOverride: number | undefined,
   ) => void;
-  updateBoostTimer: (dt: number) => void;
+  // updateBoostTimer: (dt: number) => void;
   resetBoost: () => void;
   resetAll: () => void;
 
@@ -59,8 +59,8 @@ export const useBoostStore = create<BoostState>((set, get) => ({
     })),
   resetBoosts: () => set({ collectedBoosts: {} }),
 
-  applyBoost: (corruptionGain, durationOverride) => {
-    console.time("applyBoost");
+  applyBoost: (corruptionGain) => {
+    console.log("🔥 Boost appliqué avec corruption =", corruptionGain);
     const { corruptionLevel, threshold, boostCount } = get();
     const newCorruption = Math.min(corruptionLevel + corruptionGain, 1);
 
@@ -81,7 +81,7 @@ export const useBoostStore = create<BoostState>((set, get) => ({
       boostCount: boostCount + 1,
       corruptionLevel: newCorruption,
       isBoosted: true,
-      boostTimer: durationOverride ?? 8 - boostCount, // 👈 si durée fournie, on l’utilise
+      // boostTimer: durationOverride ?? 8 - boostCount, // 👈 si durée fournie, on l’utilise
       baseSpeed,
       baseJump,
       baseDash,
@@ -92,17 +92,17 @@ export const useBoostStore = create<BoostState>((set, get) => ({
     console.timeEnd("applyBoost");
   },
 
-  updateBoostTimer: (dt) => {
-    const { boostTimer } = get();
-    if (boostTimer > 0) {
-      set({ boostTimer: boostTimer - dt });
-      if (boostTimer - dt <= 0) {
-        set({ isBoosted: false });
-      }
-    }
-  },
+  // updateBoostTimer: (dt) => {
+  //   const { boostTimer } = get();
+  //   if (boostTimer > 0) {
+  //     set({ boostTimer: boostTimer - dt });
+  //     if (boostTimer - dt <= 0) {
+  //       set({ isBoosted: false });
+  //     }
+  //   }
+  // },
 
-  resetBoost: () => set({ isBoosted: false, boostTimer: 0 }),
+  resetBoost: () => set({ isBoosted: false }),
 
   resetAll: () =>
     set({
@@ -110,7 +110,7 @@ export const useBoostStore = create<BoostState>((set, get) => ({
       corruptionLevel: 0,
       threshold: Math.random() * 0.3 + 0.4,
       isBoosted: false,
-      boostTimer: 0,
+      // boostTimer: 0,
       baseSpeed: 3,
       baseJump: 0.35,
       baseDash: 5,

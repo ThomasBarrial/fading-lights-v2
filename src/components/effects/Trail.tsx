@@ -27,6 +27,8 @@ export default function TrailFollow({
       clearTimeout(timeout);
     };
   }, [isDashing]);
+
+  if (!target.current) return null;
   return (
     <Trail
       width={isActive ? 3 : 0} // largeur du trail
