@@ -1,7 +1,7 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useRef } from "react";
 import { KeyboardControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
 import Charactere from "./Charactere";
@@ -12,7 +12,6 @@ import SceneLoader from "./loaders/SceneLoader";
 import ScreenTransition from "./ui/ScreenTransition";
 import Level2 from "./levels/level2/Level2";
 import { Perf } from "r3f-perf";
-// import PostProcessingEffects from "./effects/PostProcessingEffects";
 
 interface ExperienceProps {
   level: 1 | 2 | 3;
@@ -23,10 +22,6 @@ export default function Experience({ level }: ExperienceProps) {
     fogColor: { value: "#D6E892" },
   });
   const rigidBodyRef = useRef(null);
-
-  useEffect(() => {
-    console.log("rerender");
-  }, []);
 
   return (
     <>
@@ -41,6 +36,7 @@ export default function Experience({ level }: ExperienceProps) {
       >
         <Canvas shadows camera={{ fov: 45 }}>
           <Perf />
+
           <color attach="background" args={["#D6E892"]} />
           <fog attach="fog" args={[fogColor, 10, 30]} />
           {/* <OrbitControls /> */}
@@ -52,7 +48,6 @@ export default function Experience({ level }: ExperienceProps) {
               {level === 2 && <Level2 />}
               <Charactere rigidBodyRef={rigidBodyRef} />
             </Physics>
-            {/* <PostProcessingEffects /> */}
           </Suspense>
         </Canvas>
       </KeyboardControls>

@@ -9,7 +9,6 @@ import { useFrame } from "@react-three/fiber";
 import trees_block3 from "@/utils/level1/block3/trees_block3";
 import rocks_block3 from "@/utils/level1/block3/rocks_block3";
 import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
-import { useCurrentPerfArea } from "@/store/useCurrentPerfArea";
 
 function Level1Block3() {
   const { scene: block3 } = useGLTF("/models/level1/level_1_block_3.gltf");
@@ -23,8 +22,6 @@ function Level1Block3() {
       enableShadowsRecursively(spike);
     }
   }, [block3, spike]);
-
-  const { perfArea } = useCurrentPerfArea();
 
   const spikes = useMemo(() => {
     return [
@@ -131,11 +128,6 @@ function Level1Block3() {
           object={block3}
           scale={1.1}
           position={[0, 0.8, 0]}
-          visible={
-            perfArea === "perfArea1" ||
-            perfArea === "perfArea2" ||
-            perfArea === "start"
-          }
         />
       </RigidBody>
       <group ref={spikesGrp1Ref}>
@@ -150,24 +142,19 @@ function Level1Block3() {
           />
         ))}
       </group>
-      {(perfArea === "perfArea1" ||
-        perfArea === "perfArea2" ||
-        perfArea === "start") && (
-        <>
-          <TreesBackground
-            minZ={-88}
-            maxZ={-50}
-            treesPositions={trees_block3}
-            maxX={-20}
-          />
-          <RocksBackground
-            minZ={-88}
-            maxZ={-50}
-            rocksPosition={rocks_block3}
-            maxX={-15}
-          />
-        </>
-      )}
+
+      <TreesBackground
+        minZ={-88}
+        maxZ={-50}
+        treesPositions={trees_block3}
+        maxX={-20}
+      />
+      <RocksBackground
+        minZ={-88}
+        maxZ={-50}
+        rocksPosition={rocks_block3}
+        maxX={-15}
+      />
     </group>
   );
 }

@@ -5,7 +5,6 @@ import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import * as THREE from "three";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useCurrentPerfArea } from "@/store/useCurrentPerfArea";
 import TreesBackground from "../env/TreesBackground";
 import RocksBackground from "../env/RocksBackground";
 import TransitionPlateform from "./TransitionPlateform";
@@ -40,7 +39,7 @@ function Level1Block4() {
   const doorOpened = useRef(false);
   const leftDoorLightRef = useRef<THREE.PointLight>(null);
   const rightDoorLightRef = useRef<THREE.PointLight>(null);
-  const { perfArea } = useCurrentPerfArea();
+
   useEffect(() => {
     if (block4) {
       enableShadowsRecursively(block4);
@@ -214,11 +213,6 @@ function Level1Block4() {
           object={block4}
           scale={1.1}
           position={[0, 0.8, 0]}
-          visible={
-            perfArea === "perfArea2" ||
-            perfArea === "perfArea3" ||
-            perfArea === "start"
-          }
         />
       </RigidBody>
 

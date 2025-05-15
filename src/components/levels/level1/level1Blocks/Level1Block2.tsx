@@ -8,7 +8,6 @@ import trees_block2 from "@/utils/level1/block2/trees_block2";
 import RocksBackground from "../env/RocksBackground";
 import rocks_block2 from "@/utils/level1/block2/rocks_block2";
 import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
-import { useCurrentPerfArea } from "@/store/useCurrentPerfArea";
 
 type BarConfig = {
   ref: React.RefObject<RapierRigidBody | null>;
@@ -28,8 +27,6 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
   const { scene: plantsGrass } = useGLTF(
     "/models/level1/plants_level_1_block_2.gltf",
   );
-
-  const { perfArea } = useCurrentPerfArea();
 
   useEffect(() => {
     if (block2) {
@@ -92,7 +89,6 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
           position={[0, 1.1, 0]}
           rotation={[0, Math.PI / 2, 0]}
           scale={1.1}
-          visible={perfArea === "start" || perfArea === "perfArea1"}
         />
       </RigidBody>
 
@@ -114,10 +110,7 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
             }
           }}
         >
-          <primitive
-            object={node}
-            visible={perfArea === "start" || perfArea === "perfArea1"}
-          />
+          <primitive object={node} />
         </RigidBody>
       ))}
       <primitive
@@ -125,24 +118,20 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         object={plantsGrass}
         scale={1.1}
         position={[0, 1.1, 0]}
-        visible={perfArea === "start" || perfArea === "perfArea1"}
       />
-      {(perfArea === "start" || perfArea === "perfArea1") && (
-        <>
-          <TreesBackground
-            minZ={-50}
-            maxZ={-15}
-            treesPositions={trees_block2}
-            maxX={-15}
-          />
-          <RocksBackground
-            minZ={-50}
-            maxZ={-15}
-            rocksPosition={rocks_block2}
-            maxX={-15}
-          />
-        </>
-      )}
+
+      <TreesBackground
+        minZ={-50}
+        maxZ={-15}
+        treesPositions={trees_block2}
+        maxX={-15}
+      />
+      <RocksBackground
+        minZ={-50}
+        maxZ={-15}
+        rocksPosition={rocks_block2}
+        maxX={-15}
+      />
     </group>
   );
 }

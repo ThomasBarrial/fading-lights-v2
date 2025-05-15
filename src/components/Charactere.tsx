@@ -1,5 +1,5 @@
 import { useKeyboardControls } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import {
   CapsuleCollider,
   RapierRigidBody,
@@ -22,19 +22,8 @@ function Charactere({
   const cameraFollowRef = useRef<THREE.Object3D>(null);
   const [subscribeKeys, get] = useKeyboardControls();
   const dashTrailRef = useRef<THREE.Object3D>(null);
-  // const { trailColor } = useControls("Dash Trail", {
-  //   trailColor: { value: "#feffcf" },
-  // });
 
   const boostTimer = useRef(0);
-
-  // const { dashFov, baseFov, fovSmooth } = useControls("Camera", {
-  //   dashFov: { value: 40, min: 35, max: 90 },
-  //   baseFov: { value: 45, min: 30, max: 90 },
-  //   fovSmooth: { value: 2, min: 0, max: 20 },
-  // });
-  // const targetFov = useRef(baseFov); // FOV normal
-  // const lastFov = useRef(baseFov);
 
   const direction = useMemo(() => new THREE.Vector3(), []);
   const { rapier, world } = useRapier();
@@ -149,16 +138,6 @@ function Charactere({
     return () => window.removeEventListener("keydown", handleDash);
   }, [dashAvailable, direction, rigidBodyRef, triggerDash, currentDash]);
 
-  // const camera = useThree().camera as THREE.PerspectiveCamera;
-  // useEffect(() => {
-  //   // Appliquer le FOV de base à la caméra au premier montage
-  //   // (évite le snap au premier dash)
-  //   camera.fov = baseFov;
-  //   camera.updateProjectionMatrix();
-  //   targetFov.current = baseFov;
-  //   lastFov.current = baseFov;
-  // }, [baseFov, camera]);
-
   useFrame((state, delta) => {
     const body = rigidBodyRef.current;
     if (!body) return;
@@ -201,16 +180,6 @@ function Charactere({
 
     state.camera.position.lerp(cameraPos, 5 * delta);
     state.camera.lookAt(target);
-
-    // FOV Boost
-    // const desiredFov = isDashing ? dashFov : baseFov; // Zoom out légèrement pendant dash
-    // targetFov.current = THREE.MathUtils.lerp(
-    //   targetFov.current,
-    //   desiredFov,
-    //   fovSmooth * delta,
-    // );
-    // (state.camera as THREE.PerspectiveCamera).fov = targetFov.current;
-    // state.camera.updateProjectionMatrix(); // Obligatoire après modif FO
 
     // Dash
     updateDash(delta, isBoosted);

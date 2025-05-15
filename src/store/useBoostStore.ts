@@ -60,8 +60,7 @@ export const useBoostStore = create<BoostState>((set, get) => ({
   resetBoosts: () => set({ collectedBoosts: {} }),
 
   applyBoost: (corruptionGain) => {
-    console.time("applyBoost");
-
+    console.log("🔥 Boost appliqué avec corruption =", corruptionGain);
     const { corruptionLevel, threshold, boostCount } = get();
     const newCorruption = Math.min(corruptionLevel + corruptionGain, 1);
 
