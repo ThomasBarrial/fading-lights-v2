@@ -131,11 +131,11 @@ function Level1Block3() {
           object={block3}
           scale={1.1}
           position={[0, 0.8, 0]}
-          visible={
-            perfArea === "perfArea1" ||
-            perfArea === "perfArea2" ||
-            perfArea === "start"
-          }
+          // visible={
+          //   perfArea === "perfArea1" ||
+          //   perfArea === "perfArea2" ||
+          //   perfArea === "start"
+          // }
         />
       </RigidBody>
       <group ref={spikesGrp1Ref}>
@@ -150,24 +150,24 @@ function Level1Block3() {
           />
         ))}
       </group>
-      {(perfArea === "perfArea1" ||
+      {/* {(perfArea === "perfArea1" ||
         perfArea === "perfArea2" ||
-        perfArea === "start") && (
-        <>
-          <TreesBackground
-            minZ={-88}
-            maxZ={-50}
-            treesPositions={trees_block3}
-            maxX={-20}
-          />
-          <RocksBackground
-            minZ={-88}
-            maxZ={-50}
-            rocksPosition={rocks_block3}
-            maxX={-15}
-          />
-        </>
-      )}
+        perfArea === "start") && ( */}
+      <>
+        <TreesBackground
+          minZ={-88}
+          maxZ={-50}
+          treesPositions={trees_block3}
+          maxX={-20}
+        />
+        <RocksBackground
+          minZ={-88}
+          maxZ={-50}
+          rocksPosition={rocks_block3}
+          maxX={-15}
+        />
+      </>
+      {/* )} */}
     </group>
   );
 }

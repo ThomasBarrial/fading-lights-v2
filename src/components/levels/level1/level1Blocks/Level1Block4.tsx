@@ -214,11 +214,11 @@ function Level1Block4() {
           object={block4}
           scale={1.1}
           position={[0, 0.8, 0]}
-          visible={
-            perfArea === "perfArea2" ||
-            perfArea === "perfArea3" ||
-            perfArea === "start"
-          }
+          // visible={
+          //   perfArea === "perfArea2" ||
+          //   perfArea === "perfArea3" ||
+          //   perfArea === "start"
+          // }
         />
       </RigidBody>
 

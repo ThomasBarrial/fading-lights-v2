@@ -30,7 +30,7 @@ function Level1Block1() {
           object={block1}
           scale={1.1}
           position={[0, 1.1, 0]}
-          visible={perfArea === "start"}
+          // visible={perfArea === "start"}
         />
       </RigidBody>
 
@@ -39,7 +39,7 @@ function Level1Block1() {
         object={plantsGrass}
         scale={1.1}
         position={[0, 1.1, 0]}
-        visible={perfArea === "start"}
+        // visible={perfArea === "start"}
       />
 
       {perfArea === "start" && (

@@ -147,14 +147,14 @@ function Level1({
         />
       ))}
       {/* Perf Areas */}
-      {perfAreas.map((perfArea) => (
+      {/* {perfAreas.map((perfArea) => (
         <PerfArea
           prevArea={perfArea.prevArea}
           name={perfArea.name}
           key={perfArea.name}
           position={perfArea.position}
         />
-      ))}
+      ))} */}
       {/* boost test */}
       <Boost id="boost1" position={[-0.3, 3, -29]} corruptionValue={0.1} />
       <Boost id="boost2" position={[-3, 3, -52.5]} corruptionValue={0.15} />
