@@ -1,0 +1,3119 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "THREE.GLTFExporter"
+  },
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "children": [
+        90
+      ],
+      "matrix": [
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 0
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -10.475432815026577,
+        -20.3381043882579,
+        1.9796221719842013,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 8",
+      "children": [
+        1
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 1
+    },
+    {
+      "matrix": [
+        4.843385498145564,
+        0,
+        8.388989763430411,
+        0,
+        0,
+        9.686770996291125,
+        0,
+        0,
+        -8.388989763430411,
+        0,
+        4.843385498145564,
+        0,
+        23.063827319539655,
+        -20.338104388257907,
+        9.716041218169151,
+        1
+      ],
+      "name": "rocksModel 7",
+      "children": [
+        3
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 2
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        24.22336357322166,
+        -20.3381043882579,
+        -16.073732587376355,
+        1
+      ],
+      "name": "rocksModel 2",
+      "children": [
+        5
+      ]
+    },
+    {
+      "matrix": [
+        -4.300259482406924,
+        -0.0024513298550505012,
+        -0.15766429775091115,
+        0,
+        0.0024890012405839783,
+        4.286087911180337,
+        -0.0007243915229933461,
+        0,
+        0.05675982779908706,
+        0.00031248707181275975,
+        -1.6354687594735475,
+        0,
+        1197.3649906576752,
+        -79.48210476539842,
+        203.79408586783032,
+        1.0000000000000009
+      ],
+      "name": "Group 7",
+      "children": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 3
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -10.475432815026577,
+        -20.3381043882579,
+        1.9796221719842013,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 8",
+      "children": [
+        8
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 4
+    },
+    {
+      "matrix": [
+        4.843385498145564,
+        0,
+        8.388989763430411,
+        0,
+        0,
+        9.686770996291125,
+        0,
+        0,
+        -8.388989763430411,
+        0,
+        4.843385498145564,
+        0,
+        23.063827319539655,
+        -20.338104388257907,
+        9.716041218169151,
+        1
+      ],
+      "name": "rocksModel 7",
+      "children": [
+        10
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 5
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        24.22336357322166,
+        -20.3381043882579,
+        -16.073732587376355,
+        1
+      ],
+      "name": "rocksModel 2",
+      "children": [
+        12
+      ]
+    },
+    {
+      "matrix": [
+        -0.14146323258777554,
+        0.0035562202346211933,
+        -4.094636304034004,
+        0,
+        0.0053746641662862134,
+        7.145755728608478,
+        -0.006332056415470851,
+        0,
+        2.2166925250994134,
+        0.0017231310690429798,
+        -0.07195990522442836,
+        0,
+        635.4657274074108,
+        10.744965397639245,
+        -180.51919384602343,
+        1.0000000000000009
+      ],
+      "name": "Group 8",
+      "children": [
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 6
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -10.475432815026577,
+        -20.3381043882579,
+        1.9796221719842013,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 8",
+      "children": [
+        15
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 7
+    },
+    {
+      "matrix": [
+        4.843385498145564,
+        0,
+        8.388989763430411,
+        0,
+        0,
+        9.686770996291125,
+        0,
+        0,
+        -8.388989763430411,
+        0,
+        4.843385498145564,
+        0,
+        23.063827319539655,
+        -20.338104388257907,
+        9.716041218169151,
+        1
+      ],
+      "name": "rocksModel 7",
+      "children": [
+        17
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 8
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        24.22336357322166,
+        -20.3381043882579,
+        -16.073732587376355,
+        1
+      ],
+      "name": "rocksModel 2",
+      "children": [
+        19
+      ]
+    },
+    {
+      "matrix": [
+        3.1366452358591506,
+        -1.7619547919898012e-16,
+        -0.098086513076344,
+        0,
+        4.288516528513682e-16,
+        5.44691465291828,
+        9.986455179819534e-16,
+        0,
+        0.06051883091891428,
+        -4.451914106851855e-16,
+        1.6927416889510924,
+        0,
+        732.438030297797,
+        -3.889340308919132,
+        265.19316875284403,
+        1.0000000000000007
+      ],
+      "name": "Group 6",
+      "children": [
+        16,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 9
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -10.475432815026577,
+        -20.3381043882579,
+        1.9796221719842013,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 8",
+      "children": [
+        22
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 10
+    },
+    {
+      "matrix": [
+        4.843385498145564,
+        0,
+        8.388989763430411,
+        0,
+        0,
+        9.686770996291125,
+        0,
+        0,
+        -8.388989763430411,
+        0,
+        4.843385498145564,
+        0,
+        23.063827319539655,
+        -20.338104388257907,
+        9.716041218169151,
+        1
+      ],
+      "name": "rocksModel 7",
+      "children": [
+        24
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 11
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        24.22336357322166,
+        -20.3381043882579,
+        -16.073732587376355,
+        1
+      ],
+      "name": "rocksModel 2",
+      "children": [
+        26
+      ]
+    },
+    {
+      "matrix": [
+        4.133519222779783,
+        -4.706339348249756e-17,
+        0.026125324910929216,
+        0,
+        6.677869566289553e-16,
+        4.994385748340932,
+        9.270595581674878e-16,
+        0,
+        -0.022084085768065802,
+        -5.690918732596028e-16,
+        2.2031093111589084,
+        0,
+        -416.56652840144477,
+        -66.12368825692238,
+        68.20544270620222,
+        1.0000000000000004
+      ],
+      "name": "Group 4",
+      "children": [
+        23,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 12
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -10.475432815026577,
+        -20.3381043882579,
+        1.9796221719842013,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 8",
+      "children": [
+        29
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 13
+    },
+    {
+      "matrix": [
+        4.843385498145564,
+        0,
+        8.388989763430411,
+        0,
+        0,
+        9.686770996291125,
+        0,
+        0,
+        -8.388989763430411,
+        0,
+        4.843385498145564,
+        0,
+        23.063827319539655,
+        -20.338104388257907,
+        9.716041218169151,
+        1
+      ],
+      "name": "rocksModel 7",
+      "children": [
+        31
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 14
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        24.22336357322166,
+        -20.3381043882579,
+        -16.073732587376355,
+        1
+      ],
+      "name": "rocksModel 2",
+      "children": [
+        33
+      ]
+    },
+    {
+      "matrix": [
+        2.629639237231754,
+        -2.994052754291997e-17,
+        0.016620263695061543,
+        0,
+        6.677869566289476e-16,
+        4.994385748340932,
+        9.270595581674876e-16,
+        0,
+        -0.022084085768065684,
+        -5.690918732596028e-16,
+        2.2031093111589084,
+        0,
+        -746.2144420910728,
+        -66.12368825692234,
+        65.42661773978577,
+        1.0000000000000004
+      ],
+      "name": "Group 3",
+      "children": [
+        30,
+        32,
+        34
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 15
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -10.475432815026577,
+        -20.3381043882579,
+        1.9796221719842013,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 8",
+      "children": [
+        36
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 16
+    },
+    {
+      "matrix": [
+        4.843385498145564,
+        0,
+        8.388989763430411,
+        0,
+        0,
+        9.686770996291125,
+        0,
+        0,
+        -8.388989763430411,
+        0,
+        4.843385498145564,
+        0,
+        23.063827319539655,
+        -20.338104388257907,
+        9.716041218169151,
+        1
+      ],
+      "name": "rocksModel 7",
+      "children": [
+        38
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 17
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        24.22336357322166,
+        -20.3381043882579,
+        -16.073732587376355,
+        1
+      ],
+      "name": "rocksModel 2",
+      "children": [
+        40
+      ]
+    },
+    {
+      "matrix": [
+        2.6296392372317534,
+        -2.994052754292e-17,
+        0.0166202636950614,
+        0,
+        3.1065607631765105e-16,
+        2.323400097583084,
+        4.3127030558805804e-16,
+        0,
+        -0.022084085768065684,
+        -5.690918732596063e-16,
+        2.203109311158909,
+        0,
+        -1196.1190890477255,
+        -162.27555447736,
+        245.15423028789357,
+        1.0000000000000009
+      ],
+      "name": "Group 2",
+      "children": [
+        37,
+        39,
+        41
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 18
+    },
+    {
+      "matrix": [
+        14.923954808973697,
+        -1.6285692942123138,
+        29.31361091082009,
+        0,
+        0.3989761722832341,
+        17.76188092906141,
+        0.7836684328450684,
+        0,
+        -15.847976339899912,
+        -1.866929554580037e-15,
+        8.068418572856533,
+        0,
+        185.19973141302847,
+        -23.97321533203184,
+        6.783837278130704,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 14",
+      "children": [
+        43
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 19
+    },
+    {
+      "matrix": [
+        14.923954808973699,
+        -2.4687912179301885,
+        29.31361091082009,
+        0,
+        0.3989761722832373,
+        26.925704547805267,
+        0.7836684328450669,
+        0,
+        -15.847976339899917,
+        -3.885780586188048e-15,
+        8.068418572856533,
+        0,
+        132.09467988577006,
+        -14.427789401451212,
+        439.490514095024,
+        0.9999999999999997
+      ],
+      "name": "rocksModel 13",
+      "children": [
+        45
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 20
+    },
+    {
+      "matrix": [
+        14.923954808973697,
+        -1.6285692942123138,
+        29.31361091082009,
+        0,
+        0.3989761722832341,
+        17.76188092906141,
+        0.7836684328450684,
+        0,
+        -15.847976339899912,
+        -1.866929554580037e-15,
+        8.068418572856533,
+        0,
+        -33.13647750978019,
+        -23.973215332031764,
+        39.116277595555935,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 9",
+      "children": [
+        47
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 21
+    },
+    {
+      "matrix": [
+        -6.946067383846485,
+        -9.946634495645672e-15,
+        -20.03716626791767,
+        0,
+        -1.733723286682543e-15,
+        23.25740640205255,
+        -8.310476804011172e-15,
+        0,
+        15.01434130126313,
+        1.4708747694962495e-15,
+        -5.204859060815754,
+        0,
+        -111.59222370548376,
+        -13.209726400274716,
+        378.34003744660276,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 11",
+      "children": [
+        49
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 22
+    },
+    {
+      "matrix": [
+        6.946067383846476,
+        -3.915462152344441e-15,
+        20.037166267917673,
+        0,
+        7.397294499449861e-15,
+        17.78363664543457,
+        2.92460571457204e-15,
+        0,
+        -15.01434130126313,
+        3.1779495519322607e-15,
+        5.204859060815746,
+        0,
+        -47.29569870843574,
+        -20.338104388257918,
+        147.47062195913622,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 10",
+      "children": [
+        51
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 23
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        207.8607761077821,
+        -20.338104388257968,
+        -30.352818145440324,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 14",
+      "children": [
+        53
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 24
+    },
+    {
+      "matrix": [
+        -14.567502313000361,
+        1.2003514089962414e-16,
+        10.200274932450245,
+        0,
+        5.69743480189612e-15,
+        26.958684613015095,
+        2.904339334850399e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        7.518407531407888,
+        -8.917228686543762,
+        634.5218677091693,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 16",
+      "children": [
+        55
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 25
+    },
+    {
+      "matrix": [
+        -14.567502313000361,
+        1.2003514089962414e-16,
+        10.200274932450245,
+        0,
+        5.69743480189612e-15,
+        26.958684613015095,
+        2.904339334850399e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        240.7128197782189,
+        -8.917228686543783,
+        402.37308231809874,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 15",
+      "children": [
+        57
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 26
+    },
+    {
+      "matrix": [
+        -14.567502313000361,
+        1.2003514089962414e-16,
+        10.200274932450245,
+        0,
+        5.69743480189612e-15,
+        26.958684613015095,
+        2.904339334850399e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -51.499522019842345,
+        -8.917228686543762,
+        625.8896605959062,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 16",
+      "children": [
+        59
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 27
+    },
+    {
+      "matrix": [
+        -14.567502313000361,
+        1.2003514089962414e-16,
+        10.200274932450245,
+        0,
+        5.69743480189612e-15,
+        26.958684613015095,
+        2.904339334850399e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        154.75572458052386,
+        -8.917228686543785,
+        402.35385867145123,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 13",
+      "children": [
+        61
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 28
+    },
+    {
+      "matrix": [
+        -14.567502313000361,
+        1.2003514089962414e-16,
+        10.200274932450245,
+        0,
+        4.91520853257521e-15,
+        23.25740640205255,
+        2.5055896164708357e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -79.57512327576146,
+        -13.209726400274706,
+        276.98813433527994,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 12",
+      "children": [
+        63
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 29
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -10.475432815026577,
+        -20.3381043882579,
+        1.9796221719842013,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 8",
+      "children": [
+        65
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 30
+    },
+    {
+      "matrix": [
+        4.843385498145564,
+        0,
+        8.388989763430411,
+        0,
+        0,
+        9.686770996291125,
+        0,
+        0,
+        -8.388989763430411,
+        0,
+        4.843385498145564,
+        0,
+        23.063827319539655,
+        -20.338104388257907,
+        9.716041218169151,
+        1
+      ],
+      "name": "rocksModel 7",
+      "children": [
+        67
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 31
+    },
+    {
+      "matrix": [
+        -1.64333967360747,
+        2.8928706174162043e-16,
+        17.114986331322058,
+        0,
+        4.794595766759968e-15,
+        13.649463569519941,
+        2.2965465212543577e-16,
+        0,
+        -10.81658455187742,
+        3.816975334123864e-15,
+        -1.038582338479541,
+        0,
+        -112.4240604588917,
+        -20.3381043882579,
+        426.1905183278714,
+        1
+      ],
+      "name": "rocksModel 11",
+      "children": [
+        69
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 32
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        242.5595724960309,
+        -20.338104388257968,
+        -48.40617290479349,
+        1
+      ],
+      "name": "rocksModel 14",
+      "children": [
+        71
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 33
+    },
+    {
+      "matrix": [
+        13.207935798503575,
+        0,
+        -3.4435864557550757,
+        0,
+        0,
+        17.850742665046095,
+        0,
+        0,
+        3.4435864557550744,
+        0,
+        13.20793579850357,
+        0,
+        -44.8763268875133,
+        -13.209726400274688,
+        258.934779575924,
+        1
+      ],
+      "name": "rocksModel 12",
+      "children": [
+        73
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 34
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        24.22336357322166,
+        -20.3381043882579,
+        -16.073732587376355,
+        1
+      ],
+      "name": "rocksModel 2",
+      "children": [
+        75
+      ]
+    },
+    {
+      "matrix": [
+        -0.10001383088679974,
+        0.000030005578048376087,
+        -1.4461590381999119,
+        0,
+        0.0003135707420908613,
+        4.154779046234781,
+        -0.00010764464983716646,
+        0,
+        1.1281042551396858,
+        0.00008709864853774626,
+        -0.077198878261232,
+        0,
+        -94.0841650794191,
+        -90.9279020621677,
+        159.80213058496255,
+        1.0000000000000009
+      ],
+      "name": "Group 5",
+      "children": [
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64,
+        66,
+        68,
+        70,
+        72,
+        74,
+        76
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 35
+    },
+    {
+      "matrix": [
+        14.923954808973697,
+        -1.6285692942123138,
+        29.31361091082009,
+        0,
+        0.3989761722832341,
+        17.76188092906141,
+        0.7836684328450684,
+        0,
+        -15.847976339899912,
+        -1.866929554580037e-15,
+        8.068418572856533,
+        0,
+        -33.13647750978019,
+        -23.973215332031764,
+        39.116277595555935,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 9",
+      "children": [
+        78
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 36
+    },
+    {
+      "matrix": [
+        -14.567502313000357,
+        1.2003514089962414e-16,
+        10.200274932450244,
+        0,
+        3.758384794451668e-15,
+        17.78363664543457,
+        1.915884108124742e-15,
+        0,
+        -10.200274932450242,
+        1.2177755035431016e-15,
+        -14.567502313000356,
+        0,
+        -10.475432815026577,
+        -20.3381043882579,
+        1.9796221719842013,
+        0.9999999999999999
+      ],
+      "name": "rocksModel 8",
+      "children": [
+        80
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 37
+    },
+    {
+      "matrix": [
+        4.843385498145564,
+        0,
+        8.388989763430411,
+        0,
+        0,
+        9.686770996291125,
+        0,
+        0,
+        -8.388989763430411,
+        0,
+        4.843385498145564,
+        0,
+        23.063827319539655,
+        -20.338104388257907,
+        9.716041218169151,
+        1
+      ],
+      "name": "rocksModel 7",
+      "children": [
+        82
+      ]
+    },
+    {
+      "name": "menhir_mini",
+      "mesh": 38
+    },
+    {
+      "matrix": [
+        13.207935798503572,
+        0,
+        -3.443586455755075,
+        0,
+        0,
+        13.649463569519938,
+        0,
+        0,
+        3.443586455755075,
+        0,
+        13.207935798503572,
+        0,
+        24.22336357322166,
+        -20.3381043882579,
+        -16.073732587376355,
+        1
+      ],
+      "name": "rocksModel 2",
+      "children": [
+        84
+      ]
+    },
+    {
+      "matrix": [
+        -0.1000138308867998,
+        0.00003000557804837785,
+        -1.446159038199912,
+        0,
+        0.00023474353483261094,
+        3.1103269178060247,
+        -0.00008058432186658887,
+        0,
+        1.1281042551396858,
+        0.00008709864853784071,
+        -0.07719887826123203,
+        0,
+        -1459.3450167303845,
+        -115.06525881536662,
+        201.69962074317186,
+        1.0000000000000009
+      ],
+      "name": "Group",
+      "children": [
+        79,
+        81,
+        83,
+        85
+      ]
+    },
+    {
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        8694.23413027127,
+        171.91669821296614,
+        -72.44770647692599,
+        1
+      ],
+      "name": "rocks_block4",
+      "children": [
+        7,
+        14,
+        21,
+        28,
+        35,
+        42,
+        77,
+        86
+      ]
+    },
+    {
+      "matrix": [
+        0.893058741864016,
+        -4.519681737202852e-8,
+        0.449940088878796,
+        0,
+        0.384276109194017,
+        0.5201735719513163,
+        -0.7627262463991368,
+        0,
+        -0.2340469087233772,
+        0.8540605687206305,
+        0.4645455730858108,
+        0,
+        7928.70833601259,
+        3161.0617672644494,
+        1658.750157007064,
+        1
+      ],
+      "camera": 0
+    },
+    {
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "Default Ambient Light"
+    },
+    {
+      "name": "Scene 1",
+      "children": [
+        87,
+        88,
+        89
+      ]
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 1608,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1608,
+      "byteLength": 1608,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3216,
+      "byteLength": 1072,
+      "target": 34962,
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4288,
+      "byteLength": 492,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4780,
+      "byteLength": 1608,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6388,
+      "byteLength": 1608,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7996,
+      "byteLength": 1072,
+      "target": 34962,
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9068,
+      "byteLength": 492,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9560,
+      "byteLength": 1608,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 11168,
+      "byteLength": 1608,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12776,
+      "byteLength": 1072,
+      "target": 34962,
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13848,
+      "byteLength": 492,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 14340,
+      "uri": "data:application/octet-stream;base64,AF25PnAtwL4VTrs/AF25PnAtwL4VTrs/AF25PnAtwL4VTrs/EMoqP9Drn77FFpO/EMoqP9Drn77FFpO/sH3Cv1w3ij+xVoI/sH3Cv1w3ij+xVoI/sH3Cv1w3ij+xVoI/sH3Cv1w3ij+xVoI/sOSkv2xMrT/dYrM/sOSkv2xMrT/dYrM/sOSkv2xMrT/dYrM/sOSkv2xMrT/dYrM/QGjGPjRefz8wbai/QGjGPjRefz8wbai/QGjGPjRefz8wbai/AC8xvhSuJEDN5tM/AC8xvhSuJEDN5tM/AC8xvhSuJEDN5tM/AC8xvhSuJEDN5tM/ADVBvq5UREA+zEy/ADVBvq5UREA+zEy/ADVBvq5UREA+zEy/AKzNPdBtHr/84ya/AKzNPdBtHr/84ya/AKzNPdBtHr/84ya/AKJLP0A3Fb/hsp0/AKJLP0A3Fb/hsp0/AKJLP0A3Fb/hsp0/AKJLP0A3Fb/hsp0/gNhRvlBGar4JosA/gNhRvlBGar4JosA/gNhRvlBGar4JosA/EEIvvzC01b4EW8s+EEIvvzC01b4EW8s+EEIvvzC01b4EW8s+uGDKvwCYYb46gCg/uGDKvwCYYb46gCg/aMytvwDamzw5R1K/aMytvwDamzw5R1K/aMytvwDamzw5R1K/gI5bPuBV6b5yGaa/gI5bPuBV6b5yGaa/gI5bPuBV6b5yGaa/gI5bPuBV6b5yGaa/cAKXvzCalz+4I30+cAKXvzCalz+4I30+cAKXvzCalz+4I30+gO/Qvoxtwj81vtG/gO/Qvoxtwj81vtG/gO/Qvoxtwj81vtG/gO/Qvoxtwj81vtG/UPuiP/DNaL486+O+UPuiP/DNaL486+O+UPuiP/DNaL486+O+cOGcPxjRRj/8tdK+cOGcPxjRRj/8tdK+cOGcPxjRRj/8tdK+ELjQP26VlT8Uguc+ELjQP26VlT8Uguc+ELjQP26VlT8Uguc+ELjQP26VlT8Uguc+AM2pv8AQKkAMULM+AM2pv8AQKkAMULM+AM2pv8AQKkAMULM+KMzgP34YDEAUfdI+KMzgP34YDEAUfdI+KMzgP34YDEAUfdI+KMzgP34YDEAUfdI+8B+RP6xdREBoMHo+8B+RP6xdREBoMHo+8B+RP6xdREBoMHo+AGOlvaTDH0ASdqq/AGOlvaTDH0ASdqq/wM3dPqABTr9UVdg+wM3dPqABTr9UVdg+wM3dPqABTr9UVdg+MIi9P4Drtr7icxg/MIi9P4Drtr7icxg/MIi9P4Drtr7icxg/SNKjvwDlXL4lGoY/SNKjvwDlXL4lGoY/SNKjvwDlXL4lGoY/sBoxv+B0Kr51OLU/sBoxv+B0Kr51OLU/ANHUvwCYjDwIXB2+ANHUvwCYjDwIXB2+ALndPQBwYb9g4gQ9ALndPQBwYb9g4gQ9ALndPQBwYb9g4gQ9UHG5P+D5mr7ARes8UHG5P+D5mr7ARes8UHG5P+D5mr7ARes8sHzYvygToT50gv8+sHzYvygToT50gv8+sHzYvygToT50gv8+wJ04vzCOiz9w1YG9wJ04vzCOiz9w1YG9YHOEv4AxHT1paKC/YHOEv4AxHT1paKC/8Noav6j1GT/v5b+/8Noav6j1GT/v5b+/8Noav6j1GT/v5b+/8Noav6j1GT/v5b+/AGL6PqAsGT/tp8U/AGL6PqAsGT/tp8U/AGL6PqAsGT/tp8U/AGL6PqAsGT/tp8U/4BGFv8zl8D8VIdE/4BGFv8zl8D8VIdE/4BGFv8zl8D8VIdE/8Mywv6Iw8z+g0SW98Mywv6Iw8z+g0SW98Mywv6Iw8z+g0SW9IE11P7wRzj9ZEKa/IE11P7wRzj9ZEKa/IE11P7wRzj9ZEKa/MCi3P5Da4D8zonm/MCi3P5Da4D8zonm/MCi3P5Da4D8zonm/MCi3P5Da4D8zonm/AH1LP4QGEUDNNdc/AH1LP4QGEUDNNdc/AH1LP4QGEUDNNdc/AH1LP4QGEUDNNdc/QBNGP3QPMkAdF6o/QBNGP3QPMkAdF6o/QBNGP3QPMkAdF6o/EIidv8oPJUAWq1Q/EIidv8oPJUAWq1Q/EIidv8oPJUAWq1Q/0JMxP9i+SkDcbfS+0JMxP9i+SkDcbfS+0JMxP9i+SkDcbfS+ivmPvj7LZb/Ww60++Zt7vpJLkD3Sfnc/ZBY2Pzbirb2boDI/e1SNvdOAfb+83/e9A9krP4PYMD0LbT2/rZZXv7MY2r2dVAc/5fc8v2w9ED9v972+UTSrvqTKKL9fYyw/+Zt7vpJLkD3Sfnc//aF9vygooDv/1wo+5fc8v2w9ED9v972+UTSrvqTKKL9fYyw/4Pl0vWOm+L3+pH0/ldhoPh8mAr5RKXe/A9krP4PYMD0LbT2/0G88P6+t5r61UgG/VqX7viStGD/DdiI/uP4dvviqdz8RY00+4Pl0vWOm+L3+pH0/zyogPjG2Dz+bCVA/bMs6v5sJxz5dAxC/uP4dvviqdz8RY00+dK2qPkQN5T55dFS/9PgTv12tQ7+XS5K+e1SNvdOAfb+83/e9uCgMP+WLR7++2pu+ivmPvj7LZb/Ww60+e1SNvdOAfb+83/e9TjdiPo0zeL/0sti9ZBY2Pzbirb2boDI/ivmPvj7LZb/Ww60++Zt7vpJLkD3Sfnc/e1SNvdOAfb+83/e99PgTv12tQ7+XS5K+ivmPvj7LZb/Ww60+e1SNvdOAfb+83/e9rZZXv7MY2r2dVAc/e1SNvdOAfb+83/e95fc8v2w9ED9v972+hJyCvmgxE7/TAke/e1SNvdOAfb+83/e9hJyCvmgxE7/TAke/e1SNvdOAfb+83/e9ldhoPh8mAr5RKXe/A9krP4PYMD0LbT2//aF9vygooDv/1wo+EChmv6Ryl75CSaW+5fc8v2w9ED9v972+EChmv6Ryl75CSaW+bMs6v5sJxz5dAxC/ldhoPh8mAr5RKXe/dK2qPkQN5T55dFS/e1SNvdOAfb+83/e9A9krP4PYMD0LbT2/x4t0P/qKlbzSJZe+A9krP4PYMD0LbT2/0G88P6+t5r61UgG/x4t0P/qKlbzSJZe+ZBY2Pzbirb2boDI/0G88P6+t5r61UgG/x4t0P/qKlbzSJZe+gUV5P/WFAr4MSUG+/aF9vygooDv/1wo+bMs6v5sJxz5dAxC/uP4dvviqdz8RY00+ZBY2Pzbirb2boDI/jU87P+3LAT+2ROk+QfRGP1OLAz8HAbq+gUV5P/WFAr4MSUG+uP4dvviqdz8RY00+jU87P+3LAT+2ROk+QfRGP1OLAz8HAbq+bMs6v5sJxz5dAxC/dK2qPkQN5T55dFS/ivmPvj7LZb/Ww60+e1SNvdOAfb+83/e9uCgMP+WLR7++2pu+TjdiPo0zeL/0sti9ZBY2Pzbirb2boDI/x4t0P/qKlbzSJZe+rZZXv7MY2r2dVAc/+Zt7vpJLkD3Sfnc/e1SNvdOAfb+83/e9+Zt7vpJLkD3Sfnc/e1SNvdOAfb+83/e95fc8v2w9ED9v972+e1SNvdOAfb+83/e99PgTv12tQ7+XS5K+ivmPvj7LZb/Ww60+uCgMP+WLR7++2pu+e1SNvdOAfb+83/e9TjdiPo0zeL/0sti9x4t0P/qKlbzSJZe+rZZXv7MY2r2dVAc/5fc8v2w9ED9v972+e1SNvdOAfb+83/e9EChmv6Ryl75CSaW+5fc8v2w9ED9v972+5fc8v2w9ED9v972+hJyCvmgxE7/TAke/EChmv6Ryl75CSaW+5fc8v2w9ED9v972+hJyCvmgxE7/TAke/ldhoPh8mAr5RKXe/UTSrvqTKKL9fYyw/+Zt7vpJLkD3Sfnc/4Pl0vWOm+L3+pH0/ZBY2Pzbirb2boDI//aF9vygooDv/1wo+VqX7viStGD/DdiI/4Pl0vWOm+L3+pH0//aF9vygooDv/1wo+EChmv6Ryl75CSaW+bMs6v5sJxz5dAxC/ldhoPh8mAr5RKXe/dK2qPkQN5T55dFS/0G88P6+t5r61UgG/dK2qPkQN5T55dFS/0G88P6+t5r61UgG/QfRGP1OLAz8HAbq+gUV5P/WFAr4MSUG+4Pl0vWOm+L3+pH0/zyogPjG2Dz+bCVA/ZBY2Pzbirb2boDI/jU87P+3LAT+2ROk+uP4dvviqdz8RY00+zyogPjG2Dz+bCVA/jU87P+3LAT+2ROk+/aF9vygooDv/1wo+VqX7viStGD/DdiI/uP4dvviqdz8RY00+uP4dvviqdz8RY00+dK2qPkQN5T55dFS/QfRGP1OLAz8HAbq+mG+fPjxnij6rY6A+zKSKPnupoT4ss4o+XIivPtIujD68PrE+9paLPrCJkD4w2o4+OxSSPnaIkD5CG5M+Qo6OPkIbkz5Cjo4+qAmVPswskz5WD5Q+IMORPpzKkz6QhZE+ev2UPlppkj7SU7Q+su2QPtJTtD6y7ZA+0lO0PrLtkD7H9Jk+KnSXPsf0mT4qdJc+Ls+ZPpSslT4uz5k+lKyVPjlohT6c05k+OWiFPpzTmT45aIU+nNOZPq4wrz40QIY+CTa2Pt67hz7mErE+3ruHPlLVoT5qvoo+tIujPjxnij60i6M+PGeKPhMhoz7MpIo+1QKcPjxnij7VApw+PGeKPl8amj4Y/4o+eKeOPhLYhj54p44+EtiGPninjj4S2IY+N0WRPuRGij7niI8+GP+KPrAzij6k14s++Je7PmJsjD6vpLs+KE+MPs5BtT6akoo+wXaxPp52iz5xnbI+XOKKPnCdsj4a/4o+IjCOPsI9kj4iMI4+wj2SPgrGjT6y7ZA+nMe4PpCFkT6cx7g+mnSSPu5vuD4E0pI+7m+4PgTSkj4/bKs+0i6MPgLZrj7SLow+/eOsPjJajD7yyqw+1lWQPvTKrD7WVZA+8sqsPtZVkD4taac+ykiSPqDMpj6gOZE+oMymPqA5kT4taac+ykiSPv0qjz48KJc+/SqPPjwolz6HtZA+npuWPjF7pj5yRJY+2cCnPhQZlj7ZwKc+FBmWPjF7pj5yRJY+w3yoPnhrmj7DfKg+eGuaPsN8qD54a5o+52i3PjTflT5EKrc+rAeXPg47pD7AGIc+DjukPsAYhz4OO6Q+wBiHPhxJpj4UEow+HEmmPhQSjD4cSaY+FBKMPpfklD7OpIo+XRaVPorBij5KIpQ+gEqKPiS2mT54Kos+9GeVPrrTij5yoI0+0i6MPml4ij6G1Is+TnqtPnwQhT4OO6Q+EtiGPvrRrT4aQ4U+csCmPky3iz5ywKY+TLeLPosNqj6WyYs+yT2PPngqiz7ZXZA+AKuOPhILjj6G1Is+aXiKPmiTkD5peIo+aJOQPlktuz7wqYw+WS27PvCpjD407bg+su2QPrG7uT7WuI0+AJC5PgjLjT407bg+su2QPowwnj4KDpE+6EiePsYFjz6MMJ4+Cg6RPuhInj7GBY8+XRaVPrSKkz5dFpU+tIqTPl0WlT60ipM+D+qLPi48lD4P6os+LjyUPg/qiz4uPJQ+MiezPiRNkz4yJ7M+JE2TPgoBsj60ipM+rjCvPpiZlD4Nxq4+KNeUPn5Vrj7gZJU+flWuPuBklT6RaJ4+RO2VPoM9nz5yRJY+kWiePkTtlT6DPZ8+ckSWPoR7nj5SZpg+hHuePlJmmD6Ee54+UmaYPuBkkT4uYZY+8oSSPhQZlj7yhJI+FBmWPnTVsj784po+dNWyPvzimj501bI+/OKaPn4AEwB6AIUARwBDAIUAQwB3ACEAFwBXAAIAHQBOAE4AOgBBAEEAewBrAGsAAgBOAE4AQQBrAGAALgBwAHAAMABkAHAAZABgAG0AEACBAD0AeABEABwAWwBNAAwAagB5AHkAEgBuAHkAbgAMAHwAQgBGAHwARgB/AIMAFQBAAEAAggARABEAfQBFAEUAgwBAAEAAEQBFAAUAXQAkAAUAJABQABYAhAB1AHUAcwAzAEkAFgB1AHUAMwBJAA4ANwA1AAQALAAOADUABAAOADsAOAAPAA8AdAB2AA8AdgA7AGgACwAHAC0ACQBsAGwAgAA+AD4AbwAtAGwAPgAtACcAYwApAGMAZgApAB4AIgBYAFgASgAaABoAAAAeAFgAGgAeAA0AKwBnAGcAMgByAGcAcgANAB8AAQBpAGkACABRAFMAHwBpAGkAUQBTADEAcQA/AD8AFABIAD8ASAAxADwATwBcAFwANgA5AFwAOQA8ACMAIABUAFQAUgAlACUAXwBWAFYAKAAqACoAAwA0ADQAWgAbABsASwAYACMAVAAlADQAGwAYABgAIwAlACUAVgAqACoANAAYACUAKgAYAFkAGQBMAAYACgAvAC8AYQBlAGUAYgAmACYAVQBeAF4ABgAvAC8AZQAmAC8AJgBeAABduT5wLcC+FU67PwBduT5wLcC+FU67PwBduT5wLcC+FU67PxDKKj/Q65++xRaTvxDKKj/Q65++xRaTv7B9wr9cN4o/sVaCP7B9wr9cN4o/sVaCP7B9wr9cN4o/sVaCP7B9wr9cN4o/sVaCP7DkpL9sTK0/3WKzP7DkpL9sTK0/3WKzP7DkpL9sTK0/3WKzP7DkpL9sTK0/3WKzP0Boxj40Xn8/MG2ov0Boxj40Xn8/MG2ov0Boxj40Xn8/MG2ovwAvMb4UriRAzebTPwAvMb4UriRAzebTPwAvMb4UriRAzebTPwAvMb4UriRAzebTPwA1Qb6uVERAPsxMvwA1Qb6uVERAPsxMvwA1Qb6uVERAPsxMvwCszT3QbR6//OMmvwCszT3QbR6//OMmvwCszT3QbR6//OMmvwCiSz9ANxW/4bKdPwCiSz9ANxW/4bKdPwCiSz9ANxW/4bKdPwCiSz9ANxW/4bKdP4DYUb5QRmq+CaLAP4DYUb5QRmq+CaLAP4DYUb5QRmq+CaLAPxBCL78wtNW+BFvLPhBCL78wtNW+BFvLPhBCL78wtNW+BFvLPrhgyr8AmGG+OoAoP7hgyr8AmGG+OoAoP2jMrb8A2ps8OUdSv2jMrb8A2ps8OUdSv2jMrb8A2ps8OUdSv4COWz7gVem+chmmv4COWz7gVem+chmmv4COWz7gVem+chmmv4COWz7gVem+chmmv3ACl78wmpc/uCN9PnACl78wmpc/uCN9PnACl78wmpc/uCN9PoDv0L6MbcI/Nb7Rv4Dv0L6MbcI/Nb7Rv4Dv0L6MbcI/Nb7Rv4Dv0L6MbcI/Nb7Rv1D7oj/wzWi+POvjvlD7oj/wzWi+POvjvlD7oj/wzWi+POvjvnDhnD8Y0UY//LXSvnDhnD8Y0UY//LXSvnDhnD8Y0UY//LXSvhC40D9ulZU/FILnPhC40D9ulZU/FILnPhC40D9ulZU/FILnPhC40D9ulZU/FILnPgDNqb/AECpADFCzPgDNqb/AECpADFCzPgDNqb/AECpADFCzPijM4D9+GAxAFH3SPijM4D9+GAxAFH3SPijM4D9+GAxAFH3SPijM4D9+GAxAFH3SPvAfkT+sXURAaDB6PvAfkT+sXURAaDB6PvAfkT+sXURAaDB6PgBjpb2kwx9AEnaqvwBjpb2kwx9AEnaqv8DN3T6gAU6/VFXYPsDN3T6gAU6/VFXYPsDN3T6gAU6/VFXYPjCIvT+A67a+4nMYPzCIvT+A67a+4nMYPzCIvT+A67a+4nMYP0jSo78A5Vy+JRqGP0jSo78A5Vy+JRqGP0jSo78A5Vy+JRqGP7AaMb/gdCq+dTi1P7AaMb/gdCq+dTi1PwDR1L8AmIw8CFwdvgDR1L8AmIw8CFwdvgC53T0AcGG/YOIEPQC53T0AcGG/YOIEPQC53T0AcGG/YOIEPVBxuT/g+Zq+wEXrPFBxuT/g+Zq+wEXrPFBxuT/g+Zq+wEXrPLB82L8oE6E+dIL/PrB82L8oE6E+dIL/PrB82L8oE6E+dIL/PsCdOL8wjos/cNWBvcCdOL8wjos/cNWBvWBzhL+AMR09aWigv2BzhL+AMR09aWigv/DaGr+o9Rk/7+W/v/DaGr+o9Rk/7+W/v/DaGr+o9Rk/7+W/v/DaGr+o9Rk/7+W/vwBi+j6gLBk/7afFPwBi+j6gLBk/7afFPwBi+j6gLBk/7afFPwBi+j6gLBk/7afFP+ARhb/M5fA/FSHRP+ARhb/M5fA/FSHRP+ARhb/M5fA/FSHRP/DMsL+iMPM/oNElvfDMsL+iMPM/oNElvfDMsL+iMPM/oNElvSBNdT+8Ec4/WRCmvyBNdT+8Ec4/WRCmvyBNdT+8Ec4/WRCmvzAotz+Q2uA/M6J5vzAotz+Q2uA/M6J5vzAotz+Q2uA/M6J5vzAotz+Q2uA/M6J5vwB9Sz+EBhFAzTXXPwB9Sz+EBhFAzTXXPwB9Sz+EBhFAzTXXPwB9Sz+EBhFAzTXXP0ATRj90DzJAHReqP0ATRj90DzJAHReqP0ATRj90DzJAHReqPxCInb/KDyVAFqtUPxCInb/KDyVAFqtUPxCInb/KDyVAFqtUP9CTMT/YvkpA3G30vtCTMT/YvkpA3G30vtCTMT/YvkpA3G30vor5j74+y2W/1sOtPvmbe76SS5A90n53P2QWNj824q29m6AyP3tUjb3TgH2/vN/3vQPZKz+D2DA9C209v62WV7+zGNq9nVQHP+X3PL9sPRA/b/e9vlE0q76kyii/X2MsP/mbe76SS5A90n53P/2hfb8oKKA7/9cKPuX3PL9sPRA/b/e9vlE0q76kyii/X2MsP+D5dL1jpvi9/qR9P5XYaD4fJgK+USl3vwPZKz+D2DA9C209v9BvPD+vrea+tVIBv1al+74krRg/w3YiP7j+Hb74qnc/EWNNPuD5dL1jpvi9/qR9P88qID4xtg8/mwlQP2zLOr+bCcc+XQMQv7j+Hb74qnc/EWNNPnStqj5EDeU+eXRUv/T4E79drUO/l0uSvntUjb3TgH2/vN/3vbgoDD/li0e/vtqbvor5j74+y2W/1sOtPntUjb3TgH2/vN/3vU43Yj6NM3i/9LLYvWQWNj824q29m6AyP4r5j74+y2W/1sOtPvmbe76SS5A90n53P3tUjb3TgH2/vN/3vfT4E79drUO/l0uSvor5j74+y2W/1sOtPntUjb3TgH2/vN/3va2WV7+zGNq9nVQHP3tUjb3TgH2/vN/3veX3PL9sPRA/b/e9voScgr5oMRO/0wJHv3tUjb3TgH2/vN/3vYScgr5oMRO/0wJHv3tUjb3TgH2/vN/3vZXYaD4fJgK+USl3vwPZKz+D2DA9C209v/2hfb8oKKA7/9cKPhAoZr+kcpe+QkmlvuX3PL9sPRA/b/e9vhAoZr+kcpe+QkmlvmzLOr+bCcc+XQMQv5XYaD4fJgK+USl3v3Stqj5EDeU+eXRUv3tUjb3TgH2/vN/3vQPZKz+D2DA9C209v8eLdD/6ipW80iWXvgPZKz+D2DA9C209v9BvPD+vrea+tVIBv8eLdD/6ipW80iWXvmQWNj824q29m6AyP9BvPD+vrea+tVIBv8eLdD/6ipW80iWXvoFFeT/1hQK+DElBvv2hfb8oKKA7/9cKPmzLOr+bCcc+XQMQv7j+Hb74qnc/EWNNPmQWNj824q29m6AyP41POz/tywE/tkTpPkH0Rj9TiwM/BwG6voFFeT/1hQK+DElBvrj+Hb74qnc/EWNNPo1POz/tywE/tkTpPkH0Rj9TiwM/BwG6vmzLOr+bCcc+XQMQv3Stqj5EDeU+eXRUv4r5j74+y2W/1sOtPntUjb3TgH2/vN/3vbgoDD/li0e/vtqbvk43Yj6NM3i/9LLYvWQWNj824q29m6AyP8eLdD/6ipW80iWXvq2WV7+zGNq9nVQHP/mbe76SS5A90n53P3tUjb3TgH2/vN/3vfmbe76SS5A90n53P3tUjb3TgH2/vN/3veX3PL9sPRA/b/e9vntUjb3TgH2/vN/3vfT4E79drUO/l0uSvor5j74+y2W/1sOtPrgoDD/li0e/vtqbvntUjb3TgH2/vN/3vU43Yj6NM3i/9LLYvceLdD/6ipW80iWXvq2WV7+zGNq9nVQHP+X3PL9sPRA/b/e9vntUjb3TgH2/vN/3vRAoZr+kcpe+QkmlvuX3PL9sPRA/b/e9vuX3PL9sPRA/b/e9voScgr5oMRO/0wJHvxAoZr+kcpe+QkmlvuX3PL9sPRA/b/e9voScgr5oMRO/0wJHv5XYaD4fJgK+USl3v1E0q76kyii/X2MsP/mbe76SS5A90n53P+D5dL1jpvi9/qR9P2QWNj824q29m6AyP/2hfb8oKKA7/9cKPlal+74krRg/w3YiP+D5dL1jpvi9/qR9P/2hfb8oKKA7/9cKPhAoZr+kcpe+QkmlvmzLOr+bCcc+XQMQv5XYaD4fJgK+USl3v3Stqj5EDeU+eXRUv9BvPD+vrea+tVIBv3Stqj5EDeU+eXRUv9BvPD+vrea+tVIBv0H0Rj9TiwM/BwG6voFFeT/1hQK+DElBvuD5dL1jpvi9/qR9P88qID4xtg8/mwlQP2QWNj824q29m6AyP41POz/tywE/tkTpPrj+Hb74qnc/EWNNPs8qID4xtg8/mwlQP41POz/tywE/tkTpPv2hfb8oKKA7/9cKPlal+74krRg/w3YiP7j+Hb74qnc/EWNNPrj+Hb74qnc/EWNNPnStqj5EDeU+eXRUv0H0Rj9TiwM/BwG6vphvnz48Z4o+q2OgPsykij57qaE+LLOKPlyIrz7SLow+vD6xPvaWiz6wiZA+MNqOPjsUkj52iJA+QhuTPkKOjj5CG5M+Qo6OPqgJlT7MLJM+Vg+UPiDDkT6cypM+kIWRPnr9lD5aaZI+0lO0PrLtkD7SU7Q+su2QPtJTtD6y7ZA+x/SZPip0lz7H9Jk+KnSXPi7PmT6UrJU+Ls+ZPpSslT45aIU+nNOZPjlohT6c05k+OWiFPpzTmT6uMK8+NECGPgk2tj7eu4c+5hKxPt67hz5S1aE+ar6KPrSLoz48Z4o+tIujPjxnij4TIaM+zKSKPtUCnD48Z4o+1QKcPjxnij5fGpo+GP+KPninjj4S2IY+eKeOPhLYhj54p44+EtiGPjdFkT7kRoo+54iPPhj/ij6wM4o+pNeLPviXuz5ibIw+r6S7PihPjD7OQbU+mpKKPsF2sT6edos+cZ2yPlziij5wnbI+Gv+KPiIwjj7CPZI+IjCOPsI9kj4Kxo0+su2QPpzHuD6QhZE+nMe4Ppp0kj7ub7g+BNKSPu5vuD4E0pI+P2yrPtIujD4C2a4+0i6MPv3jrD4yWow+8sqsPtZVkD70yqw+1lWQPvLKrD7WVZA+LWmnPspIkj6gzKY+oDmRPqDMpj6gOZE+LWmnPspIkj79Ko8+PCiXPv0qjz48KJc+h7WQPp6blj4xe6Y+ckSWPtnApz4UGZY+2cCnPhQZlj4xe6Y+ckSWPsN8qD54a5o+w3yoPnhrmj7DfKg+eGuaPudotz4035U+RCq3PqwHlz4OO6Q+wBiHPg47pD7AGIc+DjukPsAYhz4cSaY+FBKMPhxJpj4UEow+HEmmPhQSjD6X5JQ+zqSKPl0WlT6KwYo+SiKUPoBKij4ktpk+eCqLPvRnlT6604o+cqCNPtIujD5peIo+htSLPk56rT58EIU+DjukPhLYhj760a0+GkOFPnLApj5Mt4s+csCmPky3iz6LDao+lsmLPsk9jz54Kos+2V2QPgCrjj4SC44+htSLPml4ij5ok5A+aXiKPmiTkD5ZLbs+8KmMPlktuz7wqYw+NO24PrLtkD6xu7k+1riNPgCQuT4Iy40+NO24PrLtkD6MMJ4+Cg6RPuhInj7GBY8+jDCePgoOkT7oSJ4+xgWPPl0WlT60ipM+XRaVPrSKkz5dFpU+tIqTPg/qiz4uPJQ+D+qLPi48lD4P6os+LjyUPjInsz4kTZM+MiezPiRNkz4KAbI+tIqTPq4wrz6YmZQ+DcauPijXlD5+Va4+4GSVPn5Vrj7gZJU+kWiePkTtlT6DPZ8+ckSWPpFonj5E7ZU+gz2fPnJElj6Ee54+UmaYPoR7nj5SZpg+hHuePlJmmD7gZJE+LmGWPvKEkj4UGZY+8oSSPhQZlj501bI+/OKaPnTVsj784po+dNWyPvzimj5+ABMAegCFAEcAQwCFAEMAdwAhABcAVwACAB0ATgBOADoAQQBBAHsAawBrAAIATgBOAEEAawBgAC4AcABwADAAZABwAGQAYABtABAAgQA9AHgARAAcAFsATQAMAGoAeQB5ABIAbgB5AG4ADAB8AEIARgB8AEYAfwCDABUAQABAAIIAEQARAH0ARQBFAIMAQABAABEARQAFAF0AJAAFACQAUAAWAIQAdQB1AHMAMwBJABYAdQB1ADMASQAOADcANQAEACwADgA1AAQADgA7ADgADwAPAHQAdgAPAHYAOwBoAAsABwAtAAkAbABsAIAAPgA+AG8ALQBsAD4ALQAnAGMAKQBjAGYAKQAeACIAWABYAEoAGgAaAAAAHgBYABoAHgANACsAZwBnADIAcgBnAHIADQAfAAEAaQBpAAgAUQBTAB8AaQBpAFEAUwAxAHEAPwA/ABQASAA/AEgAMQA8AE8AXABcADYAOQBcADkAPAAjACAAVABUAFIAJQAlAF8AVgBWACgAKgAqAAMANAA0AFoAGwAbAEsAGAAjAFQAJQA0ABsAGAAYACMAJQAlAFYAKgAqADQAGAAlACoAGABZABkATAAGAAoALwAvAGEAZQBlAGIAJgAmAFUAXgBeAAYALwAvAGUAJgAvACYAXgAAXbk+cC3AvhVOuz8AXbk+cC3AvhVOuz8AXbk+cC3AvhVOuz8Qyio/0OufvsUWk78Qyio/0OufvsUWk7+wfcK/XDeKP7FWgj+wfcK/XDeKP7FWgj+wfcK/XDeKP7FWgj+wfcK/XDeKP7FWgj+w5KS/bEytP91isz+w5KS/bEytP91isz+w5KS/bEytP91isz+w5KS/bEytP91isz9AaMY+NF5/PzBtqL9AaMY+NF5/PzBtqL9AaMY+NF5/PzBtqL8ALzG+FK4kQM3m0z8ALzG+FK4kQM3m0z8ALzG+FK4kQM3m0z8ALzG+FK4kQM3m0z8ANUG+rlREQD7MTL8ANUG+rlREQD7MTL8ANUG+rlREQD7MTL8ArM090G0ev/zjJr8ArM090G0ev/zjJr8ArM090G0ev/zjJr8Aoks/QDcVv+GynT8Aoks/QDcVv+GynT8Aoks/QDcVv+GynT8Aoks/QDcVv+GynT+A2FG+UEZqvgmiwD+A2FG+UEZqvgmiwD+A2FG+UEZqvgmiwD8QQi+/MLTVvgRbyz4QQi+/MLTVvgRbyz4QQi+/MLTVvgRbyz64YMq/AJhhvjqAKD+4YMq/AJhhvjqAKD9ozK2/ANqbPDlHUr9ozK2/ANqbPDlHUr9ozK2/ANqbPDlHUr+Ajls+4FXpvnIZpr+Ajls+4FXpvnIZpr+Ajls+4FXpvnIZpr+Ajls+4FXpvnIZpr9wApe/MJqXP7gjfT5wApe/MJqXP7gjfT5wApe/MJqXP7gjfT6A79C+jG3CPzW+0b+A79C+jG3CPzW+0b+A79C+jG3CPzW+0b+A79C+jG3CPzW+0b9Q+6I/8M1ovjzr475Q+6I/8M1ovjzr475Q+6I/8M1ovjzr475w4Zw/GNFGP/y10r5w4Zw/GNFGP/y10r5w4Zw/GNFGP/y10r4QuNA/bpWVPxSC5z4QuNA/bpWVPxSC5z4QuNA/bpWVPxSC5z4QuNA/bpWVPxSC5z4Azam/wBAqQAxQsz4Azam/wBAqQAxQsz4Azam/wBAqQAxQsz4ozOA/fhgMQBR90j4ozOA/fhgMQBR90j4ozOA/fhgMQBR90j4ozOA/fhgMQBR90j7wH5E/rF1EQGgwej7wH5E/rF1EQGgwej7wH5E/rF1EQGgwej4AY6W9pMMfQBJ2qr8AY6W9pMMfQBJ2qr/Azd0+oAFOv1RV2D7Azd0+oAFOv1RV2D7Azd0+oAFOv1RV2D4wiL0/gOu2vuJzGD8wiL0/gOu2vuJzGD8wiL0/gOu2vuJzGD9I0qO/AOVcviUahj9I0qO/AOVcviUahj9I0qO/AOVcviUahj+wGjG/4HQqvnU4tT+wGjG/4HQqvnU4tT8A0dS/AJiMPAhcHb4A0dS/AJiMPAhcHb4Aud09AHBhv2DiBD0Aud09AHBhv2DiBD0Aud09AHBhv2DiBD1Qcbk/4PmavsBF6zxQcbk/4PmavsBF6zxQcbk/4PmavsBF6zywfNi/KBOhPnSC/z6wfNi/KBOhPnSC/z6wfNi/KBOhPnSC/z7AnTi/MI6LP3DVgb3AnTi/MI6LP3DVgb1gc4S/gDEdPWlooL9gc4S/gDEdPWlooL/w2hq/qPUZP+/lv7/w2hq/qPUZP+/lv7/w2hq/qPUZP+/lv7/w2hq/qPUZP+/lv78AYvo+oCwZP+2nxT8AYvo+oCwZP+2nxT8AYvo+oCwZP+2nxT8AYvo+oCwZP+2nxT/gEYW/zOXwPxUh0T/gEYW/zOXwPxUh0T/gEYW/zOXwPxUh0T/wzLC/ojDzP6DRJb3wzLC/ojDzP6DRJb3wzLC/ojDzP6DRJb0gTXU/vBHOP1kQpr8gTXU/vBHOP1kQpr8gTXU/vBHOP1kQpr8wKLc/kNrgPzOieb8wKLc/kNrgPzOieb8wKLc/kNrgPzOieb8wKLc/kNrgPzOieb8AfUs/hAYRQM011z8AfUs/hAYRQM011z8AfUs/hAYRQM011z8AfUs/hAYRQM011z9AE0Y/dA8yQB0Xqj9AE0Y/dA8yQB0Xqj9AE0Y/dA8yQB0Xqj8QiJ2/yg8lQBarVD8QiJ2/yg8lQBarVD8QiJ2/yg8lQBarVD/QkzE/2L5KQNxt9L7QkzE/2L5KQNxt9L7QkzE/2L5KQNxt9L6K+Y++Pstlv9bDrT75m3u+kkuQPdJ+dz9kFjY/NuKtvZugMj97VI2904B9v7zf970D2Ss/g9gwPQttPb+tlle/sxjavZ1UBz/l9zy/bD0QP2/3vb5RNKu+pMoov19jLD/5m3u+kkuQPdJ+dz/9oX2/KCigO//XCj7l9zy/bD0QP2/3vb5RNKu+pMoov19jLD/g+XS9Y6b4vf6kfT+V2Gg+HyYCvlEpd78D2Ss/g9gwPQttPb/Qbzw/r63mvrVSAb9Wpfu+JK0YP8N2Ij+4/h2++Kp3PxFjTT7g+XS9Y6b4vf6kfT/PKiA+MbYPP5sJUD9syzq/mwnHPl0DEL+4/h2++Kp3PxFjTT50rao+RA3lPnl0VL/0+BO/Xa1Dv5dLkr57VI2904B9v7zf9724KAw/5YtHv77am76K+Y++Pstlv9bDrT57VI2904B9v7zf971ON2I+jTN4v/Sy2L1kFjY/NuKtvZugMj+K+Y++Pstlv9bDrT75m3u+kkuQPdJ+dz97VI2904B9v7zf9730+BO/Xa1Dv5dLkr6K+Y++Pstlv9bDrT57VI2904B9v7zf972tlle/sxjavZ1UBz97VI2904B9v7zf973l9zy/bD0QP2/3vb6EnIK+aDETv9MCR797VI2904B9v7zf972EnIK+aDETv9MCR797VI2904B9v7zf972V2Gg+HyYCvlEpd78D2Ss/g9gwPQttPb/9oX2/KCigO//XCj4QKGa/pHKXvkJJpb7l9zy/bD0QP2/3vb4QKGa/pHKXvkJJpb5syzq/mwnHPl0DEL+V2Gg+HyYCvlEpd790rao+RA3lPnl0VL97VI2904B9v7zf970D2Ss/g9gwPQttPb/Hi3Q/+oqVvNIll74D2Ss/g9gwPQttPb/Qbzw/r63mvrVSAb/Hi3Q/+oqVvNIll75kFjY/NuKtvZugMj/Qbzw/r63mvrVSAb/Hi3Q/+oqVvNIll76BRXk/9YUCvgxJQb79oX2/KCigO//XCj5syzq/mwnHPl0DEL+4/h2++Kp3PxFjTT5kFjY/NuKtvZugMj+NTzs/7csBP7ZE6T5B9EY/U4sDPwcBur6BRXk/9YUCvgxJQb64/h2++Kp3PxFjTT6NTzs/7csBP7ZE6T5B9EY/U4sDPwcBur5syzq/mwnHPl0DEL90rao+RA3lPnl0VL+K+Y++Pstlv9bDrT57VI2904B9v7zf9724KAw/5YtHv77am75ON2I+jTN4v/Sy2L1kFjY/NuKtvZugMj/Hi3Q/+oqVvNIll76tlle/sxjavZ1UBz/5m3u+kkuQPdJ+dz97VI2904B9v7zf9735m3u+kkuQPdJ+dz97VI2904B9v7zf973l9zy/bD0QP2/3vb57VI2904B9v7zf9730+BO/Xa1Dv5dLkr6K+Y++Pstlv9bDrT64KAw/5YtHv77am757VI2904B9v7zf971ON2I+jTN4v/Sy2L3Hi3Q/+oqVvNIll76tlle/sxjavZ1UBz/l9zy/bD0QP2/3vb57VI2904B9v7zf970QKGa/pHKXvkJJpb7l9zy/bD0QP2/3vb7l9zy/bD0QP2/3vb6EnIK+aDETv9MCR78QKGa/pHKXvkJJpb7l9zy/bD0QP2/3vb6EnIK+aDETv9MCR7+V2Gg+HyYCvlEpd79RNKu+pMoov19jLD/5m3u+kkuQPdJ+dz/g+XS9Y6b4vf6kfT9kFjY/NuKtvZugMj/9oX2/KCigO//XCj5Wpfu+JK0YP8N2Ij/g+XS9Y6b4vf6kfT/9oX2/KCigO//XCj4QKGa/pHKXvkJJpb5syzq/mwnHPl0DEL+V2Gg+HyYCvlEpd790rao+RA3lPnl0VL/Qbzw/r63mvrVSAb90rao+RA3lPnl0VL/Qbzw/r63mvrVSAb9B9EY/U4sDPwcBur6BRXk/9YUCvgxJQb7g+XS9Y6b4vf6kfT/PKiA+MbYPP5sJUD9kFjY/NuKtvZugMj+NTzs/7csBP7ZE6T64/h2++Kp3PxFjTT7PKiA+MbYPP5sJUD+NTzs/7csBP7ZE6T79oX2/KCigO//XCj5Wpfu+JK0YP8N2Ij+4/h2++Kp3PxFjTT64/h2++Kp3PxFjTT50rao+RA3lPnl0VL9B9EY/U4sDPwcBur6Yb58+PGeKPqtjoD7MpIo+e6mhPiyzij5ciK8+0i6MPrw+sT72los+sImQPjDajj47FJI+doiQPkIbkz5Cjo4+QhuTPkKOjj6oCZU+zCyTPlYPlD4gw5E+nMqTPpCFkT56/ZQ+WmmSPtJTtD6y7ZA+0lO0PrLtkD7SU7Q+su2QPsf0mT4qdJc+x/SZPip0lz4uz5k+lKyVPi7PmT6UrJU+OWiFPpzTmT45aIU+nNOZPjlohT6c05k+rjCvPjRAhj4JNrY+3ruHPuYSsT7eu4c+UtWhPmq+ij60i6M+PGeKPrSLoz48Z4o+EyGjPsykij7VApw+PGeKPtUCnD48Z4o+XxqaPhj/ij54p44+EtiGPninjj4S2IY+eKeOPhLYhj43RZE+5EaKPueIjz4Y/4o+sDOKPqTXiz74l7s+YmyMPq+kuz4oT4w+zkG1PpqSij7BdrE+nnaLPnGdsj5c4oo+cJ2yPhr/ij4iMI4+wj2SPiIwjj7CPZI+CsaNPrLtkD6cx7g+kIWRPpzHuD6adJI+7m+4PgTSkj7ub7g+BNKSPj9sqz7SLow+AtmuPtIujD7946w+MlqMPvLKrD7WVZA+9MqsPtZVkD7yyqw+1lWQPi1ppz7KSJI+oMymPqA5kT6gzKY+oDmRPi1ppz7KSJI+/SqPPjwolz79Ko8+PCiXPoe1kD6em5Y+MXumPnJElj7ZwKc+FBmWPtnApz4UGZY+MXumPnJElj7DfKg+eGuaPsN8qD54a5o+w3yoPnhrmj7naLc+NN+VPkQqtz6sB5c+DjukPsAYhz4OO6Q+wBiHPg47pD7AGIc+HEmmPhQSjD4cSaY+FBKMPhxJpj4UEow+l+SUPs6kij5dFpU+isGKPkoilD6ASoo+JLaZPngqiz70Z5U+utOKPnKgjT7SLow+aXiKPobUiz5Oeq0+fBCFPg47pD4S2IY++tGtPhpDhT5ywKY+TLeLPnLApj5Mt4s+iw2qPpbJiz7JPY8+eCqLPtldkD4Aq44+EguOPobUiz5peIo+aJOQPml4ij5ok5A+WS27PvCpjD5ZLbs+8KmMPjTtuD6y7ZA+sbu5Pta4jT4AkLk+CMuNPjTtuD6y7ZA+jDCePgoOkT7oSJ4+xgWPPowwnj4KDpE+6EiePsYFjz5dFpU+tIqTPl0WlT60ipM+XRaVPrSKkz4P6os+LjyUPg/qiz4uPJQ+D+qLPi48lD4yJ7M+JE2TPjInsz4kTZM+CgGyPrSKkz6uMK8+mJmUPg3Grj4o15Q+flWuPuBklT5+Va4+4GSVPpFonj5E7ZU+gz2fPnJElj6RaJ4+RO2VPoM9nz5yRJY+hHuePlJmmD6Ee54+UmaYPoR7nj5SZpg+4GSRPi5hlj7yhJI+FBmWPvKEkj4UGZY+dNWyPvzimj501bI+/OKaPnTVsj784po+fgATAHoAhQBHAEMAhQBDAHcAIQAXAFcAAgAdAE4ATgA6AEEAQQB7AGsAawACAE4ATgBBAGsAYAAuAHAAcAAwAGQAcABkAGAAbQAQAIEAPQB4AEQAHABbAE0ADABqAHkAeQASAG4AeQBuAAwAfABCAEYAfABGAH8AgwAVAEAAQACCABEAEQB9AEUARQCDAEAAQAARAEUABQBdACQABQAkAFAAFgCEAHUAdQBzADMASQAWAHUAdQAzAEkADgA3ADUABAAsAA4ANQAEAA4AOwA4AA8ADwB0AHYADwB2ADsAaAALAAcALQAJAGwAbACAAD4APgBvAC0AbAA+AC0AJwBjACkAYwBmACkAHgAiAFgAWABKABoAGgAAAB4AWAAaAB4ADQArAGcAZwAyAHIAZwByAA0AHwABAGkAaQAIAFEAUwAfAGkAaQBRAFMAMQBxAD8APwAUAEgAPwBIADEAPABPAFwAXAA2ADkAXAA5ADwAIwAgAFQAVABSACUAJQBfAFYAVgAoACoAKgADADQANABaABsAGwBLABgAIwBUACUANAAbABgAGAAjACUAJQBWACoAKgA0ABgAJQAqABgAWQAZAEwABgAKAC8ALwBhAGUAZQBiACYAJgBVAF4AXgAGAC8ALwBlACYALwAmAF4A"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        1.756230354309082,
+        3.167898178100586,
+        1.681329369544983
+      ],
+      "min": [
+        -1.691305160522461,
+        -0.880615234375,
+        -1.6386171579360962
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        0.9737167954444885,
+        0.9674525260925293,
+        0.990798830986023
+      ],
+      "min": [
+        -0.9907529950141907,
+        -0.9902469515800476,
+        -0.9654741883277893
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        0.36649081110954285,
+        0.3025130033493042
+      ],
+      "min": [
+        0.2605607807636261,
+        0.2598913908004761
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 246,
+      "max": [
+        133
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        1.756230354309082,
+        3.167898178100586,
+        1.681329369544983
+      ],
+      "min": [
+        -1.691305160522461,
+        -0.880615234375,
+        -1.6386171579360962
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        0.9737167954444885,
+        0.9674525260925293,
+        0.990798830986023
+      ],
+      "min": [
+        -0.9907529950141907,
+        -0.9902469515800476,
+        -0.9654741883277893
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        0.36649081110954285,
+        0.3025130033493042
+      ],
+      "min": [
+        0.2605607807636261,
+        0.2598913908004761
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5123,
+      "count": 246,
+      "max": [
+        133
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        1.756230354309082,
+        3.167898178100586,
+        1.681329369544983
+      ],
+      "min": [
+        -1.691305160522461,
+        -0.880615234375,
+        -1.6386171579360962
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        0.9737167954444885,
+        0.9674525260925293,
+        0.990798830986023
+      ],
+      "min": [
+        -0.9907529950141907,
+        -0.9902469515800476,
+        -0.9654741883277893
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 134,
+      "max": [
+        0.36649081110954285,
+        0.3025130033493042
+      ],
+      "min": [
+        0.2605607807636261,
+        0.2598913908004761
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5123,
+      "count": 246,
+      "max": [
+        133
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.34191442489801843,
+          0.1878207722902346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.995
+      },
+      "doubleSided": false
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 7,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 3
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 7,
+          "material": 4
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 5
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 6
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 7,
+          "material": 7
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 8
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 9
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 7,
+          "material": 10
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 11
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 12
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 7,
+          "material": 13
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 14
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 15
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 7,
+          "material": 16
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 17
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 18
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 19
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 20
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 21
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 22
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 23
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 24
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 25
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 26
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 27
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 28
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 29
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 7,
+          "material": 30
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 31
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 32
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 33
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 34
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 35
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 3,
+          "material": 36
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 7,
+          "material": 37
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "extras": {
+            "parameters": {
+              "width": 3.447535514831543,
+              "height": 4.048513412475586,
+              "depth": 3.319946527481079,
+              "subdivisions": 0
+            },
+            "type": "NonParametricGeometry"
+          },
+          "indices": 11,
+          "material": 38
+        }
+      ]
+    }
+  ],
+  "cameras": [
+    {
+      "type": "perspective",
+      "perspective": {
+        "aspectRatio": 2.458899213724089,
+        "yfov": 0.7853981633974483,
+        "zfar": 100000,
+        "znear": 70
+      }
+    }
+  ]
+}

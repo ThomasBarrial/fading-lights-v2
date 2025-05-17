@@ -22,6 +22,9 @@ export type InteractivePlateformeType = {
 
 function Level1Block4() {
   const { scene: block4 } = useGLTF("/models/level1/level_1_block_4.gltf");
+  const { scene: grass } = useGLTF("/models/level1/grass_block_4.gltf");
+  const { scene: rocks } = useGLTF("/models/level1/rocks_block4.gltf");
+  const { scene: plants } = useGLTF("/models/level1/plants_block_4.gltf");
 
   const sequenceRef = useRef<string[]>([]);
   const [currentStep, setCurrentStep] = useState(0);
@@ -43,8 +46,10 @@ function Level1Block4() {
   useEffect(() => {
     if (block4) {
       enableShadowsRecursively(block4);
+      enableShadowsRecursively(grass);
+      enableShadowsRecursively(plants);
     }
-  }, [block4]);
+  }, [block4, grass, plants]);
 
   const lightUp = (id: string, duration = 600) => {
     const ref = lightRefs.current.get(id);
@@ -216,6 +221,25 @@ function Level1Block4() {
         />
       </RigidBody>
 
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
+        object={grass}
+        scale={1.1}
+        position={[0, 0.8, 0]}
+      />
+
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
+        object={rocks}
+        scale={1.1}
+        position={[0, 0.8, 0]}
+      />
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
+        object={plants}
+        scale={1.1}
+        position={[0, 0.8, 0]}
+      />
       {interactivePlateform.map((plateform, index) => (
         <InteractivePlateforme
           isSequenceStarted={isSequenceStarted}
@@ -323,3 +347,6 @@ function Level1Block4() {
 export default Level1Block4;
 
 useGLTF.preload("/models/level1/level_1_block_4.gltf");
+useGLTF.preload("/models/level1/grass_block_4.gltf");
+useGLTF.preload("/models/level1/rocks_block4.gltf");
+useGLTF.preload("/models/level1/plants_block_4.gltf");

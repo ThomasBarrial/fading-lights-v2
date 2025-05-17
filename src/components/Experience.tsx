@@ -34,7 +34,7 @@ export default function Experience({ level }: ExperienceProps) {
           { name: "jump", keys: ["Space"] },
         ]}
       >
-        <Canvas shadows camera={{ fov: 45 }}>
+        <Canvas shadows camera={{ fov: 45, near: 0.1, far: 100 }}>
           <Perf />
 
           <color attach="background" args={["#D6E892"]} />

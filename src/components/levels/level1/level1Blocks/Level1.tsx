@@ -86,7 +86,11 @@ function Level1({
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
     }
-    if (currentCheckpoint.current === "checkpoint4" && translation.y < 1) {
+    if (
+      currentCheckpoint.current === "checkpoint4" &&
+      translation.z < -115 &&
+      translation.y < 1
+    ) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 9.6, z: -80.5 }, true);
       isPlayerDied.current = false;
       boostStore.isBoosted = false;
