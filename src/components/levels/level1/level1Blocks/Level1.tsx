@@ -43,14 +43,6 @@ function Level1({
       lightPosition: [1.28, 1.7, 0.65] as [number, number, number],
       particlesPosition: [-0.75, 4, -22.7] as [number, number, number],
     },
-    {
-      name: "checkpoint4",
-      position: [-1.5, 5.9, -80.5] as [number, number, number],
-      size: [7, 0.4, 2] as [number, number, number],
-      onActivate: () => onCheckpointactivated("checkpoint4"),
-      lightPosition: [-2.8, 1.2, -0.1] as [number, number, number],
-      particlesPosition: [-4.3, 7, -80.6] as [number, number, number],
-    },
   ];
 
   useFrame(() => {
@@ -65,6 +57,7 @@ function Level1({
 
     if (
       currentCheckpoint.current === "checkpoint2" &&
+      translation.z > -85 &&
       (translation.y < 1 || isPlayerDied.current)
     ) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 4.6, z: -23 }, true);
@@ -72,16 +65,16 @@ function Level1({
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
     }
-    if (
-      currentCheckpoint.current === "checkpoint4" &&
-      translation.z > -85 &&
-      translation.y < 1
-    ) {
-      rigidBodyRef.current?.setTranslation({ x: -2, y: 9.6, z: -80.5 }, true);
-      isPlayerDied.current = false;
-      boostStore.isBoosted = false;
-      boostStore.resetBoosts();
-    }
+    // if (
+    //   currentCheckpoint.current === "checkpoint4" &&
+    //   translation.z > -85 &&
+    //   translation.y < 1
+    // ) {
+    //   rigidBodyRef.current?.setTranslation({ x: -2, y: 9.6, z: -80.5 }, true);
+    //   isPlayerDied.current = false;
+    //   boostStore.isBoosted = false;
+    //   boostStore.resetBoosts();
+    // }
   });
 
   return (
