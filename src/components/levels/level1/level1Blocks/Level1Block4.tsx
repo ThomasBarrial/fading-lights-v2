@@ -268,7 +268,7 @@ function Level1Block4() {
       <RigidBody
         type="fixed"
         colliders="cuboid"
-        position={[-2.5, 7.2, -103.7]}
+        position={[-2.5, 7.2, -105]}
         sensor
         onIntersectionEnter={({ other }) => {
           if (other.rigidBodyObject?.name === "player") {
@@ -277,7 +277,7 @@ function Level1Block4() {
         }}
       >
         <mesh name="launchSequence">
-          <boxGeometry args={[6, 0.4, 2]} />
+          <boxGeometry args={[6, 0.4, 4]} />
           <meshStandardMaterial color="hotpink" transparent opacity={0} />
         </mesh>
       </RigidBody>
