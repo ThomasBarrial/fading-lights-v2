@@ -38,7 +38,7 @@ function Level1Block3() {
           number,
           number,
         ],
-        frequency: 0.2,
+        frequency: 0,
         phase: 0,
         min: -1.8,
         max: -0.8,
@@ -52,8 +52,8 @@ function Level1Block3() {
           number,
           number,
         ],
-        frequency: 0.2,
-        phase: 2,
+        frequency: 0,
+        phase: 0,
         min: -1.8,
         max: -0.8,
       },
@@ -66,8 +66,8 @@ function Level1Block3() {
           number,
           number,
         ],
-        frequency: 0.3,
-        phase: 5,
+        frequency: 0,
+        phase: 0,
         min: -1.8,
         max: -0.8,
       },
@@ -81,7 +81,7 @@ function Level1Block3() {
           number,
         ],
         frequency: 0.3,
-        phase: 5,
+        phase: 0,
         min: -2,
         max: -0.9,
       },
@@ -95,34 +95,34 @@ function Level1Block3() {
           number,
         ],
         frequency: 0.2,
-        phase: 1,
+        phase: 0.1,
         min: 1.5,
         max: 0.6,
       },
     ];
   }, []);
 
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime();
+  // useFrame(({ clock }) => {
+  //   const t = clock.getElapsedTime();
 
-    spikes.forEach((spike) => {
-      const { ref, min, max, frequency, phase } = spike;
+  //   spikes.forEach((spike) => {
+  //     const { ref, min, max, frequency, phase } = spike;
 
-      if (!ref.current) return;
-      const range = max - min;
-      const osc = (Math.sin(t * frequency * Math.PI * 2 + phase) + 1) / 2;
-      const x = min + osc * range;
+  //     if (!ref.current) return;
+  //     const range = max - min;
+  //     const osc = (Math.sin(t * frequency * Math.PI * 2 + phase) + 1) / 2;
+  //     const x = min + osc * range;
 
-      ref.current.setTranslation(
-        {
-          x: x,
-          y: spike.position[1],
-          z: spike.position[2],
-        },
-        true,
-      );
-    });
-  });
+  //     ref.current.setTranslation(
+  //       {
+  //         x: x,
+  //         y: spike.position[1],
+  //         z: spike.position[2],
+  //       },
+  //       true,
+  //     );
+  //   });
+  // });
 
   return (
     <group>

@@ -43,7 +43,7 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         min: -0.3,
         max: -1.9,
         z: -32.7,
-        frequency: 0.8,
+        frequency: 0.2,
         phase: 0,
       },
       {
@@ -52,7 +52,7 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         min: -2.8,
         max: -1.6,
         z: -32.85,
-        frequency: 0.75,
+        frequency: 0.2,
         phase: Math.PI / 2,
       },
       {
@@ -61,7 +61,7 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         min: 0.2,
         max: -1.8,
         z: -33.2,
-        frequency: 0.8,
+        frequency: 0.1,
         phase: Math.PI,
       },
     ];
