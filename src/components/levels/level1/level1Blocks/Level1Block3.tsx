@@ -102,27 +102,27 @@ function Level1Block3() {
     ];
   }, []);
 
-  // useFrame(({ clock }) => {
-  //   const t = clock.getElapsedTime();
+  useFrame(({ clock }) => {
+    const t = clock.getElapsedTime();
 
-  //   spikes.forEach((spike) => {
-  //     const { ref, min, max, frequency, phase } = spike;
+    spikes.forEach((spike) => {
+      const { ref, min, max, frequency, phase } = spike;
 
-  //     if (!ref.current) return;
-  //     const range = max - min;
-  //     const osc = (Math.sin(t * frequency * Math.PI * 2 + phase) + 1) / 2;
-  //     const x = min + osc * range;
+      if (!ref.current) return;
+      const range = max - min;
+      const osc = (Math.sin(t * frequency * Math.PI * 2 + phase) + 1) / 2;
+      const x = min + osc * range;
 
-  //     ref.current.setTranslation(
-  //       {
-  //         x: x,
-  //         y: spike.position[1],
-  //         z: spike.position[2],
-  //       },
-  //       true,
-  //     );
-  //   });
-  // });
+      ref.current.setTranslation(
+        {
+          x: x,
+          y: spike.position[1],
+          z: spike.position[2],
+        },
+        true,
+      );
+    });
+  });
 
   return (
     <group>
