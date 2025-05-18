@@ -212,7 +212,7 @@ function Level1Block4() {
   });
 
   return (
-    <group>
+    <group position={[0, -0.5, 32]}>
       <RigidBody type="fixed" colliders="trimesh">
         <primitive
           rotation={[0, Math.PI / 2, 0]}

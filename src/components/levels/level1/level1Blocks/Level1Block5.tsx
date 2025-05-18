@@ -7,7 +7,7 @@ import trees_block5 from "@/utils/level1/block5/trees_block5";
 function Level1Block5() {
   const { scene: block5 } = useGLTF("/models/level1/level_1_block_5.gltf");
   return (
-    <group>
+    <group position={[0, 0, 31]}>
       <primitive
         rotation={[0, Math.PI / 2, 0]}
         scale={1.1}

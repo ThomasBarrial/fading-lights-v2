@@ -8,7 +8,7 @@ import Checkpoint from "../CheckPoint";
 import Level1Block2 from "./Level1Block2";
 import Boost from "@/components/models/Boost";
 import { useBoostStore } from "@/store/useBoostStore";
-import Level1Block3 from "./Level1Block3";
+// import Level1Block3 from "./Level1Block3";
 import Level1Block4 from "./Level1Block4";
 
 import Level1Block5 from "./Level1Block5";
@@ -44,14 +44,6 @@ function Level1({
       particlesPosition: [-0.75, 4, -22.7] as [number, number, number],
     },
     {
-      name: "checkpoint3",
-      position: [-2, 2.5, -51.3] as [number, number, number],
-      size: [8, 0.4, 2] as [number, number, number],
-      onActivate: () => onCheckpointactivated("checkpoint3"),
-      lightPosition: [-2.1, 1.5, -0.3] as [number, number, number],
-      particlesPosition: [-4.1, 4, -51.6] as [number, number, number],
-    },
-    {
       name: "checkpoint4",
       position: [-1.5, 5.9, -80.5] as [number, number, number],
       size: [7, 0.4, 2] as [number, number, number],
@@ -80,15 +72,9 @@ function Level1({
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
     }
-    if (currentCheckpoint.current === "checkpoint3" && translation.y < 1) {
-      rigidBodyRef.current?.setTranslation({ x: -2, y: 2.6, z: -51 }, true);
-      isPlayerDied.current = false;
-      boostStore.isBoosted = false;
-      boostStore.resetBoosts();
-    }
     if (
       currentCheckpoint.current === "checkpoint4" &&
-      translation.z > -115 &&
+      translation.z > -85 &&
       translation.y < 1
     ) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 9.6, z: -80.5 }, true);
@@ -104,7 +90,7 @@ function Level1({
       {/* Sol */}
       <RigidBody type="fixed" colliders="cuboid">
         <mesh receiveShadow position={[-5, 0.4, -33]}>
-          <boxGeometry args={[70, 0.2, 160]} />
+          <boxGeometry args={[70, 0.2, 96]} />
           <meshStandardMaterial color={"#527650"} />
         </mesh>
       </RigidBody>
@@ -135,16 +121,16 @@ function Level1({
       />
       <Boost
         id="boost3"
-        position={[-2, 6, -85]}
+        position={[-2, 5.5, -56]}
         corruptionValue={0.17}
-        lightPosition={[-2, 6.2, -85]}
+        lightPosition={[-2, 5.5, -56]}
       />
       {/* Blocks */}
       <Level1Block1 />
       <Level1Block2 isPlayerDied={isPlayerDied} />
-      <Level1Block3 />
       <Level1Block4 />
       <Level1Block5 />
+      {/* <Level1Block3 /> */}
     </group>
   );
 }

@@ -2,7 +2,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
 import { Suspense, useEffect, useRef, useState } from "react";
-import { KeyboardControls } from "@react-three/drei";
+import { KeyboardControls, OrbitControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
 import Charactere from "./Charactere";
 import Level1 from "./levels/level1/level1Blocks/Level1";
@@ -52,7 +52,7 @@ export default function Experience({ level }: ExperienceProps) {
 
           <color attach="background" args={["#D6E892"]} />
           <fog attach="fog" args={[fogColor, 10, 30]} />
-          {/* <OrbitControls /> */}
+          <OrbitControls />
           <Leva hidden />
           <Lights />
           <Suspense fallback={<SceneLoader />}>

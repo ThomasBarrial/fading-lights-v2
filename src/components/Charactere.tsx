@@ -51,11 +51,11 @@ function Charactere({
     [isBoosted, baseDash, boostedDash],
   );
 
-  const intialPostion = new THREE.Vector3(-1, 2, 0);
+  // const intialPostion = new THREE.Vector3(-1, 2, 0);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -50.5);
-  // const intialPostion = new THREE.Vector3(-2, 9.6, -80);
+  const intialPostion = new THREE.Vector3(-2, 9.6, -80);
   // const intialPostion = new THREE.Vector3(-2, 9.6, -110);
 
   useEffect(() => {
@@ -171,7 +171,7 @@ function Charactere({
     // Smooth follow
     cameraFollowRef.current.position.lerp(bodyPos, 8 * delta);
 
-    const idealOffset = new THREE.Vector3(5.5, 8, 4.5); // (inversé selon besoin)
+    const idealOffset = new THREE.Vector3(5.5, 10, 4.5); // (inversé selon besoin)
     const idealLookAt = new THREE.Vector3(0, 0, 0);
 
     const cameraPos = cameraFollowRef.current.position.clone().add(idealOffset);

@@ -13,7 +13,6 @@ function Level1Block3() {
     "/models/level1/block_3/level_1_block_3.gltf",
   );
   const { scene: spike } = useGLTF("/models/level1/block_3/plate_block3.gltf");
-  const { scene: river } = useGLTF("/models/level1/block_3/river.gltf");
   const { scene: grass } = useGLTF("/models/level1/block_3/grass_block_3.gltf");
   const { scene: plants } = useGLTF(
     "/models/level1/block_3/plants_block_3.gltf",
@@ -150,13 +149,6 @@ function Level1Block3() {
 
       <primitive
         rotation={[0, Math.PI / 2, 0]}
-        object={river}
-        scale={1.1}
-        position={[0.4, 0.5, 0]}
-      />
-
-      <primitive
-        rotation={[0, Math.PI / 2, 0]}
         object={plants}
         scale={1.1}
         position={[0, 0.8, 0]}
@@ -183,6 +175,5 @@ export default Level1Block3;
 
 useGLTF.preload("/models/level1/block_3/level_1_block_3.gltf");
 useGLTF.preload("/models/level1/block_3/plate_block3.gltf");
-useGLTF.preload("/models/level1/block_3/river.gltf");
 useGLTF.preload("/models/level1/block_3/grass_block_3.gltf");
 useGLTF.preload("/models/level1/block_3/plants_block_3.gltf");
