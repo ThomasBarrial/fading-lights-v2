@@ -18,14 +18,14 @@ export default function Lights() {
         color={"#CE9562"}
         ref={light}
         castShadow
-        position={[4, 3, 1]}
-        intensity={1.5}
-        shadow-mapSize={[2024, 2024]}
+        position={[4, 3, 0]}
+        intensity={1.2}
+        shadow-mapSize={[1024, 1024]}
         shadow-camera-top={20}
         shadow-camera-bottom={-20}
         shadow-camera-left={-20}
         shadow-camera-right={20}
-        shadow-camera-near={0.1}
+        shadow-camera-near={-20}
         shadow-camera-far={100}
       />
       <ambientLight intensity={1.2} />

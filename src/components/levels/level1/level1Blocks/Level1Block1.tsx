@@ -3,22 +3,24 @@ import React, { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import TreesBackground from "../env/TreesBackground";
 import trees_block1_level1 from "@/utils/level1/block1/trees_block1";
-import RocksBackground from "../env/RocksBackground";
-import rocks_block1 from "@/utils/level1/block1/rocks_block1";
 import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
 
 function Level1Block1() {
-  const { scene: block1 } = useGLTF("/models/level1/level_1_block_1.gltf");
+  const { scene: block1 } = useGLTF(
+    "/models/level1/block_1/level_1_blocK_1v2.gltf",
+  );
+  const { scene: grass } = useGLTF("/models/level1/block_1/grass_block1.gltf");
   const { scene: plantsGrass } = useGLTF(
-    "/models/level1/plants_level_1_block_1.gltf",
+    "/models/level1/block_1/plants_block_1.gltf",
   );
 
   useEffect(() => {
     if (block1) {
       enableShadowsRecursively(block1);
       enableShadowsRecursively(plantsGrass);
+      enableShadowsRecursively(grass);
     }
-  }, [block1, plantsGrass]);
+  }, [block1, plantsGrass, grass]);
 
   return (
     <group>
@@ -33,6 +35,13 @@ function Level1Block1() {
 
       <primitive
         rotation={[0, Math.PI / 2, 0]}
+        object={grass}
+        scale={1.1}
+        position={[0, 1.1, 0]}
+      />
+
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
         object={plantsGrass}
         scale={1.1}
         position={[0, 1.1, 0]}
@@ -44,17 +53,12 @@ function Level1Block1() {
         maxZ={8}
         treesPositions={trees_block1_level1}
       />
-      <RocksBackground
-        minZ={-15}
-        maxZ={8}
-        rocksPosition={rocks_block1}
-        maxX={-15}
-      />
     </group>
   );
 }
 
 export default Level1Block1;
 
-useGLTF.preload("/models/level1/level_1_block_1.gltf");
-useGLTF.preload("/models/level1/plants_level_1_block_1.gltf");
+useGLTF.preload("/models/level1/block_1/level_1_blocK_1v2.gltf");
+useGLTF.preload("/models/level1/block_1/grass_block1.gltf");
+useGLTF.preload("/models/level1/block_1/plants_block_1.gltf");

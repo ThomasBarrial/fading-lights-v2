@@ -6,10 +6,8 @@ import * as THREE from "three";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import TreesBackground from "../env/TreesBackground";
-import RocksBackground from "../env/RocksBackground";
 import TransitionPlateform from "./TransitionPlateform";
-import trees_position_block4 from "@/utils/level1/block4/trees_position_block4";
-import rocks_block4 from "@/utils/level1/block4/rocks_block4";
+import trees_block4_level1 from "@/utils/level1/block4/trees_position_block4";
 
 export type InteractivePlateformeType = {
   id: string;
@@ -21,7 +19,13 @@ export type InteractivePlateformeType = {
 };
 
 function Level1Block4() {
-  const { scene: block4 } = useGLTF("/models/level1/level_1_block_4.gltf");
+  const { scene: block4 } = useGLTF(
+    "/models/level1/block_4/level_1_block_4.gltf",
+  );
+  const { scene: grass } = useGLTF("/models/level1/block_4/grass_block_4.gltf");
+  const { scene: plants } = useGLTF(
+    "/models/level1/block_4/plants_block_4.gltf",
+  );
 
   const sequenceRef = useRef<string[]>([]);
   const [currentStep, setCurrentStep] = useState(0);
@@ -43,8 +47,10 @@ function Level1Block4() {
   useEffect(() => {
     if (block4) {
       enableShadowsRecursively(block4);
+      enableShadowsRecursively(grass);
+      enableShadowsRecursively(plants);
     }
-  }, [block4]);
+  }, [block4, grass, plants]);
 
   const lightUp = (id: string, duration = 600) => {
     const ref = lightRefs.current.get(id);
@@ -206,7 +212,7 @@ function Level1Block4() {
   });
 
   return (
-    <group>
+    <group position={[0, -0.5, 32]}>
       <RigidBody type="fixed" colliders="trimesh">
         <primitive
           rotation={[0, Math.PI / 2, 0]}
@@ -216,6 +222,19 @@ function Level1Block4() {
         />
       </RigidBody>
 
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
+        object={grass}
+        scale={1.1}
+        position={[0, 0.8, 0]}
+      />
+
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
+        object={plants}
+        scale={1.1}
+        position={[0, 0.8, 0]}
+      />
       {interactivePlateform.map((plateform, index) => (
         <InteractivePlateforme
           isSequenceStarted={isSequenceStarted}
@@ -249,7 +268,7 @@ function Level1Block4() {
       <RigidBody
         type="fixed"
         colliders="cuboid"
-        position={[-2.5, 7.2, -103.7]}
+        position={[-2.5, 7.2, -105]}
         sensor
         onIntersectionEnter={({ other }) => {
           if (other.rigidBodyObject?.name === "player") {
@@ -258,7 +277,7 @@ function Level1Block4() {
         }}
       >
         <mesh name="launchSequence">
-          <boxGeometry args={[6, 0.4, 2]} />
+          <boxGeometry args={[6, 0.4, 4]} />
           <meshStandardMaterial color="hotpink" transparent opacity={0} />
         </mesh>
       </RigidBody>
@@ -307,14 +326,8 @@ function Level1Block4() {
       <TreesBackground
         minZ={-110}
         maxZ={-80}
-        treesPositions={trees_position_block4}
+        treesPositions={trees_block4_level1}
         maxX={-25}
-      />
-      <RocksBackground
-        maxX={-15}
-        minZ={-110}
-        maxZ={-80}
-        rocksPosition={rocks_block4}
       />
     </group>
   );
@@ -322,4 +335,6 @@ function Level1Block4() {
 
 export default Level1Block4;
 
-useGLTF.preload("/models/level1/level_1_block_4.gltf");
+useGLTF.preload("/models/level1/block_4/level_1_block_4.gltf");
+useGLTF.preload("/models/level1/block_4/grass_block_4.gltf");
+useGLTF.preload("/models/level1/block_4/plants_block_4.gltf");

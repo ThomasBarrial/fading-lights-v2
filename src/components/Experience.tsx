@@ -1,8 +1,8 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Suspense, useRef } from "react";
-import { KeyboardControls } from "@react-three/drei";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { KeyboardControls, OrbitControls } from "@react-three/drei";
 import Lights from "./lights/Lights";
 import Charactere from "./Charactere";
 import Level1 from "./levels/level1/level1Blocks/Level1";
@@ -22,6 +22,14 @@ export default function Experience({ level }: ExperienceProps) {
     fogColor: { value: "#D6E892" },
   });
   const rigidBodyRef = useRef(null);
+  const [dpr, setDpr] = useState(1);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const pixelRatio = window.devicePixelRatio;
+      setDpr(pixelRatio > 1 ? 1.5 : 1);
+    }
+  }, []);
 
   return (
     <>
@@ -34,12 +42,17 @@ export default function Experience({ level }: ExperienceProps) {
           { name: "jump", keys: ["Space"] },
         ]}
       >
-        <Canvas shadows camera={{ fov: 45 }}>
+        <Canvas
+          shadows
+          camera={{ fov: 45, near: 0.1, far: 100 }}
+          dpr={dpr}
+          gl={{ powerPreference: "high-performance" }} // important
+        >
           <Perf />
 
           <color attach="background" args={["#D6E892"]} />
           <fog attach="fog" args={[fogColor, 10, 30]} />
-          {/* <OrbitControls /> */}
+          <OrbitControls />
           <Leva hidden />
           <Lights />
           <Suspense fallback={<SceneLoader />}>

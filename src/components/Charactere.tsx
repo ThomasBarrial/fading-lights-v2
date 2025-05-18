@@ -171,7 +171,7 @@ function Charactere({
     // Smooth follow
     cameraFollowRef.current.position.lerp(bodyPos, 8 * delta);
 
-    const idealOffset = new THREE.Vector3(6, 10, 5); // (inversé selon besoin)
+    const idealOffset = new THREE.Vector3(5.5, 10, 4.5); // (inversé selon besoin)
     const idealLookAt = new THREE.Vector3(0, 0, 0);
 
     const cameraPos = cameraFollowRef.current.position.clone().add(idealOffset);

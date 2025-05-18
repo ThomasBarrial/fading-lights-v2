@@ -1,0 +1,280 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "THREE.GLTFExporter"
+  },
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "matrix": [
+        3.002140007007479e-16,
+        -1.6557759425928117e-16,
+        -1.3520436616872942,
+        0,
+        0,
+        -0.9006457030179181,
+        1.1029728773667111e-16,
+        0,
+        -1,
+        -2.465190328815662e-32,
+        -2.220446049250313e-16,
+        0,
+        3.1821288529099547,
+        7.231604339533085,
+        -24.999999999999986,
+        1
+      ],
+      "name": "Cube",
+      "mesh": 0
+    },
+    {
+      "matrix": [
+        0.5883484054145521,
+        0.39223227027636803,
+        -0.7071067811865475,
+        0,
+        -0.554700196225229,
+        0.8320502943378437,
+        0,
+        0,
+        0.588348405414552,
+        0.392232270276368,
+        0.7071067811865476,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "Directional Light",
+      "extensions": {
+        "KHR_lights_punctual": {
+          "light": 0
+        }
+      }
+    },
+    {
+      "matrix": [
+        0.9466576279579737,
+        1.1888406467597257e-8,
+        0.32224111380918247,
+        0,
+        0.19427886310612508,
+        0.7978174574903558,
+        -0.5707390190567102,
+        0,
+        -0.25708959290327976,
+        0.6028990832001854,
+        0.7552599795416157,
+        0,
+        -257.0895929032793,
+        602.8990832001848,
+        755.259979541614,
+        1
+      ],
+      "camera": 0
+    },
+    {
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "Default Ambient Light"
+    },
+    {
+      "name": "Scene 1",
+      "children": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 768,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 768,
+      "byteLength": 768,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1536,
+      "byteLength": 384,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1920,
+      "uri": "data:application/octet-stream;base64,AAAoQgAAAAAAAAAAAAAoQgAAAAAAACjCAAAoQv7/S0IAACjCAAAoQv7/S0IAAAAAAAAowgAAAAAAACjCAAAowgAAAAAAAAAAAAAowv7/S0IAAAAAAAAowv7/S0IAACjCAAAowv7/S0IAAAAAAAAoQv7/S0IAAAAAAAAoQv7/S0IAACjCAAAowv7/S0IAACjCAAAoQv7/S8IAAAAAAAAowv7/S8IAAAAAAAAowv7/S8IAACjCAAAoQv7/S8IAACjCAAAowgAAAAAAAChCAAAoQgAAAAAAAChCAAAoQv7/S0IAAChCAAAowv7/S0IAAChCAAAoQgAAAAAAACjCAAAowgAAAAAAACjCAAAowv7/S0IAACjCAAAoQv7/S0IAACjCAAAowgAAAAAAAAAAAAAowgAAAAAAAChCAAAowv7/S0IAAChCAAAowv7/S0IAAAAAAAAoQv7/S0IAAAAAAAAowv7/S0IAAAAAAAAowv7/S0IAAChCAAAoQv7/S0IAAChCAAAoQgAAAAAAAChCAAAoQgAAAAAAAAAAAAAoQv7/S0IAAAAAAAAoQv7/S0IAAChCAAAowv7/S8IAAAAAAAAoQv7/S8IAAAAAAAAoQv7/S8IAAChCAAAowv7/S8IAAChCAAAoQgAAAAAAAChCAAAowgAAAAAAAChCAAAowv7/S8IAAChCAAAoQv7/S8IAAChCAAAoQgAAAAAAAAAAAAAoQgAAAAAAAChCAAAoQv7/S8IAAChCAAAoQv7/S8IAAAAAAAAoQgAAAAAAACjCAAAoQgAAAAAAAAAAAAAoQv7/S8IAAAAAAAAoQv7/S8IAACjCAAAowgAAAAAAACjCAAAoQgAAAAAAACjCAAAoQv7/S8IAACjCAAAowv7/S8IAACjCAAAowgAAAAAAAAAAAAAowgAAAAAAACjCAAAowv7/S8IAACjCAAAowv7/S8IAAAAAAAAowgAAAAAAAChCAAAowgAAAAAAAAAAAAAowv7/S8IAAAAAAAAowv7/S8IAAChCAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAAIAAAADAAAABAAAAAUAAAAGAAAABAAAAAYAAAAHAAAACAAAAAkAAAAKAAAACAAAAAoAAAALAAAADAAAAA0AAAAOAAAADAAAAA4AAAAPAAAAEAAAABEAAAASAAAAEAAAABIAAAATAAAAFAAAABUAAAAWAAAAFAAAABYAAAAXAAAAGAAAABkAAAAaAAAAGAAAABoAAAAbAAAAHAAAAB0AAAAeAAAAHAAAAB4AAAAfAAAAIAAAACEAAAAiAAAAIAAAACIAAAAjAAAAJAAAACUAAAAmAAAAJAAAACYAAAAnAAAAKAAAACkAAAAqAAAAKAAAACoAAAArAAAALAAAAC0AAAAuAAAALAAAAC4AAAAvAAAAMAAAADEAAAAyAAAAMAAAADIAAAAzAAAANAAAADUAAAA2AAAANAAAADYAAAA3AAAAOAAAADkAAAA6AAAAOAAAADoAAAA7AAAAPAAAAD0AAAA+AAAAPAAAAD4AAAA/AAAA"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 64,
+      "max": [
+        42,
+        50.99999237060547,
+        42
+      ],
+      "min": [
+        -42,
+        -50.99999237060547,
+        -42
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 64,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5125,
+      "count": 96,
+      "max": [
+        63
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.025186859622305935,
+          0.010329823026364548,
+          0.005605391621829107,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.9819194197602586
+      },
+      "doubleSided": false
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "extras": {
+            "type": "SubdivGeometry",
+            "parameters": {
+              "width": 84,
+              "height": 101.99998474121094,
+              "depth": 84
+            }
+          },
+          "indices": 2,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "extensions": {
+    "KHR_lights_punctual": {
+      "lights": [
+        {
+          "name": "Directional Light",
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "intensity": 0.7,
+          "type": "directional"
+        }
+      ]
+    }
+  },
+  "cameras": [
+    {
+      "type": "orthographic",
+      "orthographic": {
+        "xmag": 5.564776973547798,
+        "ymag": 2.263117147091096,
+        "zfar": 100000,
+        "znear": 0
+      }
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_lights_punctual"
+  ]
+}

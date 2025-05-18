@@ -1,8 +1,9 @@
 import { useTransitionStore } from "@/store/useTransitionStore";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { RapierRigidBody, RigidBody } from "@react-three/rapier";
+import { RigidBody } from "@react-three/rapier";
 import { useRef } from "react";
+import * as THREE from "three";
 
 function TransitionPlateform() {
   const { scene: transition_plateform } = useGLTF(
@@ -10,41 +11,25 @@ function TransitionPlateform() {
   );
 
   const isActive = useRef<boolean>(false);
-  const plateform = useRef<RapierRigidBody>(null);
+  const plateform = useRef<THREE.Object3D>(null);
 
   const { startTransition } = useTransitionStore();
 
   useFrame(() => {
-    if (!plateform.current) return;
+    if (!plateform.current || !isActive.current) return;
 
-    const plateformPosition = plateform.current.translation();
-
-    if (isActive.current) {
-      plateform.current.setTranslation(
-        {
-          x: plateformPosition.x,
-          y: plateformPosition.y - 0.3,
-          z: plateformPosition.z,
-        },
-        true,
-      );
-    }
+    plateform.current.position.y -= 0.2; // ← vitesse de chute
   });
   return (
     <>
-      <RigidBody
+      <primitive
         ref={plateform}
-        type="fixed"
-        colliders="trimesh"
-        position={[-2.5, 0, -119]}
-      >
-        <primitive
-          rotation={[0, Math.PI / 2, 0]}
-          object={transition_plateform}
-          scale={1.1}
-          position={[0, 1.1, 0]}
-        />
-      </RigidBody>
+        position={[-2.5, 1.1, -119]}
+        rotation={[0, Math.PI / 2, 0]}
+        object={transition_plateform}
+        scale={1.1}
+      />
+
       <RigidBody
         type="fixed"
         colliders="cuboid"

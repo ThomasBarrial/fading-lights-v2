@@ -22,7 +22,7 @@ function Spike({
     <RigidBody
       type="fixed"
       position={position}
-      colliders="trimesh"
+      colliders="cuboid"
       ref={ref as React.RefObject<RapierRigidBody>}
     >
       {/* <primitive object={object} scale={scale} rotation={rotation} /> */}

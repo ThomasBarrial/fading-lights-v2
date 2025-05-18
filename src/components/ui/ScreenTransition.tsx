@@ -25,13 +25,12 @@ export default function ScreenTransition() {
       if (p < 1) {
         requestAnimationFrame(animate);
       } else {
-        console.log("Transition terminée");
         // Quand tout est noir
         setShowText(true);
         setTimeout(() => {
           endTransition();
-          router.push("/level2");
-        }, 3000);
+          router.push("/");
+        }, 5000);
       }
     };
 
@@ -46,13 +45,14 @@ export default function ScreenTransition() {
     <div
       className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center"
       style={{
-        background: `radial-gradient(circle at center, transparent ${inverse * 100}%, black ${inverse * 100}%)`,
+        background: `radial-gradient(circle at center, transparent ${inverse * 100}%, #090909 ${inverse * 100}%)`,
         transition: "background 0.1s linear",
       }}
     >
       {showText && (
         <p className="text-white text-2xl font-serif animate-fadeIn">
-          “Il faut toucher le fond pour remonter.”
+          “On croit fuir la douleur, mais l’addiction ne fait que la sculpter en
+          silence.”
         </p>
       )}
     </div>
