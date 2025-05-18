@@ -18,7 +18,7 @@ function Level1({
 }: {
   rigidBodyRef: React.RefObject<RapierRigidBody | null>;
 }) {
-  const currentCheckpoint = useRef<string | null>("start");
+  const currentCheckpoint = useRef<string | null>("checkpoint4");
   const boostStore = useBoostStore();
   const isPlayerDied = useRef(false);
 
@@ -67,7 +67,7 @@ function Level1({
 
     if (!currentCheckpoint.current) return;
 
-    if (currentCheckpoint.current === "checkpoint1" && translation.y < 3) {
+    if (currentCheckpoint.current === "checkpoint1" && translation.y < 1) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 4, z: -9 }, true);
     }
 
@@ -75,7 +75,7 @@ function Level1({
       currentCheckpoint.current === "checkpoint2" &&
       (translation.y < 1 || isPlayerDied.current)
     ) {
-      rigidBodyRef.current?.setTranslation({ x: -2, y: 2.6, z: -23 }, true);
+      rigidBodyRef.current?.setTranslation({ x: -2, y: 4.6, z: -23 }, true);
       isPlayerDied.current = false;
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
@@ -88,7 +88,7 @@ function Level1({
     }
     if (
       currentCheckpoint.current === "checkpoint4" &&
-      translation.z < -115 &&
+      translation.z > -115 &&
       translation.y < 1
     ) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 9.6, z: -80.5 }, true);

@@ -30,7 +30,7 @@ export default function ScreenTransition() {
         setShowText(true);
         setTimeout(() => {
           endTransition();
-          router.push("/level2");
+          router.push("/");
         }, 3000);
       }
     };

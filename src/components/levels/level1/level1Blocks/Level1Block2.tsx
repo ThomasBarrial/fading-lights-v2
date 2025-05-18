@@ -5,8 +5,6 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import TreesBackground from "../env/TreesBackground";
 import trees_block2 from "@/utils/level1/block2/trees_block2";
-import RocksBackground from "../env/RocksBackground";
-import rocks_block2 from "@/utils/level1/block2/rocks_block2";
 import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
 
 type BarConfig = {
@@ -21,19 +19,21 @@ type BarConfig = {
 
 function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
   const { scene: block2, nodes } = useGLTF(
-    "/models/level1/level_1_block_2.gltf",
+    "/models/level1/block_2/level_1_block_2.gltf",
   );
+  const { scene: grass } = useGLTF("/models/level1/block_2/grass_block_2.gltf");
 
   const { scene: plantsGrass } = useGLTF(
-    "/models/level1/plants_level_1_block_2.gltf",
+    "/models/level1/block_2/plants_block_2.gltf",
   );
 
   useEffect(() => {
     if (block2) {
       enableShadowsRecursively(block2);
       enableShadowsRecursively(plantsGrass);
+      enableShadowsRecursively(grass);
     }
-  }, [block2, plantsGrass]);
+  }, [block2, grass, plantsGrass]);
 
   const bars: BarConfig[] = useMemo(() => {
     return [
@@ -115,6 +115,12 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
       ))}
       <primitive
         rotation={[0, Math.PI / 2, 0]}
+        object={grass}
+        scale={1.1}
+        position={[0, 1.1, 0]}
+      />
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
         object={plantsGrass}
         scale={1.1}
         position={[0, 1.1, 0]}
@@ -126,17 +132,12 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         treesPositions={trees_block2}
         maxX={-15}
       />
-      <RocksBackground
-        minZ={-50}
-        maxZ={-15}
-        rocksPosition={rocks_block2}
-        maxX={-15}
-      />
     </group>
   );
 }
 
 export default Level1Block2;
 
-useGLTF.preload("/models/level1/level_1_block_2.gltf");
-useGLTF.preload("/models/level1/plants_level_1_block_2.gltf");
+useGLTF.preload("/models/level1/block_2/level_1_block_2.gltf");
+useGLTF.preload("/models/level1/block_2/grass_block_2.gltf");
+useGLTF.preload("/models/level1/block_2/plants_block_2.gltf");

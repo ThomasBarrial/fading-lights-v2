@@ -3,35 +3,37 @@ import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import React, { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import TreesBackground from "../env/TreesBackground";
-import RocksBackground from "../env/RocksBackground";
-import Spike from "@/components/models/Spike";
 import { useFrame } from "@react-three/fiber";
 import trees_block3 from "@/utils/level1/block3/trees_block3";
-import rocks_block3 from "@/utils/level1/block3/rocks_block3";
 import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
+import Spike from "@/components/models/Spike";
 
 function Level1Block3() {
-  const { scene: block3 } = useGLTF("/models/level1/level_1_block_3.gltf");
-  const { scene: spike } = useGLTF("/models/plate.gltf");
-  const { scene: rocks } = useGLTF("/models/level1/rocks_block_3_lvl1.gltf");
-  const { scene: river } = useGLTF("/models/level1/river_block_3.gltf");
-  const { scene: grass } = useGLTF("/models/level1/grass_block_3.gltf");
+  const { scene: block3 } = useGLTF(
+    "/models/level1/block_3/level_1_block_3.gltf",
+  );
+  const { scene: spike } = useGLTF("/models/level1/block_3/plate_block3.gltf");
+  const { scene: river } = useGLTF("/models/level1/block_3/river.gltf");
+  const { scene: grass } = useGLTF("/models/level1/block_3/grass_block_3.gltf");
+  const { scene: plants } = useGLTF(
+    "/models/level1/block_3/plants_block_3.gltf",
+  );
   const spikesGrp1Ref = useRef<THREE.Group>(null);
 
   useEffect(() => {
     if (block3) {
       enableShadowsRecursively(block3);
-      enableShadowsRecursively(spike);
       enableShadowsRecursively(grass);
+      enableShadowsRecursively(plants);
     }
-  }, [block3, spike, grass]);
+  }, [block3, grass, plants]);
 
   const spikes = useMemo(() => {
     return [
       {
         ref: React.createRef<RapierRigidBody>(),
         position: [-1.3, 3, -56] as [number, number, number],
-        scale: [1.8, 1.8, 1.8] as [number, number, number],
+        scale: [1.2, 1.3, 1.8] as [number, number, number],
         rotation: [-Math.PI / 2, Math.PI / 2, -Math.PI / 2] as [
           number,
           number,
@@ -45,7 +47,7 @@ function Level1Block3() {
       {
         ref: React.createRef<RapierRigidBody>(),
         position: [-1.3, 2.62, -58] as [number, number, number],
-        scale: [1.5, 1.5, 1.5] as [number, number, number],
+        scale: [1.2, 1.3, 1.5] as [number, number, number],
         rotation: [Math.PI / 2, Math.PI / 2, -Math.PI / 2] as [
           number,
           number,
@@ -59,7 +61,7 @@ function Level1Block3() {
       {
         ref: React.createRef<RapierRigidBody>(),
         position: [-1.3, 2.8, -61] as [number, number, number],
-        scale: [1.5, 1.5, 1.7] as [number, number, number],
+        scale: [1.2, 1.3, 1.7] as [number, number, number],
         rotation: [Math.PI, Math.PI / 2, -Math.PI / 2] as [
           number,
           number,
@@ -87,7 +89,7 @@ function Level1Block3() {
       {
         ref: React.createRef<RapierRigidBody>(),
         position: [1.2, 4, -71.2] as [number, number, number],
-        scale: [1.8, 1.8, 1.6] as [number, number, number],
+        scale: [1.3, 1.3, 1.3] as [number, number, number],
         rotation: [Math.PI, Math.PI / 2, Math.PI / 2] as [
           number,
           number,
@@ -145,18 +147,19 @@ function Level1Block3() {
           />
         ))}
       </group>
-      <primitive
-        rotation={[0, Math.PI / 2, 0]}
-        object={rocks}
-        scale={1.1}
-        position={[0, 0.5, 0]}
-      />
 
       <primitive
         rotation={[0, Math.PI / 2, 0]}
         object={river}
         scale={1.1}
         position={[0.4, 0.5, 0]}
+      />
+
+      <primitive
+        rotation={[0, Math.PI / 2, 0]}
+        object={plants}
+        scale={1.1}
+        position={[0, 0.8, 0]}
       />
 
       <primitive
@@ -172,20 +175,14 @@ function Level1Block3() {
         treesPositions={trees_block3}
         maxX={-20}
       />
-      <RocksBackground
-        minZ={-88}
-        maxZ={-50}
-        rocksPosition={rocks_block3}
-        maxX={-15}
-      />
     </group>
   );
 }
 
 export default Level1Block3;
 
-useGLTF.preload("/models/level1/level_1_block_3.gltf");
-useGLTF.preload("/models/plate.gltf");
-useGLTF.preload("/models/level1/rocks_block_3_lvl1.gltf");
-useGLTF.preload("/models/level1/river_block_3.gltf");
-useGLTF.preload("/models/level1/grass_block_3.gltf");
+useGLTF.preload("/models/level1/block_3/level_1_block_3.gltf");
+useGLTF.preload("/models/level1/block_3/plate_block3.gltf");
+useGLTF.preload("/models/level1/block_3/river.gltf");
+useGLTF.preload("/models/level1/block_3/grass_block_3.gltf");
+useGLTF.preload("/models/level1/block_3/plants_block_3.gltf");

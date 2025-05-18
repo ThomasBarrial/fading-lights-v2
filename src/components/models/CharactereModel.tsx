@@ -10,7 +10,7 @@ import { useFrame } from "@react-three/fiber";
 // import { useBoostStore } from "@/store/useBoostStore";
 
 export function CharactereModel() {
-  const { nodes } = useGLTF("/models/charactere.gltf");
+  const { nodes } = useGLTF("/models/model.gltf");
 
   const groupRef = useRef<THREE.Group>(null);
   const [isJumping, setIsJumping] = useState(false);
@@ -294,24 +294,25 @@ export function CharactereModel() {
             />
           </group>
           <mesh
-            name="Cube"
-            castShadow
-            receiveShadow
-            geometry={(nodes.Cube as THREE.Mesh).geometry}
-            material={(nodes.Cube as THREE.Mesh).material}
-            position={[-7.797, 26.322, 0]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={[1.12, 1.291, 1.12]}
-          />
-          <mesh
             name="Sphere"
             castShadow
             receiveShadow
             geometry={(nodes.Sphere as THREE.Mesh).geometry}
             material={(nodes.Sphere as THREE.Mesh).material}
-            position={[21.473, -23.887, 9.578]}
+            position={[22.473, -23.887, 3.488]}
             rotation={[Math.PI / 2, 1.354, -Math.PI / 2]}
-            scale={[3.417, 2.948, 3.313]}
+            scale={[3.21, 2.948, 3.313]}
+          />
+
+          <mesh
+            name="Sphere_1"
+            castShadow
+            receiveShadow
+            geometry={(nodes.Sphere_1 as THREE.Mesh).geometry}
+            material={(nodes.Sphere_1 as THREE.Mesh).material}
+            position={[-11.53, -1.926, 1.385]}
+            rotation={[0.044, 0.189, -0.364]}
+            scale={[8.51, 8.514, 6.858]}
           />
         </group>
       </group>
