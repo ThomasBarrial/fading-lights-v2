@@ -37,11 +37,19 @@ function Level1({
     },
     {
       name: "checkpoint2",
-      position: [-2, 2.5, -23.3] as [number, number, number],
+      position: [-2, 3.5, -22.6] as [number, number, number],
       size: [3.3, 0.4, 2] as [number, number, number],
       onActivate: () => onCheckpointactivated("checkpoint2"),
-      lightPosition: [1.28, 1.7, 0.65] as [number, number, number],
-      particlesPosition: [-0.75, 4, -22.7] as [number, number, number],
+      lightPosition: [1.28, 1.1, 0.9] as [number, number, number],
+      particlesPosition: [-0.75, 4.5, -21.7] as [number, number, number],
+    },
+    {
+      name: "checkpoint3",
+      position: [-1.8, 5, -49.5] as [number, number, number],
+      size: [7.3, 0.4, 4] as [number, number, number],
+      onActivate: () => onCheckpointactivated("checkpoint2"),
+      lightPosition: [-2.5, 1.5, 0.9] as [number, number, number],
+      particlesPosition: [-4.3, 6.4, -48.6] as [number, number, number],
     },
   ];
 
@@ -102,9 +110,9 @@ function Level1({
 
       <Boost
         id="boost1"
-        position={[-0.3, 3, -29]}
+        position={[-0.3, 4, -29]}
         corruptionValue={0.1}
-        lightPosition={[-0.3, 3.2, -29]}
+        lightPosition={[-0.3, 4.2, -29]}
       />
       <Boost
         id="boost2"

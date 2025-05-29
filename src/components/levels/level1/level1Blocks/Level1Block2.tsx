@@ -42,16 +42,16 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         node: nodes.bar1_obs_2,
         min: -0.3,
         max: -1.9,
-        z: -32.7,
+        z: -31.8,
         frequency: 0.4,
         phase: 0,
       },
       {
         ref: React.createRef<RapierRigidBody>(),
         node: nodes.bar2_obs_2,
-        min: -2.8,
-        max: -1.6,
-        z: -32.85,
+        min: -2.9,
+        max: -1.7,
+        z: -32,
         frequency: 0.3,
         phase: Math.PI / 2,
       },
@@ -60,7 +60,7 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
         node: nodes.bar3_obs_2,
         min: 0.2,
         max: -1.8,
-        z: -33.2,
+        z: -32.4,
         frequency: 0.4,
         phase: Math.PI,
       },
@@ -83,7 +83,7 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
 
   return (
     <group>
-      <RigidBody type="fixed" colliders="trimesh">
+      <RigidBody type="fixed" colliders="trimesh" restitution={0}>
         <primitive
           object={block2}
           position={[0, 1.1, 0]}

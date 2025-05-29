@@ -117,7 +117,7 @@ function InteractivePlateforme({
         sensor
         onIntersectionEnter={({ other }) => {
           if (other.rigidBodyObject?.name === "player") {
-            if (plateFormActivated.includes(id) && isSequenceStarted) return;
+            if (plateFormActivated.includes(id) || isSequenceStarted) return;
 
             const current = sequenceRef.current[currentStep];
 
@@ -132,6 +132,7 @@ function InteractivePlateforme({
                 return next;
               });
             } else {
+              console.log("Wrong plateform activated:", id);
               hasLaunched.current = false;
               lightsOff();
               setCurrentStep(0);

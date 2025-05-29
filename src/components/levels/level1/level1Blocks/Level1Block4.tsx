@@ -122,8 +122,13 @@ function Level1Block4() {
           1500 + index * 800,
         );
       });
+
+      const totalDuration = order.length * 800;
+      setTimeout(() => {
+        console.log("Sequence completed");
+        setIsSequenceStarted(false);
+      }, totalDuration + 500);
     }, 1000);
-    setIsSequenceStarted(false);
   };
 
   const interactivePlateform = useMemo(() => {
@@ -271,7 +276,10 @@ function Level1Block4() {
         position={[-2.5, 7.2, -105]}
         sensor
         onIntersectionEnter={({ other }) => {
-          if (other.rigidBodyObject?.name === "player") {
+          if (
+            other.rigidBodyObject?.name === "player" &&
+            !hasLaunched.current
+          ) {
             launchSequence();
           }
         }}
