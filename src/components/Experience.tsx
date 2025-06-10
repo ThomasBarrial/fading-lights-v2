@@ -15,6 +15,7 @@ import { Perf } from "r3f-perf";
 import PlayerDiedOverlay from "./ui/PlayerDiedOverlay";
 import ControlsOverlay from "./ui/ControlsOverlay";
 import GlobalOverlay from "./ui/GlobalOverlay";
+import BackgroundMusic from "./BackgroundMusic";
 
 interface ExperienceProps {
   level: 1 | 2 | 3;
@@ -72,6 +73,7 @@ export default function Experience({ level }: ExperienceProps) {
       <ControlsOverlay />
       <GlobalOverlay />
       <GameOverOverlay />
+      <BackgroundMusic />
     </>
   );
 }
