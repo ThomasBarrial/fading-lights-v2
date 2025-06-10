@@ -12,19 +12,24 @@ import { useBoostStore } from "@/store/useBoostStore";
 import Level1Block4 from "./Level1Block4";
 
 import Level1Block5 from "./Level1Block5";
+import { useIsPlayerDied } from "@/store/useIsPlayerDied";
+import { useIsMenuOpen } from "@/store/isMenuOpen";
 
 function Level1({
   rigidBodyRef,
 }: {
   rigidBodyRef: React.RefObject<RapierRigidBody | null>;
 }) {
-  const currentCheckpoint = useRef<string | null>("checkpoint4");
+  const currentCheckpoint = useRef<string | null>(null);
   const boostStore = useBoostStore();
   const isPlayerDied = useRef(false);
+  const { resetPlayerDied } = useIsPlayerDied();
 
   const onCheckpointactivated = (checkPointId: string) => {
     currentCheckpoint.current = checkPointId;
   };
+
+  const { shouldRestartGame } = useIsMenuOpen();
 
   const checkpoints = [
     {
@@ -45,16 +50,21 @@ function Level1({
     },
     {
       name: "checkpoint3",
-      position: [-1.8, 5, -49.5] as [number, number, number],
+      position: [-1.8, 5, -48.2] as [number, number, number],
       size: [7.3, 0.4, 4] as [number, number, number],
       onActivate: () => onCheckpointactivated("checkpoint2"),
       lightPosition: [-2.5, 1.5, 0.9] as [number, number, number],
-      particlesPosition: [-4.3, 6.4, -48.6] as [number, number, number],
+      particlesPosition: [-4.3, 6.4, -47] as [number, number, number],
     },
   ];
 
   useFrame(() => {
     if (!rigidBodyRef.current) return;
+
+    if (shouldRestartGame) {
+      currentCheckpoint.current = null;
+    }
+
     const translation = rigidBodyRef.current.translation();
 
     if (!currentCheckpoint.current) return;
@@ -68,21 +78,16 @@ function Level1({
       translation.z > -85 &&
       (translation.y < 1 || isPlayerDied.current)
     ) {
+      setTimeout(() => {
+        resetPlayerDied();
+      }, 400);
       rigidBodyRef.current?.setTranslation({ x: -2, y: 4.6, z: -23 }, true);
       isPlayerDied.current = false;
+
+      // resetPlayerDied();
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
     }
-    // if (
-    //   currentCheckpoint.current === "checkpoint4" &&
-    //   translation.z > -85 &&
-    //   translation.y < 1
-    // ) {
-    //   rigidBodyRef.current?.setTranslation({ x: -2, y: 9.6, z: -80.5 }, true);
-    //   isPlayerDied.current = false;
-    //   boostStore.isBoosted = false;
-    //   boostStore.resetBoosts();
-    // }
   });
 
   return (
@@ -110,9 +115,9 @@ function Level1({
 
       <Boost
         id="boost1"
-        position={[-0.3, 4, -29]}
+        position={[-0.3, 4, -28]}
         corruptionValue={0.1}
-        lightPosition={[-0.3, 4.2, -29]}
+        lightPosition={[-0.3, 4.2, -28]}
       />
       <Boost
         id="boost2"

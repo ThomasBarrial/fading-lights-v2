@@ -132,7 +132,6 @@ function InteractivePlateforme({
                 return next;
               });
             } else {
-              console.log("Wrong plateform activated:", id);
               hasLaunched.current = false;
               lightsOff();
               setCurrentStep(0);

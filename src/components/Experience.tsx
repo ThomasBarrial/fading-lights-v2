@@ -12,6 +12,9 @@ import SceneLoader from "./loaders/SceneLoader";
 import ScreenTransition from "./ui/ScreenTransition";
 import Level2 from "./levels/level2/Level2";
 import { Perf } from "r3f-perf";
+import PlayerDiedOverlay from "./ui/PlayerDiedOverlay";
+import ControlsOverlay from "./ui/ControlsOverlay";
+import GlobalOverlay from "./ui/GlobalOverlay";
 
 interface ExperienceProps {
   level: 1 | 2 | 3;
@@ -51,7 +54,7 @@ export default function Experience({ level }: ExperienceProps) {
           <Perf />
 
           <color attach="background" args={["#D6E892"]} />
-          <fog attach="fog" args={[fogColor, 10, 30]} />
+          <fog attach="fog" args={[fogColor, 10, 25]} />
           <OrbitControls />
           <Leva hidden />
           <Lights />
@@ -65,6 +68,9 @@ export default function Experience({ level }: ExperienceProps) {
         </Canvas>
       </KeyboardControls>
       <ScreenTransition />
+      <PlayerDiedOverlay />
+      <ControlsOverlay />
+      <GlobalOverlay />
       <GameOverOverlay />
     </>
   );

@@ -125,7 +125,6 @@ function Level1Block4() {
 
       const totalDuration = order.length * 800;
       setTimeout(() => {
-        console.log("Sequence completed");
         setIsSequenceStarted(false);
       }, totalDuration + 500);
     }, 1000);
@@ -217,7 +216,7 @@ function Level1Block4() {
   });
 
   return (
-    <group position={[0, -0.5, 32]}>
+    <group position={[0, -0.5, 33.3]}>
       <RigidBody type="fixed" colliders="trimesh">
         <primitive
           rotation={[0, Math.PI / 2, 0]}

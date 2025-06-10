@@ -57,7 +57,6 @@ export default function Boost({
           scale={1.2}
           onIntersectionEnter={({ other }) => {
             if (other.rigidBodyObject?.name === "player") {
-              console.log("Boost collected", id);
               applyBoost(corruptionValue, duration);
               // On retarde la suppression dans Zustand pour laisser Three.js respirer
               markBoostAsCollected(id);
