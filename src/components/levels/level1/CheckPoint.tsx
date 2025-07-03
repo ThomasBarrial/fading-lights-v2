@@ -1,9 +1,11 @@
 import CheckpointParticles from "@/components/effects/CheckPointParticles";
+import { useIsMenuOpen } from "@/store/isMenuOpen";
 // import { useHelper } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 import { useControls } from "leva";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+
 export default function Checkpoint({
   args,
   position,
@@ -25,11 +27,19 @@ export default function Checkpoint({
     lightColor: "#074EA4",
   });
 
+  const { shouldRestartGame } = useIsMenuOpen();
+
+  useEffect(() => {
+    if (shouldRestartGame) {
+      setIsActive(false);
+    }
+  }, [shouldRestartGame]);
+
   // useHelper(
-  //   lightRef as React.RefObject<THREE.Object3D>,
+  //   lightRef as React.RefObject<THREE.PointLight>,
   //   THREE.PointLightHelper,
   //   0.5,
-  //   "hotpink",
+  //   "red",
   // );
 
   return (
@@ -48,7 +58,6 @@ export default function Checkpoint({
         }}
       >
         {/* checkpointLight*/}
-
         <pointLight
           ref={lightRef}
           position={lightPosition}

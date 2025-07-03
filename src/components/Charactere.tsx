@@ -13,6 +13,7 @@ import { useBoostStore } from "@/store/useBoostStore";
 import { useDashStore } from "@/store/useDashStore";
 
 import TrailFollow from "./effects/Trail";
+import { useIsMenuOpen } from "@/store/isMenuOpen";
 
 function Charactere({
   rigidBodyRef,
@@ -22,6 +23,7 @@ function Charactere({
   const cameraFollowRef = useRef<THREE.Object3D>(null);
   const [subscribeKeys, get] = useKeyboardControls();
   const dashTrailRef = useRef<THREE.Object3D>(null);
+  const { shouldRestartGame, resetShouldRestartGame } = useIsMenuOpen();
 
   const boostTimer = useRef(0);
 
@@ -54,7 +56,7 @@ function Charactere({
   const intialPostion = new THREE.Vector3(-1, 2, 0);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
-  // s
+  // const intialPostion = new THREE.Vector3(-2, 5.6, -48);
   // const intialPostion = new THREE.Vector3(-2, 12, -72);
   // const intialPostion = new THREE.Vector3(-2, 9.6, -110);
 
@@ -140,6 +142,18 @@ function Charactere({
 
   useFrame((state, delta) => {
     const body = rigidBodyRef.current;
+
+    if (shouldRestartGame) {
+      if (body) {
+        body.setTranslation(intialPostion, true);
+        body.setLinvel({ x: 0, y: 0, z: 0 }, true);
+        body.setAngvel({ x: 0, y: 0, z: 0 }, true);
+      }
+      useBoostStore.getState().resetBoost(); // met isBoosted à false
+      useDashStore.getState().resetDash(); // met isDashing à false
+      resetShouldRestartGame();
+      return;
+    }
     if (!body) return;
     if (isBoosted) {
       boostTimer.current -= delta;

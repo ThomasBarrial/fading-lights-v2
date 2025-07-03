@@ -6,6 +6,7 @@ import * as THREE from "three";
 import TreesBackground from "../env/TreesBackground";
 import trees_block2 from "@/utils/level1/block2/trees_block2";
 import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
+import { useIsPlayerDied } from "@/store/useIsPlayerDied";
 
 type BarConfig = {
   ref: React.RefObject<RapierRigidBody | null>;
@@ -26,6 +27,8 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
   const { scene: plantsGrass } = useGLTF(
     "/models/level1/block_2/plants_block_2.gltf",
   );
+
+  const { markAsPlayerDied } = useIsPlayerDied();
 
   useEffect(() => {
     if (block2) {
@@ -106,6 +109,7 @@ function Level1Block2({ isPlayerDied }: { isPlayerDied: RefObject<boolean> }) {
           sensor
           onIntersectionEnter={({ other }) => {
             if (other.rigidBodyObject?.name === "player") {
+              markAsPlayerDied();
               isPlayerDied.current = true;
             }
           }}
