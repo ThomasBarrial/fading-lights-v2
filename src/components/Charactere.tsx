@@ -58,7 +58,7 @@ function Charactere({
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -48);
   // const intialPostion = new THREE.Vector3(-2, 12, -72);
-  // const intialPostion = new THREE.Vector3(-2, 9.6, -110);
+  // const intialPostion = new THREE.Vector3(-2, 9.6, -78);
 
   useEffect(() => {
     if (!isBoosted) return;
