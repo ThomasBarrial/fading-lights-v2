@@ -14,6 +14,7 @@ import { useDashStore } from "@/store/useDashStore";
 
 import TrailFollow from "./effects/Trail";
 import { useIsMenuOpen } from "@/store/isMenuOpen";
+import { usePlatformStore } from "@/store/usePlateformLevel2Sore";
 
 function Charactere({
   rigidBodyRef,
@@ -24,7 +25,7 @@ function Charactere({
   const [subscribeKeys, get] = useKeyboardControls();
   const dashTrailRef = useRef<THREE.Object3D>(null);
   const { shouldRestartGame, resetShouldRestartGame } = useIsMenuOpen();
-
+  const platformVelocityX = usePlatformStore((s) => s.platformVelocityX);
   const boostTimer = useRef(0);
 
   const direction = useMemo(() => new THREE.Vector3(), []);
@@ -53,7 +54,7 @@ function Charactere({
     [isBoosted, baseDash, boostedDash],
   );
 
-  const intialPostion = new THREE.Vector3(-1, 2, 0);
+  const intialPostion = new THREE.Vector3(-1, 4, 0);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -48);
@@ -175,25 +176,33 @@ function Charactere({
     direction.normalize().multiplyScalar(currentSpeed);
     // Récupère la vélocité actuelle
     const linvel = body.linvel();
-    body.setLinvel({ x: direction.x, y: linvel.y, z: direction.z }, true);
 
-    // CAMERA;
-    if (!cameraFollowRef.current) return;
-    // On récupère la position actuelle et on lisse sur le ref visuel
-    const bodyPos = new THREE.Vector3().copy(body.translation());
+    body.setLinvel(
+      {
+        x: direction.x + platformVelocityX * 1.15,
+        y: linvel.y,
+        z: direction.z, // optionnel : platformVelocityZ si plateforme diagonale
+      },
+      true,
+    );
 
-    // Smooth follow
-    cameraFollowRef.current.position.lerp(bodyPos, 8 * delta);
+    // // CAMERA;
+    // if (!cameraFollowRef.current) return;
+    // // On récupère la position actuelle et on lisse sur le ref visuel
+    // const bodyPos = new THREE.Vector3().copy(body.translation());
 
-    const idealOffset = new THREE.Vector3(5.5, 8.5, 4.5); // (inversé selon besoin)
-    const idealLookAt = new THREE.Vector3(0, 0, 0);
+    // // Smooth follow
+    // cameraFollowRef.current.position.lerp(bodyPos, 8 * delta);
 
-    const cameraPos = cameraFollowRef.current.position.clone().add(idealOffset);
+    // const idealOffset = new THREE.Vector3(5.5, 8.5, 4.5); // (inversé selon besoin)
+    // const idealLookAt = new THREE.Vector3(0, 0, 0);
 
-    const target = cameraFollowRef.current.position.clone().add(idealLookAt);
+    // const cameraPos = cameraFollowRef.current.position.clone().add(idealOffset);
 
-    state.camera.position.lerp(cameraPos, 5 * delta);
-    state.camera.lookAt(target);
+    // const target = cameraFollowRef.current.position.clone().add(idealLookAt);
+
+    // state.camera.position.lerp(cameraPos, 5 * delta);
+    // state.camera.lookAt(target);
 
     // Dash
     updateDash(delta, isBoosted);

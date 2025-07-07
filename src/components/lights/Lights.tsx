@@ -6,9 +6,9 @@ import * as THREE from "three";
 
 export default function Lights({ level = 1 }: { level?: number }) {
   const light = useRef<THREE.DirectionalLight>(null);
-  const { lightColor, ambientLightIntensity } = useControls({
-    lightColor: { value: "#CE9562" },
-    ambientLightIntensity: { value: level === 1 ? 1.5 : 0 },
+  const { directionalLightColor, ambientLightIntensity } = useControls({
+    directionalLightColor: { value: level === 1 ? "#CE9562" : "#8291B0" },
+    ambientLightIntensity: { value: level === 1 ? 1.5 : 0.3 },
   });
   // const { isBoosted } = useBoostStore();
   useFrame((state) => {
@@ -20,11 +20,11 @@ export default function Lights({ level = 1 }: { level?: number }) {
   return (
     <>
       <directionalLight
-        color={lightColor}
+        color={directionalLightColor}
         ref={light}
         castShadow
         position={[1, 3, 0]}
-        intensity={1}
+        intensity={level === 1 ? 1 : 0}
         shadow-mapSize={[1024, 1024]}
         shadow-camera-top={20}
         shadow-camera-bottom={-20}
