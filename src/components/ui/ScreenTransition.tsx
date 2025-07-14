@@ -29,7 +29,7 @@ export default function ScreenTransition() {
         setShowText(true);
         setTimeout(() => {
           endTransition();
-          router.push("/");
+          router.push("/level2");
         }, 5000);
       }
     };

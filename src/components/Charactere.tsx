@@ -14,6 +14,7 @@ import { useDashStore } from "@/store/useDashStore";
 
 import TrailFollow from "./effects/Trail";
 import { useIsMenuOpen } from "@/store/isMenuOpen";
+import { usePlatformStore } from "@/store/usePlateformLevel2Sore";
 
 function Charactere({
   rigidBodyRef,
@@ -24,7 +25,11 @@ function Charactere({
   const [subscribeKeys, get] = useKeyboardControls();
   const dashTrailRef = useRef<THREE.Object3D>(null);
   const { shouldRestartGame, resetShouldRestartGame } = useIsMenuOpen();
-
+  const setPlatformVelocityX = usePlatformStore((s) => s.setPlatformVelocityX);
+  const velocityByPlatformHandle = usePlatformStore(
+    (s) => s.velocityByPlatformHandle,
+  );
+  const { platformVelocityX } = usePlatformStore();
   const boostTimer = useRef(0);
 
   const direction = useMemo(() => new THREE.Vector3(), []);
@@ -53,12 +58,12 @@ function Charactere({
     [isBoosted, baseDash, boostedDash],
   );
 
-  const intialPostion = new THREE.Vector3(-1, 2, 0);
+  const intialPostion = new THREE.Vector3(-1, 4, 0);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -48);
   // const intialPostion = new THREE.Vector3(-2, 12, -72);
-  // const intialPostion = new THREE.Vector3(-2, 9.6, -110);
+  // const intialPostion = new THREE.Vector3(-2, 9.6, -78);
 
   useEffect(() => {
     if (!isBoosted) return;
@@ -69,6 +74,7 @@ function Charactere({
   }, [isBoosted]);
 
   const isGrounded = useRef(false);
+  const currentPlatformHandle = useRef<number | null>(null);
 
   const checkGrounded = () => {
     if (!rigidBodyRef.current) return;
@@ -76,20 +82,40 @@ function Charactere({
     const rb = rigidBodyRef.current;
     const origin = rb.translation();
     const down = { x: 0, y: -1, z: 0 };
-
-    // On lance une capsule fictive directement sous le joueur
     const shape = new rapier.Capsule(0.2, 0.1); // radius, halfHeight
 
     const hit = world.castShape(
-      { x: origin.x, y: origin.y - 0.25, z: origin.z }, // Position
-      { x: 0, y: 0, z: 0, w: 1 }, // Pas de rotation
+      { x: origin.x, y: origin.y - 0.25, z: origin.z },
+      { x: 0, y: 0, z: 0, w: 1 },
       down,
       shape,
-      0.05, // max distance
-      1, // ignore RB itself
-      false, // stopAtPenetration
+      0.05,
+      1,
+      false,
     );
-    isGrounded.current = !!hit && hit.time_of_impact < 0.05;
+
+    if (hit && hit.collider !== undefined) {
+      const collider = world.getCollider(hit.collider.handle);
+      const parent = collider?.parent();
+
+      isGrounded.current = true;
+
+      if (parent) {
+        const handle = parent.handle;
+        currentPlatformHandle.current = handle;
+
+        // Récupère la vitesse depuis le store (mise à jour par Level2Block1)
+        const platformVX = velocityByPlatformHandle[handle] ?? 0;
+        setPlatformVelocityX(platformVX);
+      } else {
+        currentPlatformHandle.current = null;
+        setPlatformVelocityX(0);
+      }
+    } else {
+      isGrounded.current = false;
+      currentPlatformHandle.current = null;
+      setPlatformVelocityX(0);
+    }
   };
 
   const canJump = useRef(true);
@@ -175,7 +201,15 @@ function Charactere({
     direction.normalize().multiplyScalar(currentSpeed);
     // Récupère la vélocité actuelle
     const linvel = body.linvel();
-    body.setLinvel({ x: direction.x, y: linvel.y, z: direction.z }, true);
+
+    body.setLinvel(
+      {
+        x: direction.x + platformVelocityX * 1.12,
+        y: linvel.y,
+        z: direction.z,
+      },
+      true,
+    );
 
     // CAMERA;
     if (!cameraFollowRef.current) return;

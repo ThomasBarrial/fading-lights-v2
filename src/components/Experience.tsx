@@ -11,19 +11,24 @@ import GameOverOverlay from "./ui/GameOverOverlay";
 import SceneLoader from "./loaders/SceneLoader";
 import ScreenTransition from "./ui/ScreenTransition";
 import Level2 from "./levels/level2/Level2";
-import { Perf } from "r3f-perf";
+// import { Perf } from "r3f-perf";
 import PlayerDiedOverlay from "./ui/PlayerDiedOverlay";
 import ControlsOverlay from "./ui/ControlsOverlay";
 import GlobalOverlay from "./ui/GlobalOverlay";
+import BackgroundMusic from "./BackgroundMusic";
 
 interface ExperienceProps {
   level: 1 | 2 | 3;
 }
 
 export default function Experience({ level }: ExperienceProps) {
-  const { fogColor } = useControls({
-    fogColor: { value: "#D6E892" },
-  });
+  const { fogColor, fogColor2, backgroundLevel1, backgroundLevel2 } =
+    useControls({
+      fogColor: { value: "#D6E892" },
+      fogColor2: { value: "#041b55" },
+      backgroundLevel1: { value: "#D6E892" },
+      backgroundLevel2: { value: "#00144e" },
+    });
   const rigidBodyRef = useRef(null);
   const [dpr, setDpr] = useState(1);
 
@@ -45,33 +50,43 @@ export default function Experience({ level }: ExperienceProps) {
           { name: "jump", keys: ["Space"] },
         ]}
       >
+        <Leva />
         <Canvas
           shadows
           camera={{ fov: 45, near: 0.1, far: 100 }}
           dpr={dpr}
-          gl={{ powerPreference: "high-performance" }} // important
+          gl={{
+            powerPreference: "high-performance",
+            preserveDrawingBuffer: true,
+          }} // important
         >
-          <Perf />
+          {/* <Perf /> */}
 
-          <color attach="background" args={["#D6E892"]} />
-          <fog attach="fog" args={[fogColor, 10, 25]} />
+          <color
+            attach="background"
+            args={[level === 1 ? backgroundLevel1 : backgroundLevel2]}
+          />
+          <fog
+            attach="fog"
+            args={[level === 1 ? fogColor : fogColor2, 10, 25]}
+          />
           <OrbitControls />
-          <Leva hidden />
-          <Lights />
+          <Lights level={level} />
           <Suspense fallback={<SceneLoader />}>
             <Physics debug={false}>
               {level === 1 && <Level1 rigidBodyRef={rigidBodyRef} />}
-              {level === 2 && <Level2 />}
+              {level === 2 && <Level2 rigidBodyRef={rigidBodyRef} />}
               <Charactere rigidBodyRef={rigidBodyRef} />
             </Physics>
           </Suspense>
         </Canvas>
       </KeyboardControls>
       <ScreenTransition />
-      <PlayerDiedOverlay />
+      {/* <PlayerDiedOverlay />
       <ControlsOverlay />
       <GlobalOverlay />
-      <GameOverOverlay />
+      <GameOverOverlay /> */}
+      {/* <BackgroundMusic /> */}
     </>
   );
 }
