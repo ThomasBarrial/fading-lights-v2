@@ -1,6 +1,6 @@
 import { RapierRigidBody, RigidBody } from "@react-three/rapier";
 import React, { useEffect, useMemo, useRef } from "react";
-import { useGLTF, useHelper } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import enableShadowsRecursively from "@/utils/enableShadowsRecursively";
 import { useControls } from "leva";
 import * as THREE from "three";
@@ -31,6 +31,9 @@ function Level2Block1({
   const currentPlatformRef = useRef<RapierRigidBody | null>(null);
   const prevPositions = useRef<Record<string, number>>({});
   const setPlatformVelocityX = usePlatformStore((s) => s.setPlatformVelocityX);
+  const setPlatformVelocityByHandle = usePlatformStore(
+    (s) => s.setPlatformVelocityByHandle,
+  );
   useEffect(() => {
     if (block1) {
       enableShadowsRecursively(block1);
@@ -44,7 +47,8 @@ function Level2Block1({
   const pointLights = [
     { position: [-3.1, 6.3, -4.8] },
     { position: [-4.1, 6.3, -25] },
-    // { position: [-1.5, 7.0, 2] },
+    { position: [-4.3, 8, -38.7] },
+    { position: [-2.7, 8.9, -47.8] },
   ];
 
   const movingBlocks: MovingBlocksConfig[] = useMemo(() => {
@@ -55,9 +59,39 @@ function Level2Block1({
         node: nodes.movingplateform1,
         min: 0,
         max: 4,
-        z: -0.2,
+        z: -0.1,
         frequency: 0.1,
         phase: 0,
+      },
+      {
+        id: "plateform2",
+        ref: React.createRef<RapierRigidBody>(),
+        node: nodes.movingplatforme2,
+        min: -3,
+        max: 2,
+        z: -0.4,
+        frequency: 0.08,
+        phase: 3,
+      },
+      {
+        id: "plateform3",
+        ref: React.createRef<RapierRigidBody>(),
+        node: nodes.movingplateforme3,
+        min: -1,
+        max: 3,
+        z: -0.7,
+        frequency: 0.1,
+        phase: 2,
+      },
+      {
+        id: "plateform4",
+        ref: React.createRef<RapierRigidBody>(),
+        node: nodes.Movingplateform4,
+        min: -2,
+        max: 2,
+        z: -0.8,
+        frequency: 0.07,
+        phase: 1,
       },
     ];
   }, [nodes]);
@@ -92,6 +126,10 @@ function Level2Block1({
         setPlatformVelocityX(velocityX);
       } else {
         setPlatformVelocityX(0); // reset si pas sur la plateforme
+      }
+
+      if (ref.current) {
+        setPlatformVelocityByHandle(ref.current.handle, velocityX);
       }
     });
   });
@@ -133,18 +171,6 @@ function Level2Block1({
           scale={0.018}
           rotation={[0, Math.PI / 2, 0]}
           name={`platform-${id}`}
-          onCollisionEnter={({ other }) => {
-            if (other.rigidBodyObject?.name === "player") {
-              console.log("enter plateform");
-              currentPlatformRef.current = ref.current;
-            }
-          }}
-          onCollisionExit={({ other }) => {
-            if (other.rigidBodyObject?.name === "player") {
-              console.log("exit plateform");
-              currentPlatformRef.current = null;
-            }
-          }}
         >
           <primitive object={node} />
         </RigidBody>

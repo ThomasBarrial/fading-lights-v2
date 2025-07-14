@@ -25,7 +25,11 @@ function Charactere({
   const [subscribeKeys, get] = useKeyboardControls();
   const dashTrailRef = useRef<THREE.Object3D>(null);
   const { shouldRestartGame, resetShouldRestartGame } = useIsMenuOpen();
-  const platformVelocityX = usePlatformStore((s) => s.platformVelocityX);
+  const setPlatformVelocityX = usePlatformStore((s) => s.setPlatformVelocityX);
+  const velocityByPlatformHandle = usePlatformStore(
+    (s) => s.velocityByPlatformHandle,
+  );
+  const { platformVelocityX } = usePlatformStore();
   const boostTimer = useRef(0);
 
   const direction = useMemo(() => new THREE.Vector3(), []);
@@ -70,6 +74,7 @@ function Charactere({
   }, [isBoosted]);
 
   const isGrounded = useRef(false);
+  const currentPlatformHandle = useRef<number | null>(null);
 
   const checkGrounded = () => {
     if (!rigidBodyRef.current) return;
@@ -77,20 +82,40 @@ function Charactere({
     const rb = rigidBodyRef.current;
     const origin = rb.translation();
     const down = { x: 0, y: -1, z: 0 };
-
-    // On lance une capsule fictive directement sous le joueur
     const shape = new rapier.Capsule(0.2, 0.1); // radius, halfHeight
 
     const hit = world.castShape(
-      { x: origin.x, y: origin.y - 0.25, z: origin.z }, // Position
-      { x: 0, y: 0, z: 0, w: 1 }, // Pas de rotation
+      { x: origin.x, y: origin.y - 0.25, z: origin.z },
+      { x: 0, y: 0, z: 0, w: 1 },
       down,
       shape,
-      0.05, // max distance
-      1, // ignore RB itself
-      false, // stopAtPenetration
+      0.05,
+      1,
+      false,
     );
-    isGrounded.current = !!hit && hit.time_of_impact < 0.05;
+
+    if (hit && hit.collider !== undefined) {
+      const collider = world.getCollider(hit.collider.handle);
+      const parent = collider?.parent();
+
+      isGrounded.current = true;
+
+      if (parent) {
+        const handle = parent.handle;
+        currentPlatformHandle.current = handle;
+
+        // Récupère la vitesse depuis le store (mise à jour par Level2Block1)
+        const platformVX = velocityByPlatformHandle[handle] ?? 0;
+        setPlatformVelocityX(platformVX);
+      } else {
+        currentPlatformHandle.current = null;
+        setPlatformVelocityX(0);
+      }
+    } else {
+      isGrounded.current = false;
+      currentPlatformHandle.current = null;
+      setPlatformVelocityX(0);
+    }
   };
 
   const canJump = useRef(true);
@@ -179,30 +204,30 @@ function Charactere({
 
     body.setLinvel(
       {
-        x: direction.x + platformVelocityX * 1.15,
+        x: direction.x + platformVelocityX * 1.12,
         y: linvel.y,
-        z: direction.z, // optionnel : platformVelocityZ si plateforme diagonale
+        z: direction.z,
       },
       true,
     );
 
-    // // CAMERA;
-    // if (!cameraFollowRef.current) return;
-    // // On récupère la position actuelle et on lisse sur le ref visuel
-    // const bodyPos = new THREE.Vector3().copy(body.translation());
+    // CAMERA;
+    if (!cameraFollowRef.current) return;
+    // On récupère la position actuelle et on lisse sur le ref visuel
+    const bodyPos = new THREE.Vector3().copy(body.translation());
 
-    // // Smooth follow
-    // cameraFollowRef.current.position.lerp(bodyPos, 8 * delta);
+    // Smooth follow
+    cameraFollowRef.current.position.lerp(bodyPos, 8 * delta);
 
-    // const idealOffset = new THREE.Vector3(5.5, 8.5, 4.5); // (inversé selon besoin)
-    // const idealLookAt = new THREE.Vector3(0, 0, 0);
+    const idealOffset = new THREE.Vector3(5.5, 8.5, 4.5); // (inversé selon besoin)
+    const idealLookAt = new THREE.Vector3(0, 0, 0);
 
-    // const cameraPos = cameraFollowRef.current.position.clone().add(idealOffset);
+    const cameraPos = cameraFollowRef.current.position.clone().add(idealOffset);
 
-    // const target = cameraFollowRef.current.position.clone().add(idealLookAt);
+    const target = cameraFollowRef.current.position.clone().add(idealLookAt);
 
-    // state.camera.position.lerp(cameraPos, 5 * delta);
-    // state.camera.lookAt(target);
+    state.camera.position.lerp(cameraPos, 5 * delta);
+    state.camera.lookAt(target);
 
     // Dash
     updateDash(delta, isBoosted);

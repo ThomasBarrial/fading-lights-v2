@@ -66,10 +66,10 @@ export default function Experience({ level }: ExperienceProps) {
             attach="background"
             args={[level === 1 ? backgroundLevel1 : backgroundLevel2]}
           />
-          {/* <fog
+          <fog
             attach="fog"
             args={[level === 1 ? fogColor : fogColor2, 10, 25]}
-          /> */}
+          />
           <OrbitControls />
           <Lights level={level} />
           <Suspense fallback={<SceneLoader />}>
