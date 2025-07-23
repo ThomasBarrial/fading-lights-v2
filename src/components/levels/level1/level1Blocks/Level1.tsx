@@ -52,7 +52,7 @@ function Level1({
       name: "checkpoint3",
       position: [-1.8, 5, -48.2] as [number, number, number],
       size: [7.3, 0.4, 4] as [number, number, number],
-      onActivate: () => onCheckpointactivated("checkpoint2"),
+      onActivate: () => onCheckpointactivated("checkpoint3"),
       lightPosition: [-2.5, 1.5, 0.9] as [number, number, number],
       particlesPosition: [-4.3, 6.4, -47] as [number, number, number],
     },
@@ -68,7 +68,7 @@ function Level1({
     const translation = rigidBodyRef.current.translation();
 
     if (!currentCheckpoint.current) return;
-
+    console.log(currentCheckpoint.current);
     if (currentCheckpoint.current === "checkpoint1" && translation.y < 1) {
       rigidBodyRef.current?.setTranslation({ x: -2, y: 4, z: -9 }, true);
     }
@@ -87,6 +87,9 @@ function Level1({
       // resetPlayerDied();
       boostStore.isBoosted = false;
       boostStore.resetBoosts();
+    }
+    if (currentCheckpoint.current === "checkpoint3" && translation.y < 1) {
+      rigidBodyRef.current?.setTranslation({ x: -2, y: 5.6, z: -48 }, true);
     }
   });
 

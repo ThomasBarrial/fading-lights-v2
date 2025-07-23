@@ -18,7 +18,7 @@ function TransitionPlateform() {
   useFrame(() => {
     if (!plateform.current || !isActive.current) return;
 
-    plateform.current.position.y -= 0.2; // ← vitesse de chute
+    plateform.current.position.y -= 0.6; // ← vitesse de chute
   });
   return (
     <>

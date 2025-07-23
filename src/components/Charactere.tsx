@@ -53,11 +53,11 @@ function Charactere({
     [isBoosted, baseDash, boostedDash],
   );
 
-  const intialPostion = new THREE.Vector3(-1, 2, 0);
+  // const intialPostion = new THREE.Vector3(-1, 2, 0);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -48);
-  // const intialPostion = new THREE.Vector3(-2, 12, -72);
+  const intialPostion = new THREE.Vector3(-2, 12, -72);
   // const intialPostion = new THREE.Vector3(-2, 9.6, -110);
 
   useEffect(() => {

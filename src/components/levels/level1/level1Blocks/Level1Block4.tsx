@@ -119,7 +119,7 @@ function Level1Block4() {
           () => {
             lightUp(id);
           },
-          1500 + index * 800,
+          1500 + index * 1000,
         );
       });
 

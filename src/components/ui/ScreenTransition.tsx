@@ -9,6 +9,7 @@ const DURATION = 1800; // durée totale en ms
 export default function ScreenTransition() {
   const { isTransitioning, endTransition } = useTransitionStore();
   const [progress, setProgress] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showText, setShowText] = useState(false);
   const router = useRouter();
 
@@ -30,7 +31,7 @@ export default function ScreenTransition() {
         setTimeout(() => {
           endTransition();
           router.push("/");
-        }, 5000);
+        }, 3000);
       }
     };
 
@@ -43,18 +44,18 @@ export default function ScreenTransition() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center"
+      className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center animate-fadeIn"
       style={{
         background: `radial-gradient(circle at center, transparent ${inverse * 100}%, #090909 ${inverse * 100}%)`,
         transition: "background 0.1s linear",
       }}
     >
-      {showText && (
+      {/* {showText && (
         <p className="text-white text-2xl font-serif animate-fadeIn">
           “On croit fuir la douleur, mais l’addiction ne fait que la sculpter en
           silence.”
         </p>
-      )}
+      )} */}
     </div>
   );
 }
