@@ -1,5 +1,6 @@
 import CheckpointParticles from "@/components/effects/CheckPointParticles";
 import { useIsMenuOpen } from "@/store/isMenuOpen";
+import { useHelper } from "@react-three/drei";
 // import { useHelper } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 import { useControls } from "leva";
@@ -35,12 +36,12 @@ export default function Checkpoint({
     }
   }, [shouldRestartGame]);
 
-  // useHelper(
-  //   lightRef as React.RefObject<THREE.PointLight>,
-  //   THREE.PointLightHelper,
-  //   0.5,
-  //   "red",
-  // );
+  useHelper(
+    lightRef as React.RefObject<THREE.PointLight>,
+    THREE.PointLightHelper,
+    0.5,
+    "red",
+  );
 
   return (
     <>

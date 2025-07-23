@@ -59,6 +59,7 @@ function Charactere({
   );
 
   const intialPostion = new THREE.Vector3(-1, 4, 0);
+
   // const intialPostion = new THREE.Vector3(-2, 5.6, -34);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -23);
   // const intialPostion = new THREE.Vector3(-2, 5.6, -48);
