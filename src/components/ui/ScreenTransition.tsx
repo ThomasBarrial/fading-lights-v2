@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useTransitionStore } from "@/store/useTransitionStore";
 import { useRouter } from "next/navigation";
 
-const DURATION = 1800; // durée totale en ms
+const DURATION = 1500; // durée totale en ms
 
 export default function ScreenTransition() {
   const { isTransitioning, endTransition } = useTransitionStore();
@@ -31,7 +31,7 @@ export default function ScreenTransition() {
         setTimeout(() => {
           endTransition();
           router.push("/");
-        }, 3000);
+        }, 2000);
       }
     };
 

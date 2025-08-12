@@ -11,7 +11,6 @@ export default function Scene() {
           <meshStandardMaterial color="#a3b18a" />
         </mesh>
       </RigidBody>
-
       {/* Blocs décoratifs */}
       <RigidBody type="fixed">
         <mesh position={[2, 0.5, 2]} castShadow>
@@ -19,7 +18,7 @@ export default function Scene() {
           <meshStandardMaterial color="#588157" />
         </mesh>
       </RigidBody>
-
+      sd
       <RigidBody type="fixed">
         <mesh position={[-3, 0.5, -1]} castShadow>
           <boxGeometry args={[1.5, 1.5, 1.5]} />

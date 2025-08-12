@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
-import { Atma } from "next/font/google";
+import { Atma, Jersey_10, Jersey_25 } from "next/font/google";
 import "./globals.css";
 
 const atma = Atma({
   variable: "--font-atma",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+
+const jersey10 = Jersey_10({
+  variable: "--font-jersey-10",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const jersey25 = Jersey_25({
+  variable: "--font-jersey-25",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${atma.variable} antialiased h-screen w-screen`}>
+      <body
+        className={`${atma.variable} ${jersey10.variable} ${jersey25.variable} antialiased h-screen w-screen`}
+      >
         {children}
       </body>
     </html>

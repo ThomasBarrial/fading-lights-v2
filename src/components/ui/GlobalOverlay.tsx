@@ -25,16 +25,16 @@ function GlobalOverlay() {
   }, [toggleMenu, isMenuOpen]);
 
   return (
-    <div className="fixed top-0 z-10  w-full h-full font-atma p-4 text-[#FFFAD1]">
+    <div className="fixed top-0 z-10  w-full h-full font-jersey-10 p-4 text-white">
       <button
         onClick={() => toggleMenu()}
         type="button"
-        className="cursor-pointer bg-[#1A1A1A] text-[#FFFAD1] px-4 py-2 rounded-lg hover:bg-[#333] transition-colors duration-300"
+        className="cursor-pointer bg-[#1A1A1A] text-white px-4 py-2 rounded-lg hover:bg-[#333] transition-colors duration-300"
       >
         MENU(esc)
       </button>
       {isMenuOpen && (
-        <div className="relative bg-[#1A1A1A] text-[#FFFAD1] rounded-xl h-80 w-60 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col">
+        <div className="relative bg-[#1A1A1A] text-white rounded-xl h-80 w-60 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col">
           <button
             className="absolute top-4 right-5 cursor-pointer hover:scale-125 transition-transform duration-700"
             onClick={toggleMenu}

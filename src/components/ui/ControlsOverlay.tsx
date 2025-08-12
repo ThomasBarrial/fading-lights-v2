@@ -58,7 +58,7 @@ export default function ControlsOverlay() {
     <>
       {isControlsOpen && (
         <div
-          className={`bg-[#FFFAD1] fixed bottom-4 left-4 px-5 py-3 rounded-xl flex flex-col items-center gap-4 transition-all duration-300 ease-in-out overflow-hidden font-atma z-20`}
+          className={`bg-white fixed bottom-4 left-4 px-5 py-3 rounded-xl flex flex-col items-center gap-4 transition-all duration-300 ease-in-out overflow-hidden font-jersey-10 z-20`}
         >
           <div className="w-full flex justify-between items-center text-black">
             <p>Controls</p>
