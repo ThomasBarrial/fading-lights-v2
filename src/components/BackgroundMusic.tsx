@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 function BackgroundMusic() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const audio = new Audio("/audio/whispered-sunrise.mp3");
@@ -27,12 +27,13 @@ function BackgroundMusic() {
 
   const toggleAudio = () => {
     if (!audioRef.current) return;
+    console.log("Toggling audio:", isPlaying ? "playing" : "paused");
     if (isPlaying) {
-      audioRef.current.pause();
-    } else {
       audioRef.current.play().catch(() => {});
+    } else {
+      audioRef.current.pause();
     }
-    setIsPlaying(!isPlaying);
+    setIsPlaying((prev) => !prev);
   };
 
   return (
